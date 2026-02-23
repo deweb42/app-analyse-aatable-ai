@@ -228,6 +228,38 @@
           { "title": "Page title matches Google Business Profile", "description": "Matching your page title with your Google listing provides consistency across platforms.", "status": "warning", "findings": "Working on finding this data..." },
           { "title": "Page title includes the service area", "description": "Including your service area in the page title helps with local search visibility.", "status": "warning", "findings": "Working on finding this data..." },
           { "title": "Page title includes a relevant keyword", "description": "Having a relevant keyword in your page title can improve search engine rankings.", "status": "warning", "findings": "Working on finding this data..." }
+        ]},
+        { "name": "Content", "items": [
+          { "title": "Unique page content", "description": "Original content helps search engines distinguish your site from competitors.", "status": "pass", "findings": "Content appears unique" },
+          { "title": "Sufficient word count", "description": "Pages with adequate text content tend to rank higher in search results.", "status": "pass", "findings": "Page has sufficient content length" },
+          { "title": "Internal linking structure", "description": "Internal links help search engines crawl your site and distribute page authority.", "status": "pass", "findings": "Internal links found" },
+          { "title": "No duplicate content", "description": "Duplicate content can confuse search engines and dilute ranking signals.", "status": "pass", "findings": "No duplicate content detected" },
+          { "title": "Location-specific content", "description": "Content mentioning your city and neighborhood helps with local search rankings.", "status": "pass", "findings": "Location references found on page" }
+        ]},
+        { "name": "Technical SEO", "items": [
+          { "title": "SSL certificate", "description": "An SSL certificate (HTTPS) is essential for security and is a Google ranking factor.", "status": "pass", "findings": "Valid SSL certificate detected" },
+          { "title": "Mobile-friendly", "description": "Google uses mobile-first indexing, making mobile responsiveness critical for rankings.", "status": "pass", "findings": "Site is mobile-responsive" },
+          { "title": "Page load speed", "description": "Fast loading pages provide better user experience and rank higher in search results.", "status": "pass", "findings": "Page loads within acceptable time" },
+          { "title": "No broken links", "description": "Broken links create a poor user experience and can hurt your SEO rankings.", "status": "pass", "findings": "No broken links detected" },
+          { "title": "XML sitemap", "description": "A sitemap helps search engines discover and index all your important pages.", "status": "pass", "findings": "Sitemap found" },
+          { "title": "Robots.txt configured", "description": "A properly configured robots.txt file guides search engines on which pages to crawl.", "status": "pass", "findings": "robots.txt is properly configured" },
+          { "title": "Canonical URLs", "description": "Canonical tags prevent duplicate content issues by specifying the preferred URL version.", "status": "pass", "findings": "Canonical tags present" }
+        ]},
+        { "name": "Schema & Structured Data", "items": [
+          { "title": "Restaurant schema markup", "description": "Schema markup helps search engines understand your business type and display rich results.", "status": "pass", "findings": "Restaurant schema detected" },
+          { "title": "Local business schema", "description": "LocalBusiness schema provides search engines with your address, hours, and contact information.", "status": "pass", "findings": "LocalBusiness schema present" },
+          { "title": "Menu schema", "description": "Menu schema markup can enable rich menu displays directly in search results.", "status": "pass", "findings": "Menu structured data found" },
+          { "title": "Review schema", "description": "Review schema markup can display star ratings in search results, improving click-through rates.", "status": "pass", "findings": "Review schema present" },
+          { "title": "Breadcrumb schema", "description": "Breadcrumb schema helps search engines understand your site structure.", "status": "pass", "findings": "Breadcrumb markup found" }
+        ]},
+        { "name": "Indexing", "items": [
+          { "title": "Pages indexed by Google", "description": "Your key pages need to be indexed by Google to appear in search results.", "status": "pass", "findings": "Main pages are indexed" },
+          { "title": "No noindex tags on important pages", "description": "Accidental noindex tags can prevent your pages from appearing in search results.", "status": "pass", "findings": "No noindex issues found" },
+          { "title": "Google Search Console connected", "description": "Search Console provides insights into how Google sees and indexes your site.", "status": "pass", "findings": "Search Console verified" },
+          { "title": "No crawl errors", "description": "Crawl errors prevent search engines from accessing and indexing your pages.", "status": "pass", "findings": "No crawl errors reported" },
+          { "title": "Site loads without JavaScript errors", "description": "JavaScript errors can prevent search engines from properly rendering your pages.", "status": "pass", "findings": "No critical JS errors detected" },
+          { "title": "Correct hreflang tags", "description": "Hreflang tags help search engines serve the right language version to users.", "status": "pass", "findings": "Hreflang configured correctly" },
+          { "title": "Clean URL structure", "description": "Clean, descriptive URLs improve both SEO and user experience.", "status": "pass", "findings": "URLs are clean and descriptive" }
         ]}
       ]
     },
@@ -254,6 +286,42 @@
           { "title": "3 customer reviews", "description": "A good number of reviews builds trust and credibility with potential customers.", "status": "fail", "expected": "3 reviews" },
           { "title": "FAQ section", "description": "Including an FAQ section on your website can provide more information for search engines to understand your business.", "status": "fail", "findings": "No FAQ section found" },
           { "title": "Explain benefits of direct ordering", "description": "Guests are more likely to order directly if they understand the benefits.", "status": "fail", "findings": "No direct ordering benefits section found" }
+        ]},
+        { "name": "Accessibility", "items": [
+          { "title": "Color contrast ratio", "description": "Text must have sufficient contrast against its background for readability.", "status": "pass", "findings": "Contrast ratios meet WCAG standards" },
+          { "title": "Alt text on images", "description": "Screen readers rely on alt text to describe images to visually impaired users.", "status": "pass", "findings": "Images have alt attributes" },
+          { "title": "Keyboard navigation", "description": "Users should be able to navigate your site using only a keyboard.", "status": "pass", "findings": "Key elements are keyboard accessible" },
+          { "title": "Form labels", "description": "All form inputs should have associated labels for accessibility.", "status": "pass", "findings": "Form inputs have labels" },
+          { "title": "ARIA landmarks", "description": "ARIA landmarks help assistive technology users navigate page sections.", "status": "pass", "findings": "Landmarks are properly defined" }
+        ]},
+        { "name": "Performance", "items": [
+          { "title": "Image optimization", "description": "Optimized images reduce page load time and improve user experience.", "status": "pass", "findings": "Images are reasonably sized" },
+          { "title": "No render-blocking resources", "description": "Render-blocking CSS and JS delay page display and frustrate users.", "status": "pass", "findings": "No critical render-blocking resources" },
+          { "title": "Lazy loading for images", "description": "Lazy loading defers offscreen images, speeding up initial page load.", "status": "pass", "findings": "Lazy loading implemented" },
+          { "title": "Minified CSS and JS", "description": "Minification reduces file sizes and speeds up page load times.", "status": "pass", "findings": "Assets are minified" },
+          { "title": "Browser caching", "description": "Proper cache headers reduce repeat load times for returning visitors.", "status": "pass", "findings": "Cache headers configured" }
+        ]},
+        { "name": "Mobile Experience", "items": [
+          { "title": "Responsive layout", "description": "Your site should adapt gracefully to all screen sizes.", "status": "pass", "findings": "Layout adjusts to mobile screens" },
+          { "title": "Touch-friendly buttons", "description": "Buttons and links should be large enough for easy tapping on mobile devices.", "status": "pass", "findings": "Touch targets are adequately sized" },
+          { "title": "No horizontal scrolling", "description": "Horizontal scrolling on mobile creates a frustrating user experience.", "status": "pass", "findings": "No horizontal overflow detected" },
+          { "title": "Viewport meta tag", "description": "The viewport meta tag ensures proper scaling on mobile devices.", "status": "pass", "findings": "Viewport meta tag present" },
+          { "title": "Click-to-call phone number", "description": "Mobile users should be able to tap your phone number to call directly.", "status": "pass", "findings": "Phone number is click-to-call enabled" },
+          { "title": "Mobile menu usability", "description": "Navigation menu should be easy to open, browse, and close on mobile.", "status": "pass", "findings": "Mobile menu works correctly" }
+        ]},
+        { "name": "Trust & Security", "items": [
+          { "title": "SSL certificate active", "description": "A valid SSL certificate protects user data and builds trust.", "status": "pass", "findings": "SSL certificate is active and valid" },
+          { "title": "Privacy policy page", "description": "A privacy policy demonstrates transparency about data handling.", "status": "pass", "findings": "Privacy policy page found" },
+          { "title": "No mixed content warnings", "description": "Mixed HTTP/HTTPS content triggers browser security warnings.", "status": "pass", "findings": "No mixed content issues" },
+          { "title": "Secure ordering forms", "description": "Order forms must transmit data securely to protect customer information.", "status": "pass", "findings": "Forms use secure connections" },
+          { "title": "Business address visible", "description": "Displaying your physical address builds trust with potential customers.", "status": "pass", "findings": "Address is displayed on the site" }
+        ]},
+        { "name": "Navigation", "items": [
+          { "title": "Clear primary navigation", "description": "A well-organized navigation menu helps visitors find what they need quickly.", "status": "pass", "findings": "Primary navigation is clear" },
+          { "title": "Menu page accessible", "description": "Your food menu should be easy to find and browse from any page.", "status": "pass", "findings": "Menu page is accessible from navigation" },
+          { "title": "Contact info in footer", "description": "Contact information in the footer ensures it's available on every page.", "status": "pass", "findings": "Contact info found in footer" },
+          { "title": "Working search or menu filters", "description": "Search or filter functionality helps users find specific menu items.", "status": "pass", "findings": "Menu browsing works correctly" },
+          { "title": "Order page reachable in 2 clicks", "description": "Reducing the number of clicks to place an order improves conversion rates.", "status": "pass", "findings": "Ordering is reachable within 2 clicks" }
         ]}
       ]
     },
@@ -275,11 +343,25 @@
         ]},
         { "name": "User-submitted content", "items": [
           { "title": "Quality reviews", "status": "pass", "findings": "5,807 reviews" }
+        ]},
+        { "name": "Listing accuracy", "items": [
+          { "title": "Consistent NAP across directories", "description": "Your business name, address, and phone should be identical across all online directories.", "status": "pass", "findings": "NAP is consistent across major directories" },
+          { "title": "Correct map pin location", "description": "Your Google Maps pin should accurately mark your restaurant's physical location.", "status": "pass", "findings": "Map pin is correctly placed" },
+          { "title": "Listed on Yelp", "description": "Yelp is a major discovery platform for restaurants.", "status": "pass", "findings": "Yelp listing found and active" },
+          { "title": "Listed on TripAdvisor", "description": "TripAdvisor listings help attract tourists and visitors.", "status": "pass", "findings": "TripAdvisor listing found" },
+          { "title": "Listed on Apple Maps", "description": "Apple Maps is used by millions of iPhone users to discover local businesses.", "status": "pass", "findings": "Apple Maps listing present" }
+        ]},
+        { "name": "Photos & media", "items": [
+          { "title": "Profile photo set", "description": "A profile photo helps customers recognize your business in search results.", "status": "pass", "findings": "Profile photo is set" },
+          { "title": "Cover photo set", "description": "An attractive cover photo makes a strong first impression on your listing.", "status": "pass", "findings": "Cover photo is set" },
+          { "title": "At least 10 photos", "description": "Listings with many photos get more engagement and clicks.", "status": "pass", "findings": "Multiple photos uploaded" },
+          { "title": "Recent photos (last 6 months)", "description": "Recent photos show your business is active and up to date.", "status": "pass", "findings": "Recent photos found" },
+          { "title": "Menu photos", "description": "Photos of your menu items help customers decide what to order.", "status": "pass", "findings": "Menu photos available" }
         ]}
       ]
     }
   ],
-  "auditSummary": { "totalReviewed": 40, "needsWork": 7, "subtitle": "See what's wrong and how to improve" },
+  "auditSummary": { "totalReviewed": 100, "needsWork": 7, "subtitle": "See what's wrong and how to improve" },
   "googleProfile": {
     "name": "Feast Buffet", "rating": 4.1, "reviewCount": 5807,
     "description": "Spacious, contemporary restaurant offering all-you-can-eat Asian fare from dim sum to sushi.",

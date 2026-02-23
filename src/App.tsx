@@ -24,26 +24,14 @@ export default function App() {
           {/* Hero cards: Revenue Loss + Competitors + Why Fix */}
           <HeroCards report={report} />
 
-          {/* Search Results section with keywords */}
+          {/* Search Results section with keywords + audit summary */}
           {searchResults && (
             <SearchResultsSection
               section={searchResults}
               keywordCards={report.keywordCards}
+              auditSummary={report.auditSummary}
             />
           )}
-
-          {/* Audit summary header */}
-          <div>
-            <h2 className="text-xl font-semibold text-gray-900">
-              {report.auditSummary.totalReviewed} things reviewed,{' '}
-              <span className="text-red-500">{report.auditSummary.needsWork} need work</span>
-            </h2>
-            <p className="text-sm text-gray-500 mt-0.5">
-              {report.auditSummary.subtitle}
-            </p>
-          </div>
-
-          {/* Section 1: Search Results checklist (already shown above with keywords) */}
 
           {/* Section 2: Guest Experience */}
           {websiteExperience && (

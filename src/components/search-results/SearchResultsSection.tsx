@@ -1,4 +1,4 @@
-import type { ReportSection, KeywordCard as KeywordCardType } from '../../types/report'
+import type { ReportSection, KeywordCard as KeywordCardType, AuditSummary } from '../../types/report'
 import { SectionHeader } from '../shared/SectionHeader'
 import { InfoBox } from '../shared/InfoBox'
 import { KeywordGrid } from './KeywordGrid'
@@ -7,11 +7,23 @@ import { ChecklistAccordion } from '../website-experience/ChecklistAccordion'
 interface SearchResultsSectionProps {
   section: ReportSection
   keywordCards: KeywordCardType[]
+  auditSummary: AuditSummary
 }
 
-export function SearchResultsSection({ section, keywordCards }: SearchResultsSectionProps) {
+export function SearchResultsSection({ section, keywordCards, auditSummary }: SearchResultsSectionProps) {
   return (
     <div className="space-y-4">
+      {/* Audit summary */}
+      <div>
+        <h2 className="text-xl font-semibold text-gray-900">
+          {auditSummary.totalReviewed} things reviewed,{' '}
+          <span className="text-red-500">{auditSummary.needsWork} need work</span>
+        </h2>
+        <p className="text-sm text-gray-500 mt-0.5">
+          {auditSummary.subtitle}
+        </p>
+      </div>
+
       {/* Keyword rankings */}
       <div>
         <div className="mb-3">
