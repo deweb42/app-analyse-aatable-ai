@@ -1,4 +1,5 @@
 import type { HealthReport } from '../../types/report'
+import { useI18n } from '../../lib/i18n'
 import { ScoreCard } from '../scorecard/ScoreCard'
 import { CTAButton } from '../shared/CTAButton'
 import { RadialProgress } from '../shared/RadialProgress'
@@ -8,6 +9,8 @@ interface SidebarProps {
 }
 
 export function Sidebar({ report }: SidebarProps) {
+  const { t } = useI18n()
+
   return (
     <>
       {/* Desktop sidebar */}
@@ -34,7 +37,7 @@ export function Sidebar({ report }: SidebarProps) {
                 className="text-xs font-semibold"
                 style={{ color: report.overallScore.strokeColor }}
               >
-                {report.overallScore.rating}
+                {t(report.overallScore.rating)}
               </span>
             </div>
           </div>

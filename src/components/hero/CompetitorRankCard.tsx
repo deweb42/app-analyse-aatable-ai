@@ -1,4 +1,5 @@
 import type { OverallCompetitor, Restaurant } from '../../types/report'
+import { useI18n } from '../../lib/i18n'
 import cutleryIcon from '../../assets/icons/cutlery.svg'
 import starIcon from '../../assets/icons/star.svg'
 
@@ -9,7 +10,10 @@ interface CompetitorRankCardProps {
 }
 
 export function CompetitorRankCard({ competitors, restaurant, restaurantRating }: CompetitorRankCardProps) {
+  const { t, locale } = useI18n()
+
   const ordinalSuffix = (n: number) => {
+    if (locale === 'fr') return n + (n === 1 ? 'er' : 'e')
     const s = ['th', 'st', 'nd', 'rd']
     const v = n % 100
     return n + (s[(v - 20) % 10] || s[v] || s[0])
@@ -19,7 +23,7 @@ export function CompetitorRankCard({ competitors, restaurant, restaurantRating }
     <div className="rounded-2xl bg-white border border-gray-200/60 shadow-sm h-full flex flex-col overflow-hidden">
       <div className="p-5 pb-2">
         <h2 className="text-lg font-bold text-gray-900 leading-snug tracking-tight">
-          You're ranking below {competitors.length} competitors
+          {t('rankingBelow', { count: competitors.length })}
         </h2>
       </div>
 

@@ -1,5 +1,6 @@
 import type { HealthReport } from '../../types/report'
 import { getRatingColor } from '../../lib/score-utils'
+import { useI18n } from '../../lib/i18n'
 import { RadialProgress } from '../shared/RadialProgress'
 import { CTAButton } from '../shared/CTAButton'
 import { SubScoreRow } from './SubScoreRow'
@@ -9,6 +10,7 @@ interface ScoreCardProps {
 }
 
 export function ScoreCard({ report }: ScoreCardProps) {
+  const { t } = useI18n()
   const ratingColor = getRatingColor(report.overallScore.rating)
 
   return (
@@ -47,9 +49,9 @@ export function ScoreCard({ report }: ScoreCardProps) {
 
         {/* Rating label */}
         <div className="text-center mb-5">
-          <p className="text-[11px] text-gray-400 tracking-widest uppercase font-medium">Online health grade</p>
+          <p className="text-[11px] text-gray-400 tracking-widest uppercase font-medium">{t('healthGrade')}</p>
           <p className="text-base font-bold mt-0.5" style={{ color: ratingColor }}>
-            {report.overallScore.rating}
+            {t(report.overallScore.rating)}
           </p>
         </div>
 

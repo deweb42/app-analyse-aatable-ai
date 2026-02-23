@@ -1,5 +1,6 @@
 import type { CTABanner } from '../../types/report'
 import { ArrowRight, Sparkles } from 'lucide-react'
+import { useI18n } from '../../lib/i18n'
 import feastBuffetImg from '../../assets/images/feast-buffet.jpg'
 
 interface AIWebsiteSectionProps {
@@ -7,6 +8,8 @@ interface AIWebsiteSectionProps {
 }
 
 export function AIWebsiteSection({ ctaBanner }: AIWebsiteSectionProps) {
+  const { t } = useI18n()
+
   return (
     <div className="relative rounded-2xl overflow-hidden shadow-sm">
       {/* Background image */}
@@ -42,10 +45,10 @@ export function AIWebsiteSection({ ctaBanner }: AIWebsiteSectionProps) {
             <div className="w-full h-20 bg-gradient-to-br from-amber-100 to-orange-100 rounded-lg mb-3 flex items-center justify-center">
               <span className="text-2xl">🍜</span>
             </div>
-            <p className="text-xs font-bold text-gray-900">Savor every bite</p>
-            <p className="text-[10px] text-gray-400 mt-0.5">Fresh & authentic</p>
+            <p className="text-xs font-bold text-gray-900">{t('savorEveryBite')}</p>
+            <p className="text-[10px] text-gray-400 mt-0.5">{t('freshAuthentic')}</p>
             <div className="mt-3 bg-gray-900 text-white text-[10px] font-semibold rounded-lg px-3 py-1.5 text-center">
-              Order now
+              {t('orderNow')}
             </div>
           </div>
         </div>

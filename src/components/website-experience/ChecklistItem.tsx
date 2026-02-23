@@ -1,4 +1,5 @@
 import type { CheckItem } from '../../types/report'
+import { useI18n } from '../../lib/i18n'
 import { StatusIcon } from '../shared/StatusIcon'
 import { DisclosurePanel } from '../shared/DisclosurePanel'
 
@@ -7,6 +8,7 @@ interface ChecklistItemProps {
 }
 
 export function ChecklistItem({ item }: ChecklistItemProps) {
+  const { t } = useI18n()
   const hasDetails = item.findings || item.expected || item.description
 
   const trigger = (
@@ -38,13 +40,13 @@ export function ChecklistItem({ item }: ChecklistItemProps) {
           )}
           {item.findings && (
             <div className="text-[12px] bg-gray-50 rounded-lg px-3 py-2">
-              <span className="text-gray-400">Found: </span>
+              <span className="text-gray-400">{t('found')}</span>
               <span className="text-gray-600">{item.findings}</span>
             </div>
           )}
           {item.expected && (
             <div className="text-[12px] bg-gray-50 rounded-lg px-3 py-2">
-              <span className="text-gray-400">Expected: </span>
+              <span className="text-gray-400">{t('expected')}</span>
               <span className="text-gray-600">{item.expected}</span>
             </div>
           )}

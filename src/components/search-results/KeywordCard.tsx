@@ -2,6 +2,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react
 import { ChevronDown } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
 import type { KeywordCard as KeywordCardType } from '../../types/report'
+import { useI18n } from '../../lib/i18n'
 import { RankBadge } from './RankBadge'
 import { CompetitorEntry } from './CompetitorEntry'
 import googleIcon from '../../assets/icons/google_symbol.svg'
@@ -12,6 +13,7 @@ interface KeywordCardProps {
 }
 
 export function KeywordCard({ card }: KeywordCardProps) {
+  const { t } = useI18n()
   const mapCompetitors = card.competitors
     .filter((c) => c.mapRank !== null)
     .sort((a, b) => (a.mapRank ?? 99) - (b.mapRank ?? 99))
@@ -58,10 +60,10 @@ export function KeywordCard({ card }: KeywordCardProps) {
                     <div className="rounded-xl border border-gray-200/80 bg-gray-50/50 overflow-hidden">
                       <div className="px-4 pt-4 pb-2">
                         <h4 className="text-sm font-bold text-gray-900">
-                          Google Maps results
+                          {t('googleMapsResults')}
                         </h4>
                         <p className="text-[11px] text-gray-400 mt-0.5">
-                          These results get the most clicks
+                          {t('mostClicks')}
                         </p>
                       </div>
                       <div className="flex">
@@ -73,7 +75,7 @@ export function KeywordCard({ card }: KeywordCardProps) {
                           />
                         </div>
                         <div className="w-3/5 px-3 pb-3 pt-1">
-                          <p className="text-[10px] text-gray-400 uppercase tracking-wider font-medium mb-1.5">Top 3 map results</p>
+                          <p className="text-[10px] text-gray-400 uppercase tracking-wider font-medium mb-1.5">{t('top3Map')}</p>
                           {mapCompetitors.map((comp, i) => (
                             <CompetitorEntry key={comp.name} competitor={comp} index={i} />
                           ))}
@@ -84,10 +86,10 @@ export function KeywordCard({ card }: KeywordCardProps) {
                     {/* Google Search results */}
                     <div className="rounded-xl border border-gray-200/80 bg-gray-50/50 p-4">
                       <h4 className="text-sm font-bold text-gray-900">
-                        Google Search results
+                        {t('googleSearchResults')}
                       </h4>
                       <p className="text-[11px] text-red-400 font-medium mt-0.5 mb-3">
-                        You are Unranked
+                        {t('youAreUnranked')}
                       </p>
                       <div className="space-y-2.5">
                         {card.organicResults.map((result) => (

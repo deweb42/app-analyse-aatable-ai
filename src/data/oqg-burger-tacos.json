@@ -1,0 +1,300 @@
+{
+  "restaurant": {
+    "name": "O'QG Burger & Tacos",
+    "website": "oqgburgertacos.ch",
+    "city": "Neuchâtel",
+    "state": "NE",
+    "placeId": "oqg-burger-tacos-neuchatel",
+    "imageUrl": ""
+  },
+  "overallScore": {
+    "score": 48,
+    "maxScore": 100,
+    "rating": "Fair",
+    "strokeColor": "#F89412"
+  },
+  "subScores": [
+    { "name": "Search Results", "score": 17, "maxScore": 40, "rating": "Fair", "strokeColor": "#F89412" },
+    { "name": "Website Experience", "score": 17, "maxScore": 40, "rating": "Fair", "strokeColor": "#F89412" },
+    { "name": "Local Listings", "score": 14, "maxScore": 20, "rating": "Good", "strokeColor": "#57AA30" }
+  ],
+  "revenueLoss": { "amount": 1890, "problems": ["Le site ne mentionne pas Neuchâtel dans ses contenus", "Pas de section À propos sur le site principal", "Plusieurs domaines fragmentent la présence web"] },
+  "competitorRankings": [
+    { "name": "Greasemonkees", "rating": 4.7, "rank": 1 },
+    { "name": "Neuch' Tacos Burger", "rating": 4.2, "rank": 2 },
+    { "name": "King Food", "rating": 4.3, "rank": 3 },
+    { "name": "Holy Cow!", "rating": 4.5, "rank": 4 },
+    { "name": "Burger King", "rating": 3.5, "rank": 5 },
+    { "name": "McDonald's", "rating": 3.4, "rank": 6 },
+    { "name": "La Turquoise", "rating": 4.4, "rank": 7 },
+    { "name": "Star Kebab", "rating": 4.6, "rank": 8 }
+  ],
+  "keywordCards": [
+    {
+      "keyword": "burger", "city": "Neuchâtel", "fullKeyword": "Meilleur burger à Neuchâtel",
+      "mapPackRank": 3, "organicRank": null, "winner": "Greasemonkees",
+      "competitors": [
+        { "name": "Greasemonkees", "rating": 4.7, "mapRank": 1, "organicRank": null },
+        { "name": "Neuch' Tacos Burger", "rating": 4.2, "mapRank": 2, "organicRank": null },
+        { "name": "O'QG Burger & Tacos", "rating": 4.5, "mapRank": 3, "organicRank": null }
+      ],
+      "organicResults": [
+        { "site": "www.thefork.ch", "title": "Les 5 meilleurs restaurants de Hamburger à Neuchâtel" },
+        { "site": "www.tripadvisor.com", "title": "THE 10 BEST Burgers in Neuchâtel (Updated 2026)" },
+        { "site": "restaurantguru.com", "title": "Top 5 restaurants with burgers in Neuchâtel" },
+        { "site": "www.gaultmillau.ch", "title": "Neuchâtel: les cinq burgers à ne pas rater" },
+        { "site": "www.ubereats.com", "title": "Burger Delivery in Neuchâtel" }
+      ]
+    },
+    {
+      "keyword": "tacos", "city": "Neuchâtel", "fullKeyword": "Meilleur tacos à Neuchâtel",
+      "mapPackRank": 2, "organicRank": null, "winner": "Neuch' Tacos Burger",
+      "competitors": [
+        { "name": "Neuch' Tacos Burger", "rating": 4.2, "mapRank": 1, "organicRank": null },
+        { "name": "O'QG Burger & Tacos", "rating": 4.5, "mapRank": 2, "organicRank": null },
+        { "name": "King Food", "rating": 4.3, "mapRank": 3, "organicRank": null }
+      ],
+      "organicResults": [
+        { "site": "www.ubereats.com", "title": "Tacos Delivery in Neuchâtel" },
+        { "site": "www.tripadvisor.com", "title": "THE BEST Tacos in Neuchâtel (Updated 2026)" },
+        { "site": "www.yelp.com", "title": "Best Tacos in Neuchâtel" },
+        { "site": "restaurantguru.com", "title": "Best tacos in Neuchâtel restaurants" }
+      ]
+    },
+    {
+      "keyword": "smash burger", "city": "Neuchâtel", "fullKeyword": "Meilleur smash burger à Neuchâtel",
+      "mapPackRank": 1, "organicRank": null, "winner": "O'QG Burger & Tacos",
+      "competitors": [
+        { "name": "O'QG Burger & Tacos", "rating": 4.5, "mapRank": 1, "organicRank": null },
+        { "name": "Greasemonkees", "rating": 4.7, "mapRank": 2, "organicRank": null },
+        { "name": "Holy Cow!", "rating": 4.5, "mapRank": 3, "organicRank": null }
+      ],
+      "organicResults": [
+        { "site": "www.oqgburgertacos.ch", "title": "OQG TACOS & BURGER" },
+        { "site": "www.ubereats.com", "title": "O'QG Burger & Tacos (Neuchâtel) - Menu & prices" },
+        { "site": "restaurantguru.com", "title": "O'QG Burger & Tacos Neuchâtel" },
+        { "site": "www.greasemonkees.ch", "title": "GREASEMONKEES | Best Burgers In Town" }
+      ]
+    },
+    {
+      "keyword": "fast food", "city": "Neuchâtel", "fullKeyword": "Meilleur fast food à Neuchâtel",
+      "mapPackRank": null, "organicRank": null, "winner": "McDonald's",
+      "competitors": [
+        { "name": "McDonald's", "rating": 3.4, "mapRank": 1, "organicRank": null },
+        { "name": "Burger King", "rating": 3.5, "mapRank": 2, "organicRank": null },
+        { "name": "King Food", "rating": 4.3, "mapRank": 3, "organicRank": null }
+      ],
+      "organicResults": [
+        { "site": "www.tripadvisor.com", "title": "THE BEST Fast Food in Neuchâtel (Updated 2025)" },
+        { "site": "www.yelp.com", "title": "Best Fast Food in Neuchâtel" },
+        { "site": "www.ubereats.com", "title": "Fast Food Delivery in Neuchâtel" },
+        { "site": "restaurantguru.com", "title": "Fast food restaurants in Neuchâtel" }
+      ]
+    },
+    {
+      "keyword": "burger", "city": "La Chaux-de-Fonds", "fullKeyword": "Meilleur burger à La Chaux-de-Fonds",
+      "mapPackRank": 2, "organicRank": null, "winner": "Holy Cow!",
+      "competitors": [
+        { "name": "Holy Cow!", "rating": 4.5, "mapRank": 1, "organicRank": null },
+        { "name": "O'QG Burger & Tacos", "rating": 4.4, "mapRank": 2, "organicRank": null },
+        { "name": "McDonald's", "rating": 3.3, "mapRank": 3, "organicRank": null }
+      ],
+      "organicResults": [
+        { "site": "www.tripadvisor.com", "title": "THE BEST Burgers in La Chaux-de-Fonds" },
+        { "site": "restaurantguru.com", "title": "Top burger restaurants in La Chaux-de-Fonds" },
+        { "site": "www.ubereats.com", "title": "Burger Delivery in La Chaux-de-Fonds" }
+      ]
+    },
+    {
+      "keyword": "livraison burger", "city": "Neuchâtel", "fullKeyword": "Livraison burger Neuchâtel",
+      "mapPackRank": null, "organicRank": null, "winner": "Uber Eats",
+      "competitors": [
+        { "name": "McDonald's", "rating": 3.4, "mapRank": 1, "organicRank": null },
+        { "name": "Burger King", "rating": 3.5, "mapRank": 2, "organicRank": null },
+        { "name": "O'QG Burger & Tacos", "rating": 4.5, "mapRank": 3, "organicRank": null }
+      ],
+      "organicResults": [
+        { "site": "www.ubereats.com", "title": "O'QG Burger & Tacos (Neuchâtel) - Livraison" },
+        { "site": "www.ubereats.com", "title": "Burger Delivery in Neuchâtel" },
+        { "site": "www.just-eat.ch", "title": "Burger livraison Neuchâtel" },
+        { "site": "www.smood.ch", "title": "Commandez des burgers à Neuchâtel" }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "search-results", "number": 1, "title": "Résultats de Recherche",
+      "subtitle": "Faites apparaître votre site en haut de Google",
+      "score": 17, "maxScore": 40, "scoreColor": "#F89412",
+      "infoBox": { "title": "C'est quoi le SEO ?", "text": "Ça consiste à améliorer votre site pour que les moteurs de recherche comme Google le trouvent, le classent plus haut, et aident plus de gens à le voir." },
+      "categories": [
+        { "name": "Domaine", "items": [
+          { "title": "Utilise un domaine personnalisé", "description": "L'entreprise possède et contrôle son propre nom de domaine", "status": "pass", "findings": "oqgburgertacos.ch" },
+          { "title": "Un seul domaine", "description": "Fragmenter votre présence web sur plusieurs domaines nuit au classement Google", "status": "fail", "findings": "Multiples domaines : oqgburgertacos.ch, neuchatel.oqgburgertacos.ch, oqgburger.com, oqg-burgertacos.shop — fragmentation importante" }
+        ]},
+        { "name": "Titre principal (H1)", "items": [
+          { "title": "Inclut la zone de service", "description": "Mentionner votre zone de service dans le titre aide le SEO local", "status": "fail", "findings": "Pas de mention de Neuchâtel dans le H1" },
+          { "title": "Inclut des mots-clés pertinents", "description": "Inclure des mots-clés pertinents dans votre titre améliore la visibilité", "status": "fail", "findings": "Le H1 est le logo — pas de texte H1 avec mots-clés" },
+          { "title": "Existe", "description": "Un tag H1 est crucial pour le SEO et la structure du contenu", "status": "fail", "findings": "Pas de tag H1 textuel, le nom du restaurant est dans une image/logo" }
+        ]},
+        { "name": "Métadonnées", "items": [
+          { "title": "Images avec \"alt tags\"", "description": "Google regarde les alt tags pour comprendre les images de votre site", "status": "fail", "findings": "Images de catégories sans alt tags descriptifs" },
+          { "title": "Longueur de la description", "description": "Une meta description suffisamment longue donne plus de contexte dans les résultats", "status": "fail", "findings": "Meta description absente" },
+          { "title": "Description inclut la zone de service", "description": "Mentionner Neuchâtel dans la meta description aide le SEO local", "status": "fail", "findings": "Pas de meta description du tout" },
+          { "title": "Description inclut des mots-clés", "description": "Inclure des mots-clés dans la meta description améliore le taux de clic", "status": "fail", "findings": "Pas de meta description" },
+          { "title": "Open Graph title", "description": "Le titre Open Graph est essentiel pour le partage sur les réseaux sociaux", "status": "fail", "findings": "Pas de tag og:title détecté" },
+          { "title": "Open Graph description", "description": "La description OG fournit un aperçu lors du partage sur les réseaux sociaux", "status": "fail", "findings": "Pas de tag og:description détecté" },
+          { "title": "Open Graph image", "description": "L'image OG est critique pour les aperçus visuels sur les réseaux sociaux", "status": "fail", "findings": "Pas de tag og:image détecté" },
+          { "title": "Twitter card", "description": "Les Twitter cards permettent des aperçus riches lors du partage sur Twitter/X", "status": "fail", "findings": "Pas de Twitter card configurée" },
+          { "title": "Titre de page correspond au profil Google", "description": "La cohérence entre le titre de page et la fiche Google renforce la confiance", "status": "warning", "findings": "Titre de page \"OQG TACOS & BURGER\" vs Google \"O'QG Burger & Tacos\" — légère incohérence" },
+          { "title": "Titre de page inclut la zone de service", "description": "Inclure Neuchâtel dans le titre aide la visibilité locale", "status": "fail", "findings": "Neuchâtel absent du titre de page" },
+          { "title": "Titre de page inclut un mot-clé", "description": "Avoir un mot-clé pertinent dans le titre améliore le classement", "status": "pass", "findings": "\"TACOS\" et \"BURGER\" présents dans le titre" }
+        ]},
+        { "name": "Contenu", "items": [
+          { "title": "Contenu de page unique", "description": "Un contenu original aide les moteurs de recherche à distinguer votre site", "status": "pass", "findings": "Menu et catégories uniques au restaurant" },
+          { "title": "Nombre de mots suffisant", "description": "Les pages avec suffisamment de texte tendent à mieux se classer", "status": "fail", "findings": "Très peu de texte — principalement un menu avec noms de produits" },
+          { "title": "Structure de liens internes", "description": "Les liens internes aident les moteurs de recherche à explorer votre site", "status": "pass", "findings": "Navigation par catégories de menu (Smash Burger, Tacos, Burgers, etc.)" },
+          { "title": "Pas de contenu dupliqué", "description": "Le contenu dupliqué peut confondre les moteurs de recherche", "status": "warning", "findings": "Menu similaire sur oqgburgertacos.ch et neuchatel.oqgburgertacos.ch" },
+          { "title": "Contenu spécifique à la localisation", "description": "Mentionner votre ville aide le classement local", "status": "pass", "findings": "Adresse Rue de la Dîme 6, Neuchâtel visible sur le sous-domaine" }
+        ]},
+        { "name": "SEO Technique", "items": [
+          { "title": "Certificat SSL", "description": "Un certificat SSL (HTTPS) est essentiel pour la sécurité et le classement Google", "status": "pass", "findings": "HTTPS actif" },
+          { "title": "Compatible mobile", "description": "Google utilise l'indexation mobile-first", "status": "pass", "findings": "Site responsive avec media queries mobile" },
+          { "title": "Vitesse de chargement", "description": "Des pages rapides offrent une meilleure expérience et un meilleur classement", "status": "pass", "findings": "Site léger, chargement rapide" },
+          { "title": "Pas de liens cassés", "description": "Les liens cassés créent une mauvaise expérience utilisateur", "status": "pass", "findings": "Pas de liens cassés détectés" },
+          { "title": "Sitemap XML", "description": "Un sitemap aide les moteurs de recherche à indexer vos pages", "status": "warning", "findings": "Pas de sitemap XML détecté" },
+          { "title": "Robots.txt configuré", "description": "Un fichier robots.txt guide les moteurs de recherche", "status": "warning", "findings": "Configuration par défaut, non optimisée" },
+          { "title": "URLs canoniques", "description": "Les tags canoniques empêchent les problèmes de contenu dupliqué", "status": "fail", "findings": "Pas de tags canoniques — problème avec les multiples domaines" }
+        ]},
+        { "name": "Schema & Données Structurées", "items": [
+          { "title": "Schema restaurant", "description": "Le schema markup aide Google à comprendre votre type de commerce", "status": "fail", "findings": "Pas de schema Restaurant détecté" },
+          { "title": "Schema commerce local", "description": "Le schema LocalBusiness fournit adresse, horaires et contact", "status": "fail", "findings": "Pas de schema LocalBusiness" },
+          { "title": "Schema menu", "description": "Le schema Menu peut afficher votre menu directement dans les résultats", "status": "fail", "findings": "Pas de schema Menu malgré un menu en ligne complet" },
+          { "title": "Schema avis", "description": "Le schema Review peut afficher des étoiles dans les résultats", "status": "fail", "findings": "Pas de schema Review" },
+          { "title": "Schema fil d'Ariane", "description": "Le schema Breadcrumb aide les moteurs à comprendre la structure", "status": "fail", "findings": "Pas de schema Breadcrumb" }
+        ]},
+        { "name": "Indexation", "items": [
+          { "title": "Pages indexées par Google", "description": "Vos pages clés doivent être indexées pour apparaître dans les résultats", "status": "pass", "findings": "Site principal indexé" },
+          { "title": "Pas de noindex sur les pages importantes", "description": "Des tags noindex accidentels empêchent l'apparition dans les résultats", "status": "pass", "findings": "Pas de problème noindex" },
+          { "title": "Google Search Console connecté", "description": "Search Console donne des insights sur la façon dont Google voit votre site", "status": "warning", "findings": "Impossible de vérifier — probablement non configuré" },
+          { "title": "Pas d'erreurs de crawl", "description": "Les erreurs de crawl empêchent l'indexation de vos pages", "status": "pass", "findings": "Pas d'erreurs critiques" },
+          { "title": "Le site charge sans erreurs JavaScript", "description": "Les erreurs JS empêchent le rendu correct des pages", "status": "pass", "findings": "Pas d'erreurs JS critiques" },
+          { "title": "Tags hreflang corrects", "description": "Les tags hreflang aident à servir la bonne version linguistique", "status": "fail", "findings": "Pas de hreflang configuré" },
+          { "title": "Structure d'URL propre", "description": "Des URLs propres améliorent le SEO et l'expérience utilisateur", "status": "pass", "findings": "URLs propres avec sous-domaines par ville" }
+        ]}
+      ]
+    },
+    {
+      "id": "website-experience", "number": 2, "title": "Expérience Client",
+      "subtitle": "Améliorez l'expérience sur votre site web",
+      "score": 17, "maxScore": 40, "scoreColor": "#F89412",
+      "infoBox": { "title": "Votre site", "text": "Le contenu et l'expérience de votre site stimulent la conversion et les ventes" },
+      "categories": [
+        { "name": "Contenu", "items": [
+          { "title": "Pas de commande hors-site", "description": "Les liens de commande externes fragmentent l'expérience utilisateur", "status": "warning", "findings": "Commande aussi via Uber Eats — commissions élevées sur les ventes externes" },
+          { "title": "CTA efficace pour la commande en ligne", "description": "Un appel à l'action clair pour commander en ligne augmente les conversions", "status": "pass", "findings": "Système de commande intégré avec panier sur le sous-domaine Neuchâtel" },
+          { "title": "Contenu textuel suffisant", "description": "Du contenu sur le restaurant aide Google à comprendre votre commerce", "status": "fail", "findings": "Quasi pas de texte — uniquement les noms des catégories et produits" },
+          { "title": "Numéro de téléphone", "description": "Afficher un numéro de téléphone augmente les moyens de commander", "status": "pass", "findings": "032 753 19 75 affiché sur le sous-domaine" },
+          { "title": "Favicon", "description": "Inclure un favicon améliore la légitimité de votre site", "status": "pass", "findings": "Favicon OQG présent" },
+          { "title": "Liens réseaux sociaux", "description": "Les liens sociaux étendent votre portée", "status": "fail", "findings": "Aucun lien vers Instagram (@oqg_burgertacos) sur le site, malgré une présence active" },
+          { "title": "Horaires d'ouverture", "description": "Inclure les horaires aide les clients à planifier leurs visites", "status": "fail", "findings": "Horaires non affichés sur le site web" },
+          { "title": "Adresse sur le site", "description": "Afficher votre adresse aide les clients à vous trouver", "status": "pass", "findings": "Rue de la Dîme 6, 2000 Neuchâtel visible sur le sous-domaine" },
+          { "title": "Contenu avec mots-clés pertinents", "description": "Inclure des mots-clés pertinents aide les moteurs de recherche", "status": "pass", "findings": "Smash burger, tacos, burger, tenders, samboussa présents dans le menu" }
+        ]},
+        { "name": "Apparence", "items": [
+          { "title": "Section À propos convaincante", "description": "Une histoire convaincante crée une connexion émotionnelle avec vos clients", "status": "fail", "findings": "Page À propos sur oqgburger.com mais absente du site principal oqgburgertacos.ch" },
+          { "title": "Texte lisible", "status": "pass", "findings": "Texte clair et lisible" },
+          { "title": "3 avis clients", "description": "Des avis construisent la confiance avec les clients potentiels", "status": "fail", "findings": "Pas d'avis clients affichés sur le site" },
+          { "title": "Section FAQ", "description": "Une FAQ aide les moteurs de recherche à comprendre votre commerce", "status": "fail", "findings": "Pas de section FAQ" },
+          { "title": "Explication des avantages de la commande directe", "description": "Les clients commandent plus facilement s'ils comprennent les avantages", "status": "fail", "findings": "Pas d'incitation à commander directement plutôt que via Uber Eats" }
+        ]},
+        { "name": "Accessibilité", "items": [
+          { "title": "Ratio de contraste des couleurs", "description": "Le texte doit avoir un contraste suffisant pour la lisibilité", "status": "pass", "findings": "Contraste correct" },
+          { "title": "Alt text sur les images", "description": "Les lecteurs d'écran utilisent l'alt text pour décrire les images", "status": "fail", "findings": "Images de catégories et produits sans alt text" },
+          { "title": "Navigation au clavier", "description": "Les utilisateurs doivent pouvoir naviguer avec le clavier uniquement", "status": "pass", "findings": "Navigation clavier fonctionnelle" },
+          { "title": "Labels des formulaires", "description": "Tous les champs de formulaire doivent avoir des labels associés", "status": "pass", "findings": "Formulaire de commande avec labels" },
+          { "title": "Landmarks ARIA", "description": "Les landmarks ARIA aident les technologies d'assistance", "status": "warning", "findings": "Landmarks basiques, non optimisés" }
+        ]},
+        { "name": "Performance", "items": [
+          { "title": "Optimisation des images", "description": "Des images optimisées réduisent le temps de chargement", "status": "pass", "findings": "Images de taille raisonnable" },
+          { "title": "Pas de ressources bloquant le rendu", "description": "CSS et JS bloquants retardent l'affichage de la page", "status": "pass", "findings": "Peu de ressources bloquantes" },
+          { "title": "Chargement différé des images", "description": "Le lazy loading diffère les images hors écran", "status": "warning", "findings": "Lazy loading non détecté" },
+          { "title": "CSS et JS minifiés", "description": "La minification réduit la taille des fichiers", "status": "pass", "findings": "CSS et JS minifiés" },
+          { "title": "Cache navigateur", "description": "Les headers de cache réduisent le temps de chargement pour les visiteurs réguliers", "status": "pass", "findings": "Cache navigateur configuré" }
+        ]},
+        { "name": "Expérience Mobile", "items": [
+          { "title": "Layout responsive", "description": "Votre site doit s'adapter à toutes les tailles d'écran", "status": "pass", "findings": "Design responsive avec media queries" },
+          { "title": "Boutons adaptés au tactile", "description": "Les boutons doivent être assez grands pour le tap sur mobile", "status": "pass", "findings": "Boutons de taille adéquate" },
+          { "title": "Pas de scroll horizontal", "description": "Le scroll horizontal crée une expérience frustrante", "status": "pass", "findings": "Pas de dépassement horizontal" },
+          { "title": "Tag meta viewport", "description": "Le tag viewport assure un affichage correct sur mobile", "status": "pass", "findings": "Meta viewport présent" },
+          { "title": "Numéro cliquable pour appeler", "description": "Les utilisateurs mobiles doivent pouvoir taper pour appeler", "status": "pass", "findings": "Numéro de téléphone cliquable" },
+          { "title": "Menu mobile utilisable", "description": "La navigation doit être facile à ouvrir et parcourir sur mobile", "status": "pass", "findings": "Menu mobile fonctionnel avec catégories claires" }
+        ]},
+        { "name": "Confiance & Sécurité", "items": [
+          { "title": "Certificat SSL actif", "description": "Un certificat SSL valide protège les données et renforce la confiance", "status": "pass", "findings": "SSL actif sur tous les domaines" },
+          { "title": "Page politique de confidentialité", "description": "Une politique de confidentialité montre la transparence", "status": "fail", "findings": "Pas de page politique de confidentialité trouvée" },
+          { "title": "Pas de contenu mixte", "description": "Le contenu mixte HTTP/HTTPS déclenche des alertes de sécurité", "status": "pass", "findings": "Pas de contenu mixte" },
+          { "title": "Formulaires de commande sécurisés", "description": "Les formulaires doivent transmettre les données de façon sécurisée", "status": "pass", "findings": "Système de commande sécurisé" },
+          { "title": "Adresse physique visible", "description": "Afficher votre adresse physique renforce la confiance", "status": "pass", "findings": "Adresse visible sur le sous-domaine Neuchâtel" }
+        ]},
+        { "name": "Navigation", "items": [
+          { "title": "Navigation principale claire", "description": "Un menu bien organisé aide les visiteurs à trouver ce qu'ils cherchent", "status": "pass", "findings": "Navigation par catégories : Smash Burger, Tacos, Burgers, Samboussa, Kids, Frites, Tenders, Desserts" },
+          { "title": "Page menu accessible", "description": "Votre menu doit être facile à trouver depuis n'importe quelle page", "status": "pass", "findings": "Le menu est la page principale — accès immédiat" },
+          { "title": "Infos de contact en footer", "description": "Les infos de contact en footer sont disponibles sur chaque page", "status": "pass", "findings": "Adresse, téléphone et email en footer" },
+          { "title": "Recherche ou filtres fonctionnels", "description": "La recherche aide les utilisateurs à trouver des articles spécifiques", "status": "pass", "findings": "Recherche avec suggestions (typeahead) fonctionnelle" },
+          { "title": "Page commande accessible en 2 clics", "description": "Réduire le nombre de clics pour commander améliore la conversion", "status": "pass", "findings": "Ajout au panier direct depuis la catégorie" }
+        ]}
+      ]
+    },
+    {
+      "id": "local-listings", "number": 3, "title": "Fiches Locales",
+      "subtitle": "Rendez votre restaurant facile à trouver",
+      "score": 14, "maxScore": 20, "scoreColor": "#57AA30",
+      "categories": [
+        { "name": "Contenu du profil", "items": [
+          { "title": "Site web propriétaire", "status": "pass", "findings": "oqgburgertacos.ch / neuchatel.oqgburgertacos.ch" },
+          { "title": "Description", "status": "pass", "findings": "Burgers et tacos de qualité supérieure avec des recettes originales" },
+          { "title": "Horaires d'ouverture", "description": "Afficher les horaires aide les clients à planifier leurs visites", "status": "pass", "findings": "11h30-14h00, 18h00-00h00" },
+          { "title": "Numéro de téléphone", "status": "pass", "findings": "032 753 19 75" },
+          { "title": "Gamme de prix", "status": "pass", "findings": "$ (prix abordable)" },
+          { "title": "Options de service", "description": "Lister les options de service aide les clients", "status": "pass", "findings": "Sur place, à emporter, livraison (Uber Eats)" },
+          { "title": "Liens réseaux sociaux", "description": "Les liens sociaux étendent votre portée", "status": "pass", "findings": "Instagram @oqg_burgertacos actif avec contenu régulier" },
+          { "title": "Description inclut des mots-clés", "status": "pass", "findings": "burger, tacos, smash burger, fast food présents" },
+          { "title": "Catégories correspondent aux mots-clés", "status": "pass", "findings": "Restaurant de hamburgers, Restaurant de tacos, Fast food", "expected": "burger, tacos, smash burger, fast food, livraison" }
+        ]},
+        { "name": "Contenu soumis par les utilisateurs", "items": [
+          { "title": "Avis de qualité", "status": "pass", "findings": "164 avis sur Restaurant Guru, note 4.5/5 — bon volume d'avis positifs" }
+        ]},
+        { "name": "Exactitude de la fiche", "items": [
+          { "title": "NAP cohérent sur les annuaires", "description": "Nom, adresse et téléphone doivent être identiques partout", "status": "warning", "findings": "Nom varie : \"O'QG Burger & Tacos\" vs \"OQG TACOS & BURGER\" vs \"OQG BURGER&TACOS\" selon les plateformes" },
+          { "title": "Position correcte sur la carte", "description": "Le pin Google Maps doit marquer précisément l'emplacement", "status": "pass", "findings": "Pin correctement placé Rue de la Dîme 6" },
+          { "title": "Présent sur Yelp", "description": "Yelp est une plateforme majeure de découverte de restaurants", "status": "fail", "findings": "Pas de fiche Yelp dédiée trouvée" },
+          { "title": "Présent sur TripAdvisor", "description": "TripAdvisor aide à attirer les touristes", "status": "fail", "findings": "Pas de fiche TripAdvisor dédiée trouvée" },
+          { "title": "Présent sur Uber Eats", "description": "Uber Eats est une plateforme majeure de livraison en Suisse", "status": "pass", "findings": "Fiche Uber Eats active avec menu complet" }
+        ]},
+        { "name": "Photos & médias", "items": [
+          { "title": "Photo de profil définie", "description": "Une photo de profil aide les clients à reconnaître votre commerce", "status": "pass", "findings": "Logo OQG comme photo de profil" },
+          { "title": "Photo de couverture définie", "description": "Une photo de couverture attractive fait une bonne première impression", "status": "pass", "findings": "Photo de couverture avec burgers" },
+          { "title": "Au moins 10 photos", "description": "Les fiches avec beaucoup de photos obtiennent plus d'engagement", "status": "pass", "findings": "Plus de 10 photos de produits disponibles" },
+          { "title": "Photos récentes (6 derniers mois)", "description": "Des photos récentes montrent que votre commerce est actif", "status": "pass", "findings": "Photos récentes via Instagram régulier" },
+          { "title": "Photos du menu", "description": "Les photos des plats aident les clients à décider quoi commander", "status": "fail", "findings": "Photos produit sur le site mais pas optimisées pour les fiches Google" }
+        ]}
+      ]
+    }
+  ],
+  "auditSummary": { "totalReviewed": 100, "needsWork": 52, "subtitle": "Voyez ce qui ne va pas et comment améliorer" },
+  "googleProfile": {
+    "name": "O'QG Burger & Tacos", "rating": 4.5, "reviewCount": 164,
+    "description": "Burgers et tacos de qualité supérieure avec des recettes originales, le tout en un seul lieu. Depuis 2018.",
+    "phone": "032 753 19 75", "website": "oqgburgertacos.ch",
+    "hasHours": true, "hasPhone": true, "hasPriceRange": true,
+    "categories": ["Restaurant de hamburgers", "Restaurant de tacos", "Fast food", "Livraison de repas"]
+  },
+  "caseStudies": [
+    { "name": "Cyclo Noodles", "initialScore": 37, "finalScore": 92, "result": "Ventes directes en ligne multipliées par 7", "desktopImage": "cyclonoodles-desktop.png", "tabletImage": "cyclonoodles-tablet.png" },
+    { "name": "Talkin' Tacos", "initialScore": 46, "finalScore": 95, "result": "120 000$/mois de ventes", "desktopImage": "talkintacos-desktop.png", "tabletImage": "talkintacos-tablet.png" },
+    { "name": "Saffron", "initialScore": 43, "finalScore": 96, "result": "171 400$/mois de ventes en ligne", "desktopImage": "saffron-desktop.png", "tabletImage": "saffron-tablet.png" }
+  ],
+  "ctaText": "Corrigez en 35 secondes",
+  "ctaBanner": { "label": "Site Web IA", "title": "Améliorez votre site web avec l'IA en 35 secondes.", "buttonText": "Améliorer votre site" }
+}

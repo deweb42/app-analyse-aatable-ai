@@ -1,12 +1,14 @@
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import type { CaseStudy } from '../../types/report'
+import { useI18n } from '../../lib/i18n'
 
 interface WhyFixCardProps {
   caseStudies: CaseStudy[]
 }
 
 export function WhyFixCard({ caseStudies }: WhyFixCardProps) {
+  const { t } = useI18n()
   const [activeIndex, setActiveIndex] = useState(0)
   const active = caseStudies[activeIndex]
 
@@ -42,9 +44,9 @@ export function WhyFixCard({ caseStudies }: WhyFixCardProps) {
       <div className="relative z-10 p-5 h-full flex flex-col justify-between">
         <div>
           <span className="inline-block text-[10px] font-bold uppercase tracking-[0.15em] text-white/50 mb-1">
-            Success story
+            {t('successStory')}
           </span>
-          <h3 className="text-lg font-bold text-white">Why fix these?</h3>
+          <h3 className="text-lg font-bold text-white">{t('whyFix')}</h3>
         </div>
 
         <div>
@@ -57,10 +59,12 @@ export function WhyFixCard({ caseStudies }: WhyFixCardProps) {
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.3 }}
             >
-              <span className="font-semibold text-white">{active.name}</span> had a health score of{' '}
-              <span className="font-semibold text-white">{active.initialScore}</span>. They{' '}
-              {active.result.toLowerCase()} by increasing their score to{' '}
-              <span className="font-semibold text-white">{active.finalScore}</span>.
+              {t('hadScore', {
+                name: active.name,
+                initial: active.initialScore,
+                result: active.result.toLowerCase(),
+                final: active.finalScore,
+              })}
             </motion.p>
           </AnimatePresence>
 

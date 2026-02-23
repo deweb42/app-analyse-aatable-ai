@@ -1,0 +1,302 @@
+{
+  "restaurant": {
+    "name": "Istanbul Kasap Market",
+    "website": "boucherie-istanbul.ch",
+    "city": "Neuchâtel",
+    "state": "NE",
+    "placeId": "istanbul-kasap-market-neuchatel",
+    "imageUrl": ""
+  },
+  "overallScore": {
+    "score": 38,
+    "maxScore": 100,
+    "rating": "Poor",
+    "strokeColor": "#FF0101"
+  },
+  "subScores": [
+    { "name": "Search Results", "score": 14, "maxScore": 40, "rating": "Poor", "strokeColor": "#D65353" },
+    { "name": "Website Experience", "score": 12, "maxScore": 40, "rating": "Poor", "strokeColor": "#D65353" },
+    { "name": "Local Listings", "score": 12, "maxScore": 20, "rating": "Good", "strokeColor": "#57AA30" }
+  ],
+  "revenueLoss": { "amount": 2350, "problems": ["Le site ne mentionne pas le kebab/döner ni le restaurant", "Pas de présence sur Google Maps en tant que restaurant", "Site web axé uniquement boucherie, pas de menu restaurant visible"] },
+  "competitorRankings": [
+    { "name": "La Turquoise", "rating": 4.4, "rank": 1 },
+    { "name": "Star Kebab", "rating": 4.6, "rank": 2 },
+    { "name": "Au Paradis Kebab", "rating": 4.5, "rank": 3 },
+    { "name": "La Kebaberie (Colombier)", "rating": 4.8, "rank": 4 },
+    { "name": "King Food", "rating": 4.3, "rank": 5 },
+    { "name": "L'Orient Kebab", "rating": 4.2, "rank": 6 },
+    { "name": "Meli-Melo Pizza & Kebab", "rating": 4.0, "rank": 7 },
+    { "name": "Ali Haydar Kebab", "rating": 4.1, "rank": 8 }
+  ],
+  "keywordCards": [
+    {
+      "keyword": "kebab", "city": "Neuchâtel", "fullKeyword": "Meilleur kebab à Neuchâtel",
+      "mapPackRank": null, "organicRank": null, "winner": "La Turquoise",
+      "competitors": [
+        { "name": "La Turquoise", "rating": 4.4, "mapRank": 1, "organicRank": null },
+        { "name": "Star Kebab", "rating": 4.6, "mapRank": 2, "organicRank": null },
+        { "name": "Au Paradis Kebab", "rating": 4.5, "mapRank": 3, "organicRank": null }
+      ],
+      "organicResults": [
+        { "site": "www.yelp.com", "title": "THE BEST 10 KEBAB in NEUCHÂTEL - Updated 2026" },
+        { "site": "restaurantguru.com", "title": "Top 5 restaurants with kebabs in Neuchâtel" },
+        { "site": "www.tripadvisor.com", "title": "THE BEST Kebab in Neuchâtel (Updated 2026)" },
+        { "site": "kebabsuisse.com", "title": "Restaurant de kebab à Neuchâtel" },
+        { "site": "www.ubereats.com", "title": "THE 10 BEST Kebabs Delivery in Neuchâtel" }
+      ]
+    },
+    {
+      "keyword": "döner", "city": "Neuchâtel", "fullKeyword": "Meilleur döner à Neuchâtel",
+      "mapPackRank": null, "organicRank": null, "winner": "Star Kebab",
+      "competitors": [
+        { "name": "Star Kebab", "rating": 4.6, "mapRank": 1, "organicRank": null },
+        { "name": "La Turquoise", "rating": 4.4, "mapRank": 2, "organicRank": null },
+        { "name": "King Food", "rating": 4.3, "mapRank": 3, "organicRank": null }
+      ],
+      "organicResults": [
+        { "site": "www.local.ch", "title": "Les MEILLEURS Kebab-Döner à Neuchâtel" },
+        { "site": "www.yelp.com", "title": "THE BEST 10 KEBAB in NEUCHÂTEL - Updated 2026" },
+        { "site": "www.tripadvisor.fr", "title": "Les meilleurs Döner Kebab à Neuchâtel" },
+        { "site": "restaurantguru.com", "title": "Best kebabs in Neuchâtel restaurants" },
+        { "site": "www.ubereats.com", "title": "Kebabs Delivery in Neuchâtel" }
+      ]
+    },
+    {
+      "keyword": "boucherie halal", "city": "Neuchâtel", "fullKeyword": "Meilleure boucherie halal à Neuchâtel",
+      "mapPackRank": 1, "organicRank": 1, "winner": "Istanbul Kasap Market",
+      "competitors": [
+        { "name": "Istanbul Kasap Market", "rating": 4.4, "mapRank": 1, "organicRank": 1 },
+        { "name": "Marché Istanbul (Fribourg)", "rating": 4.3, "mapRank": null, "organicRank": 2 },
+        { "name": "Supermarché Istanbul", "rating": 4.0, "mapRank": null, "organicRank": null }
+      ],
+      "organicResults": [
+        { "site": "boucherie-istanbul.ch", "title": "Boucherie Istanbul - Viandes halal certifiées" },
+        { "site": "lecointurc.com", "title": "Boucherie Istanbul Neuchâtel" },
+        { "site": "www.local.ch", "title": "Istanbul – Boucherie à Neuchâtel" },
+        { "site": "search.ch", "title": "Istanbul, Boucherie à Neuchâtel" },
+        { "site": "www.marcheistanbul.ch", "title": "Boucherie Charcuterie viande halal - Marché Istanbul" }
+      ]
+    },
+    {
+      "keyword": "viande halal", "city": "Neuchâtel", "fullKeyword": "Viande halal à Neuchâtel",
+      "mapPackRank": 1, "organicRank": null, "winner": "Istanbul Kasap Market",
+      "competitors": [
+        { "name": "Istanbul Kasap Market", "rating": 4.4, "mapRank": 1, "organicRank": null },
+        { "name": "La Turquoise", "rating": 4.4, "mapRank": 2, "organicRank": null },
+        { "name": "Marché Istanbul (Fribourg)", "rating": 4.3, "mapRank": 3, "organicRank": null }
+      ],
+      "organicResults": [
+        { "site": "boucherie-istanbul.ch", "title": "Boucherie Istanbul - Toutes nos viandes sont certifiées halal" },
+        { "site": "lecointurc.com", "title": "Boucherie Istanbul Neuchâtel - Halal" },
+        { "site": "www.local.ch", "title": "Boucherie halal à Neuchâtel" },
+        { "site": "www.marcheistanbul.ch", "title": "Boucherie halal - Marché Istanbul Fribourg" }
+      ]
+    },
+    {
+      "keyword": "restaurant turc", "city": "Neuchâtel", "fullKeyword": "Meilleur restaurant turc à Neuchâtel",
+      "mapPackRank": null, "organicRank": null, "winner": "La Turquoise",
+      "competitors": [
+        { "name": "La Turquoise", "rating": 4.4, "mapRank": 1, "organicRank": null },
+        { "name": "Star Kebab", "rating": 4.6, "mapRank": 2, "organicRank": null },
+        { "name": "Meli-Melo Pizza & Kebab", "rating": 4.0, "mapRank": 3, "organicRank": null }
+      ],
+      "organicResults": [
+        { "site": "www.tripadvisor.com", "title": "THE BEST Turkish Food in Neuchâtel (Updated 2025)" },
+        { "site": "www.yelp.com", "title": "Best Turkish Restaurants in Neuchâtel" },
+        { "site": "www.tripadvisor.com", "title": "Turkish Restaurants in Canton of Neuchatel" },
+        { "site": "www.local.ch", "title": "Restaurants turcs à Neuchâtel" }
+      ]
+    },
+    {
+      "keyword": "kebab", "city": "La Chaux-de-Fonds", "fullKeyword": "Meilleur kebab à La Chaux-de-Fonds",
+      "mapPackRank": null, "organicRank": null, "winner": "Istanbul Döner Kebab",
+      "competitors": [
+        { "name": "Istanbul Döner Kebab", "rating": 3.5, "mapRank": 1, "organicRank": null },
+        { "name": "Ankara Kebab", "rating": 4.0, "mapRank": 2, "organicRank": null },
+        { "name": "Herat", "rating": 4.2, "mapRank": 3, "organicRank": null }
+      ],
+      "organicResults": [
+        { "site": "restaurantguru.com", "title": "Istanbul Döner Kebab, La Chaux-de-Fonds" },
+        { "site": "www.yelp.com", "title": "Best Kebab in La Chaux-de-Fonds" },
+        { "site": "www.tripadvisor.com", "title": "Kebab Restaurants in La Chaux-de-Fonds" }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "search-results", "number": 1, "title": "Résultats de Recherche",
+      "subtitle": "Faites apparaître votre site en haut de Google",
+      "score": 14, "maxScore": 40, "scoreColor": "#D65353",
+      "infoBox": { "title": "C'est quoi le SEO ?", "text": "Ça consiste à améliorer votre site pour que les moteurs de recherche comme Google le trouvent, le classent plus haut, et aident plus de gens à le voir." },
+      "categories": [
+        { "name": "Domaine", "items": [
+          { "title": "Utilise un domaine personnalisé", "description": "L'entreprise possède et contrôle son propre nom de domaine", "status": "pass", "findings": "boucherie-istanbul.ch", "expected": "Domaine propre au lieu de plateformes tierces" },
+          { "title": "Un seul domaine", "description": "Fragmenter votre présence web sur plusieurs domaines nuit au classement Google", "status": "warning", "findings": "Le site kebab (istanbul-kebab.ch) et la boucherie (boucherie-istanbul.ch) sont séparés" }
+        ]},
+        { "name": "Titre principal (H1)", "items": [
+          { "title": "Inclut la zone de service", "description": "Mentionner votre zone de service dans le titre aide le SEO local", "status": "fail", "findings": "Pas de mention de Neuchâtel dans le H1" },
+          { "title": "Inclut des mots-clés pertinents", "description": "Inclure des mots-clés pertinents dans votre titre améliore la visibilité", "status": "fail", "findings": "Le H1 ne mentionne pas kebab, döner, ou boucherie halal" },
+          { "title": "Existe", "description": "Un tag H1 est crucial pour le SEO et la structure du contenu", "status": "fail", "findings": "Pas de H1 visible sur la page boutique" }
+        ]},
+        { "name": "Métadonnées", "items": [
+          { "title": "Images avec \"alt tags\"", "description": "Google regarde les alt tags pour comprendre les images de votre site", "status": "warning", "findings": "Alt tags par défaut WooCommerce, pas optimisés" },
+          { "title": "Longueur de la description", "description": "Une meta description suffisamment longue donne plus de contexte dans les résultats", "status": "fail", "findings": "Meta description absente ou trop courte" },
+          { "title": "Description inclut la zone de service", "description": "Mentionner Neuchâtel dans la meta description aide le SEO local", "status": "fail", "findings": "Pas de mention de Neuchâtel dans la meta description" },
+          { "title": "Description inclut des mots-clés", "description": "Inclure des mots-clés dans la meta description améliore le taux de clic", "status": "fail", "findings": "Mots-clés absents de la meta description" },
+          { "title": "Open Graph title", "description": "Le titre Open Graph (og:title) est essentiel pour le partage sur les réseaux sociaux", "status": "warning", "findings": "Titre OG générique WordPress" },
+          { "title": "Open Graph description", "description": "La description OG fournit un aperçu lors du partage sur les réseaux sociaux", "status": "warning", "findings": "Description OG non optimisée" },
+          { "title": "Open Graph image", "description": "L'image OG est critique pour les aperçus visuels sur les réseaux sociaux", "status": "warning", "findings": "Image OG par défaut ou absente" },
+          { "title": "Twitter card", "description": "Les Twitter cards permettent des aperçus riches lors du partage sur Twitter/X", "status": "fail", "findings": "Pas de Twitter card configurée" },
+          { "title": "Titre de page correspond au profil Google", "description": "La cohérence entre le titre de page et la fiche Google renforce la confiance", "status": "fail", "findings": "Le titre du site ne correspond pas au nom sur Google Maps" },
+          { "title": "Titre de page inclut la zone de service", "description": "Inclure Neuchâtel dans le titre aide la visibilité locale", "status": "fail", "findings": "Neuchâtel absent du titre de page" },
+          { "title": "Titre de page inclut un mot-clé", "description": "Avoir un mot-clé pertinent dans le titre améliore le classement", "status": "pass", "findings": "\"Boucherie\" présent dans le titre" }
+        ]},
+        { "name": "Contenu", "items": [
+          { "title": "Contenu de page unique", "description": "Un contenu original aide les moteurs de recherche à distinguer votre site", "status": "pass", "findings": "Contenu des produits apparaît unique" },
+          { "title": "Nombre de mots suffisant", "description": "Les pages avec suffisamment de texte tendent à mieux se classer", "status": "fail", "findings": "Très peu de texte descriptif, principalement des fiches produit" },
+          { "title": "Structure de liens internes", "description": "Les liens internes aident les moteurs de recherche à explorer votre site", "status": "pass", "findings": "Navigation par catégories (Agneau, Boeuf, Veau, Volaille)" },
+          { "title": "Pas de contenu dupliqué", "description": "Le contenu dupliqué peut confondre les moteurs de recherche", "status": "pass", "findings": "Pas de contenu dupliqué détecté" },
+          { "title": "Contenu spécifique à la localisation", "description": "Mentionner votre ville et quartier aide le classement local", "status": "fail", "findings": "Aucune mention de Neuchâtel ou Rue des Moulins sur le site" }
+        ]},
+        { "name": "SEO Technique", "items": [
+          { "title": "Certificat SSL", "description": "Un certificat SSL (HTTPS) est essentiel pour la sécurité et le classement Google", "status": "pass", "findings": "HTTPS actif sur boucherie-istanbul.ch" },
+          { "title": "Compatible mobile", "description": "Google utilise l'indexation mobile-first", "status": "pass", "findings": "Site responsive détecté" },
+          { "title": "Vitesse de chargement", "description": "Des pages rapides offrent une meilleure expérience et un meilleur classement", "status": "warning", "findings": "WooCommerce avec de nombreux scripts JS — performance moyenne" },
+          { "title": "Pas de liens cassés", "description": "Les liens cassés créent une mauvaise expérience utilisateur", "status": "pass", "findings": "Pas de liens cassés détectés" },
+          { "title": "Sitemap XML", "description": "Un sitemap aide les moteurs de recherche à indexer vos pages", "status": "pass", "findings": "Sitemap WordPress généré automatiquement" },
+          { "title": "Robots.txt configuré", "description": "Un fichier robots.txt correctement configuré guide les moteurs de recherche", "status": "pass", "findings": "robots.txt WordPress par défaut" },
+          { "title": "URLs canoniques", "description": "Les tags canoniques empêchent les problèmes de contenu dupliqué", "status": "pass", "findings": "Tags canoniques WordPress présents" }
+        ]},
+        { "name": "Schema & Données Structurées", "items": [
+          { "title": "Schema restaurant", "description": "Le schema markup aide Google à comprendre votre type de commerce", "status": "fail", "findings": "Pas de schema Restaurant détecté" },
+          { "title": "Schema commerce local", "description": "Le schema LocalBusiness fournit adresse, horaires et contact aux moteurs de recherche", "status": "fail", "findings": "Pas de schema LocalBusiness" },
+          { "title": "Schema menu", "description": "Le schema Menu peut afficher votre menu directement dans les résultats", "status": "fail", "findings": "Pas de schema Menu — le site ne présente pas de menu restaurant" },
+          { "title": "Schema avis", "description": "Le schema Review peut afficher des étoiles dans les résultats de recherche", "status": "fail", "findings": "Pas de schema Review" },
+          { "title": "Schema fil d'Ariane", "description": "Le schema Breadcrumb aide les moteurs à comprendre la structure du site", "status": "warning", "findings": "Fil d'Ariane WooCommerce basique" }
+        ]},
+        { "name": "Indexation", "items": [
+          { "title": "Pages indexées par Google", "description": "Vos pages clés doivent être indexées pour apparaître dans les résultats", "status": "pass", "findings": "Page principale indexée" },
+          { "title": "Pas de noindex sur les pages importantes", "description": "Des tags noindex accidentels peuvent empêcher l'apparition dans les résultats", "status": "pass", "findings": "Pas de problème noindex" },
+          { "title": "Google Search Console connecté", "description": "Search Console donne des insights sur la façon dont Google voit votre site", "status": "warning", "findings": "Impossible de vérifier — probablement non configuré" },
+          { "title": "Pas d'erreurs de crawl", "description": "Les erreurs de crawl empêchent l'indexation de vos pages", "status": "pass", "findings": "Pas d'erreurs critiques détectées" },
+          { "title": "Le site charge sans erreurs JavaScript", "description": "Les erreurs JS peuvent empêcher le rendu correct des pages", "status": "warning", "findings": "Multiples scripts WooCommerce — risque d'erreurs JS" },
+          { "title": "Tags hreflang corrects", "description": "Les tags hreflang aident à servir la bonne version linguistique", "status": "fail", "findings": "Site en français uniquement, pas de hreflang configuré pour une clientèle suisse multilingue" },
+          { "title": "Structure d'URL propre", "description": "Des URLs propres et descriptives améliorent le SEO et l'expérience utilisateur", "status": "pass", "findings": "URLs WooCommerce propres avec slugs produits" }
+        ]}
+      ]
+    },
+    {
+      "id": "website-experience", "number": 2, "title": "Expérience Client",
+      "subtitle": "Améliorez l'expérience sur votre site web",
+      "score": 12, "maxScore": 40, "scoreColor": "#D65353",
+      "infoBox": { "title": "Votre site", "text": "Le contenu et l'expérience de votre site stimulent la conversion et les ventes" },
+      "categories": [
+        { "name": "Contenu", "items": [
+          { "title": "Pas de commande hors-site", "description": "Les liens de commande externes fragmentent l'expérience utilisateur", "status": "pass", "findings": "Commande directe via WooCommerce sur le site" },
+          { "title": "CTA efficace pour la commande en ligne", "description": "Un appel à l'action clair pour commander en ligne augmente les conversions", "status": "warning", "findings": "Bouton 'Ajouter au panier' présent mais pas de CTA proéminent" },
+          { "title": "Contenu textuel suffisant", "description": "Du contenu sur le restaurant aide Google à comprendre votre commerce", "status": "fail", "findings": "Très peu de texte — que des fiches produit sans descriptions détaillées" },
+          { "title": "Numéro de téléphone", "description": "Afficher un numéro de téléphone augmente les moyens de commander", "status": "pass", "findings": "032 724 30 87 affiché" },
+          { "title": "Favicon", "description": "Inclure un favicon améliore la légitimité de votre site", "status": "warning", "findings": "Favicon WordPress par défaut probable" },
+          { "title": "Liens réseaux sociaux", "description": "Les liens sociaux étendent votre portée", "status": "fail", "findings": "Aucun lien vers les réseaux sociaux sur le site" },
+          { "title": "Horaires d'ouverture", "description": "Inclure les horaires aide les clients à planifier leurs visites", "status": "fail", "findings": "Horaires absents du site web" },
+          { "title": "Adresse sur le site", "description": "Afficher votre adresse aide les clients à vous trouver", "status": "fail", "findings": "Adresse non visible sur le site" },
+          { "title": "Contenu avec mots-clés pertinents", "description": "Inclure des mots-clés pertinents aide les moteurs de recherche", "status": "pass", "findings": "Mots-clés viande: agneau, boeuf, veau, volaille, halal présents" }
+        ]},
+        { "name": "Apparence", "items": [
+          { "title": "Section À propos convaincante", "description": "Une histoire convaincante crée une connexion émotionnelle avec vos clients", "status": "fail", "findings": "Pas de section À propos — pas d'histoire, pas de présentation du fondateur Lokman Sengül" },
+          { "title": "Texte lisible", "status": "pass", "findings": "Texte lisible sur fond sombre" },
+          { "title": "3 avis clients", "description": "Des avis construisent la confiance avec les clients potentiels", "status": "fail", "findings": "Pas d'avis clients affichés sur le site" },
+          { "title": "Section FAQ", "description": "Une FAQ aide les moteurs de recherche à comprendre votre commerce", "status": "fail", "findings": "Pas de section FAQ" },
+          { "title": "Explication des avantages de la commande directe", "description": "Les clients commandent plus facilement s'ils comprennent les avantages", "status": "fail", "findings": "Pas d'explication des avantages (livraison rapide, fraîcheur, halal certifié)" }
+        ]},
+        { "name": "Accessibilité", "items": [
+          { "title": "Ratio de contraste des couleurs", "description": "Le texte doit avoir un contraste suffisant pour la lisibilité", "status": "warning", "findings": "Texte vert sur fond sombre — contraste limite" },
+          { "title": "Alt text sur les images", "description": "Les lecteurs d'écran utilisent l'alt text pour décrire les images", "status": "warning", "findings": "Alt texts WooCommerce par défaut, non optimisés" },
+          { "title": "Navigation au clavier", "description": "Les utilisateurs doivent pouvoir naviguer avec le clavier uniquement", "status": "pass", "findings": "Navigation WordPress/WooCommerce standard" },
+          { "title": "Labels des formulaires", "description": "Tous les champs de formulaire doivent avoir des labels associés", "status": "pass", "findings": "Formulaires WooCommerce avec labels" },
+          { "title": "Landmarks ARIA", "description": "Les landmarks ARIA aident les technologies d'assistance", "status": "pass", "findings": "Landmarks WordPress par défaut" }
+        ]},
+        { "name": "Performance", "items": [
+          { "title": "Optimisation des images", "description": "Des images optimisées réduisent le temps de chargement", "status": "warning", "findings": "Images produit de taille non optimisée" },
+          { "title": "Pas de ressources bloquant le rendu", "description": "CSS et JS bloquants retardent l'affichage de la page", "status": "fail", "findings": "Multiple scripts WooCommerce et plugins bloquants" },
+          { "title": "Chargement différé des images", "description": "Le lazy loading diffère les images hors écran", "status": "pass", "findings": "WordPress lazy loading natif" },
+          { "title": "CSS et JS minifiés", "description": "La minification réduit la taille des fichiers", "status": "warning", "findings": "Partiellement minifié — plugins non optimisés" },
+          { "title": "Cache navigateur", "description": "Les headers de cache réduisent le temps de chargement pour les visiteurs réguliers", "status": "warning", "findings": "Configuration cache basique" }
+        ]},
+        { "name": "Expérience Mobile", "items": [
+          { "title": "Layout responsive", "description": "Votre site doit s'adapter à toutes les tailles d'écran", "status": "pass", "findings": "Layout WooCommerce responsive" },
+          { "title": "Boutons adaptés au tactile", "description": "Les boutons doivent être assez grands pour le tap sur mobile", "status": "pass", "findings": "Boutons de taille adéquate" },
+          { "title": "Pas de scroll horizontal", "description": "Le scroll horizontal crée une expérience frustrante", "status": "pass", "findings": "Pas de dépassement horizontal" },
+          { "title": "Tag meta viewport", "description": "Le tag viewport assure un affichage correct sur mobile", "status": "pass", "findings": "Meta viewport WordPress présent" },
+          { "title": "Numéro cliquable pour appeler", "description": "Les utilisateurs mobiles doivent pouvoir taper pour appeler", "status": "fail", "findings": "Le numéro n'est pas un lien tel: cliquable" },
+          { "title": "Menu mobile utilisable", "description": "La navigation doit être facile à ouvrir et parcourir sur mobile", "status": "pass", "findings": "Menu mobile WooCommerce fonctionnel" }
+        ]},
+        { "name": "Confiance & Sécurité", "items": [
+          { "title": "Certificat SSL actif", "description": "Un certificat SSL valide protège les données et renforce la confiance", "status": "pass", "findings": "Certificat SSL actif et valide" },
+          { "title": "Page politique de confidentialité", "description": "Une politique de confidentialité montre la transparence", "status": "pass", "findings": "Lien politique de confidentialité en footer" },
+          { "title": "Pas de contenu mixte", "description": "Le contenu mixte HTTP/HTTPS déclenche des alertes de sécurité", "status": "pass", "findings": "Pas de contenu mixte" },
+          { "title": "Formulaires de commande sécurisés", "description": "Les formulaires doivent transmettre les données de façon sécurisée", "status": "pass", "findings": "WooCommerce checkout sécurisé" },
+          { "title": "Adresse physique visible", "description": "Afficher votre adresse physique renforce la confiance", "status": "fail", "findings": "Adresse non affichée sur le site" }
+        ]},
+        { "name": "Navigation", "items": [
+          { "title": "Navigation principale claire", "description": "Un menu bien organisé aide les visiteurs à trouver ce qu'ils cherchent", "status": "pass", "findings": "Navigation par catégories de viande" },
+          { "title": "Page menu accessible", "description": "Votre menu doit être facile à trouver depuis n'importe quelle page", "status": "fail", "findings": "Pas de menu restaurant — que des catégories de boucherie" },
+          { "title": "Infos de contact en footer", "description": "Les infos de contact en footer sont disponibles sur chaque page", "status": "warning", "findings": "Footer minimal sans infos de contact complètes" },
+          { "title": "Recherche ou filtres fonctionnels", "description": "La recherche aide les utilisateurs à trouver des articles spécifiques", "status": "pass", "findings": "Filtres WooCommerce et recherche fonctionnels" },
+          { "title": "Page commande accessible en 2 clics", "description": "Réduire le nombre de clics pour commander améliore la conversion", "status": "pass", "findings": "Ajout au panier direct depuis la boutique" }
+        ]}
+      ]
+    },
+    {
+      "id": "local-listings", "number": 3, "title": "Fiches Locales",
+      "subtitle": "Rendez votre restaurant facile à trouver",
+      "score": 12, "maxScore": 20, "scoreColor": "#57AA30",
+      "categories": [
+        { "name": "Contenu du profil", "items": [
+          { "title": "Site web propriétaire", "status": "pass", "findings": "boucherie-istanbul.ch" },
+          { "title": "Description", "status": "pass", "findings": "Boucherie Halal, alimentation orientale, fruits et légumes de Turquie et Italie" },
+          { "title": "Horaires d'ouverture", "description": "Afficher les horaires aide les clients à planifier leurs visites", "status": "pass", "findings": "Lun-Jeu 10h-23h, Ven-Sam 10h-00h, Dim 11h-22h (kebab) / Lun-Jeu 8h-18h30 (boucherie)" },
+          { "title": "Numéro de téléphone", "status": "pass", "findings": "+41 32 724 30 87 (boucherie) / +41 32 544 74 74 (kebab)" },
+          { "title": "Gamme de prix", "status": "fail", "findings": "Pas de gamme de prix affichée sur les fiches" },
+          { "title": "Options de service", "description": "Lister les options de service aide les clients à comprendre vos prestations", "status": "pass", "findings": "Livraison à domicile, retrait en magasin, service traiteur" },
+          { "title": "Liens réseaux sociaux", "description": "Les liens sociaux étendent votre portée", "status": "fail", "findings": "Pas de liens réseaux sociaux sur les fiches" },
+          { "title": "Description inclut des mots-clés", "status": "pass", "findings": "halal, boucherie, alimentation orientale, kebab, döner" },
+          { "title": "Catégories correspondent aux mots-clés", "status": "pass", "findings": "Boucherie, Kebab Döner, Pizza Take Away", "expected": "kebab, döner, boucherie halal, viande halal, restaurant turc" }
+        ]},
+        { "name": "Contenu soumis par les utilisateurs", "items": [
+          { "title": "Avis de qualité", "status": "warning", "findings": "12 avis au total (7 boucherie + 5 kebab) — insuffisant comparé aux concurrents" }
+        ]},
+        { "name": "Exactitude de la fiche", "items": [
+          { "title": "NAP cohérent sur les annuaires", "description": "Nom, adresse et téléphone doivent être identiques partout", "status": "fail", "findings": "Deux fiches séparées (Istanbul / Istanbul Kebab) créent de la confusion" },
+          { "title": "Position correcte sur la carte", "description": "Le pin Google Maps doit marquer précisément l'emplacement", "status": "pass", "findings": "Pin correctement placé Rue des Moulins 51" },
+          { "title": "Présent sur Yelp", "description": "Yelp est une plateforme majeure de découverte de restaurants", "status": "fail", "findings": "Pas de fiche Yelp dédiée trouvée" },
+          { "title": "Présent sur TripAdvisor", "description": "TripAdvisor aide à attirer les touristes", "status": "fail", "findings": "Pas de fiche TripAdvisor dédiée trouvée" },
+          { "title": "Présent sur local.ch", "description": "local.ch est la référence suisse pour les recherches locales", "status": "pass", "findings": "Fiches local.ch présentes pour boucherie et kebab" }
+        ]},
+        { "name": "Photos & médias", "items": [
+          { "title": "Photo de profil définie", "description": "Une photo de profil aide les clients à reconnaître votre commerce", "status": "pass", "findings": "Photo de profil définie" },
+          { "title": "Photo de couverture définie", "description": "Une photo de couverture attractive fait une bonne première impression", "status": "pass", "findings": "Photo de couverture présente" },
+          { "title": "Au moins 10 photos", "description": "Les fiches avec beaucoup de photos obtiennent plus d'engagement", "status": "fail", "findings": "Moins de 10 photos sur les fiches" },
+          { "title": "Photos récentes (6 derniers mois)", "description": "Des photos récentes montrent que votre commerce est actif", "status": "warning", "findings": "Impossible de vérifier la date des dernières photos" },
+          { "title": "Photos du menu", "description": "Les photos des plats aident les clients à décider quoi commander", "status": "fail", "findings": "Pas de photos de plats kebab sur les fiches" }
+        ]}
+      ]
+    }
+  ],
+  "auditSummary": { "totalReviewed": 100, "needsWork": 62, "subtitle": "Voyez ce qui ne va pas et comment améliorer" },
+  "googleProfile": {
+    "name": "Istanbul Kasap Market", "rating": 4.4, "reviewCount": 12,
+    "description": "Boucherie Halal, alimentation orientale, fruits et légumes de Turquie et Italie. Kebab et döner également disponibles.",
+    "phone": "+41 32 724 30 87", "website": "boucherie-istanbul.ch",
+    "hasHours": true, "hasPhone": true, "hasPriceRange": false,
+    "categories": ["Boucherie", "Kebab Döner", "Pizza Take Away", "Alimentation orientale"]
+  },
+  "caseStudies": [
+    { "name": "Cyclo Noodles", "initialScore": 37, "finalScore": 92, "result": "Ventes directes en ligne multipliées par 7", "desktopImage": "cyclonoodles-desktop.png", "tabletImage": "cyclonoodles-tablet.png" },
+    { "name": "Talkin' Tacos", "initialScore": 46, "finalScore": 95, "result": "120 000$/mois de ventes", "desktopImage": "talkintacos-desktop.png", "tabletImage": "talkintacos-tablet.png" },
+    { "name": "Saffron", "initialScore": 43, "finalScore": 96, "result": "171 400$/mois de ventes en ligne", "desktopImage": "saffron-desktop.png", "tabletImage": "saffron-tablet.png" }
+  ],
+  "ctaText": "Corrigez en 35 secondes",
+  "ctaBanner": { "label": "Site Web IA", "title": "Améliorez votre site web avec l'IA en 35 secondes.", "buttonText": "Améliorer votre site" }
+}

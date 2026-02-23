@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import type { CaseStudy } from '../../types/report'
+import { useI18n } from '../../lib/i18n'
 
 interface WebsiteCarouselProps {
   caseStudies: CaseStudy[]
 }
 
 export function WebsiteCarousel({ caseStudies }: WebsiteCarouselProps) {
+  const { t } = useI18n()
   const [activeIndex, setActiveIndex] = useState(0)
   const active = caseStudies[activeIndex]
 
@@ -16,7 +18,7 @@ export function WebsiteCarousel({ caseStudies }: WebsiteCarouselProps) {
       <div className="text-center">
         <p className="text-sm font-medium text-white">{active.name}</p>
         <p className="text-xs text-white/70 mt-0.5">
-          Score: {active.initialScore} → {active.finalScore}
+          {t('score')}: {active.initialScore} → {active.finalScore}
         </p>
         <p className="text-xs text-white/70">{active.result}</p>
       </div>

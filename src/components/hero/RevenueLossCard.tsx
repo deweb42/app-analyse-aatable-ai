@@ -1,6 +1,7 @@
 import { AlertTriangle } from 'lucide-react'
 import type { RevenueLoss, Restaurant } from '../../types/report'
 import { formatCurrency } from '../../lib/score-utils'
+import { useI18n } from '../../lib/i18n'
 import feastBuffetImg from '../../assets/images/feast-buffet.jpg'
 
 interface RevenueLossCardProps {
@@ -9,12 +10,17 @@ interface RevenueLossCardProps {
 }
 
 export function RevenueLossCard({ revenueLoss, restaurant }: RevenueLossCardProps) {
+  const { t } = useI18n()
+
   return (
     <div className="flex flex-col rounded-2xl bg-white border border-gray-200/60 shadow-sm overflow-hidden h-full">
       <div className="flex-1 p-5">
         <h2 className="text-lg font-bold text-gray-900 leading-snug tracking-tight">
-          You could be losing ~{formatCurrency(revenueLoss.amount)}/month due to{' '}
-          {revenueLoss.problems.length} problem{revenueLoss.problems.length > 1 ? 's' : ''}
+          {t('couldBeLosing', {
+            amount: formatCurrency(revenueLoss.amount),
+            count: revenueLoss.problems.length,
+            s: revenueLoss.problems.length > 1 ? 's' : '',
+          })}
         </h2>
 
         <div className="mt-5 space-y-2">

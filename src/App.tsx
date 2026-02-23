@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react'
-import staticReport from './data/feast-buffet.json'
 import type { HealthReport } from './types/report'
+
+const staticReports: Record<string, () => Promise<{ default: unknown }>> = {
+  'feast-buffet': () => import('./data/feast-buffet.json'),
+  'istanbul-kasap-market': () => import('./data/istanbul-kasap-market.json'),
+  'oqg-burger-tacos': () => import('./data/oqg-burger-tacos.json'),
+}
 import { ReportLayout } from './components/layout/ReportLayout'
 import { Sidebar } from './components/layout/Sidebar'
 import { MainContent } from './components/layout/MainContent'
@@ -9,8 +14,11 @@ import { SearchResultsSection } from './components/search-results/SearchResultsS
 import { WebsiteExperienceSection } from './components/website-experience/WebsiteExperienceSection'
 import { LocalListingsSection } from './components/local-listings/LocalListingsSection'
 import { AIWebsiteSection } from './components/ai-website/AIWebsiteSection'
+import { LanguageToggle } from './components/shared/LanguageToggle'
+import { useI18n } from './lib/i18n'
 
 export default function App() {
+  const { t } = useI18n()
   const [report, setReport] = useState<HealthReport | null>(null)
   const [loading, setLoading] = useState(true)
 
@@ -23,9 +31,13 @@ export default function App() {
         return r.json()
       })
       .then(setReport)
-      .catch(() => {
+      .catch(async () => {
         // API not running — fallback to static JSON
-        setReport(staticReport as unknown as HealthReport)
+        const loader = staticReports[slug]
+        if (loader) {
+          const mod = await loader()
+          setReport(mod.default as unknown as HealthReport)
+        }
       })
       .finally(() => setLoading(false))
   }, [slug])
@@ -35,7 +47,7 @@ export default function App() {
       <div className="flex min-h-screen items-center justify-center bg-gray-50">
         <div className="text-center">
           <div className="mx-auto h-8 w-8 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600" />
-          <p className="mt-4 text-gray-600">Loading report...</p>
+          <p className="mt-4 text-gray-600">{t('loadingReport')}</p>
         </div>
       </div>
     )
@@ -49,6 +61,7 @@ export default function App() {
 
   return (
     <ReportLayout>
+      <LanguageToggle />
       <Sidebar report={report} />
       <MainContent>
         <div className="space-y-4 px-4 pb-24 pt-4 lg:px-0 lg:pb-4 lg:pt-0">

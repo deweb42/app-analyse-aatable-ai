@@ -1,4 +1,5 @@
 import type { ReportSection } from '../../types/report'
+import { useI18n } from '../../lib/i18n'
 import { SectionHeader } from '../shared/SectionHeader'
 import { InfoBox } from '../shared/InfoBox'
 import { ChecklistAccordion } from './ChecklistAccordion'
@@ -8,6 +9,7 @@ interface WebsiteExperienceSectionProps {
 }
 
 export function WebsiteExperienceSection({ section }: WebsiteExperienceSectionProps) {
+  const { t } = useI18n()
   const totalItems = section.categories.reduce((sum, cat) => sum + cat.items.length, 0)
   const failCount = section.categories.reduce(
     (sum, cat) => sum + cat.items.filter((i) => i.status === 'fail').length,
@@ -32,8 +34,8 @@ export function WebsiteExperienceSection({ section }: WebsiteExperienceSectionPr
       {section.infoBox && <InfoBox infoBox={section.infoBox} />}
       <div className="px-5 py-3 border-b border-gray-100">
         <p className="text-[13px] text-gray-500">
-          <span className="font-semibold text-gray-700">{totalItems}</span> things reviewed,{' '}
-          <span className="text-red-500 font-semibold">{needsWork} need work</span>
+          <span className="font-semibold text-gray-700">{t('thingsReviewed', { total: totalItems })}</span>
+          <span className="text-red-500 font-semibold">{t('needWork', { count: needsWork })}</span>
         </p>
       </div>
       <div>

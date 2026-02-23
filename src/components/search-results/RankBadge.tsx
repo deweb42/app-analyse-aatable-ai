@@ -1,3 +1,5 @@
+import { useI18n } from '../../lib/i18n'
+
 interface RankBadgeProps {
   rank: number | null
   label?: string
@@ -5,6 +7,7 @@ interface RankBadgeProps {
 }
 
 export function RankBadge({ rank, label, compact = false }: RankBadgeProps) {
+  const { t } = useI18n()
   const isUnranked = rank === null
 
   if (compact) {
@@ -16,7 +19,7 @@ export function RankBadge({ rank, label, compact = false }: RankBadgeProps) {
             : 'bg-emerald-100 text-emerald-700'
         }`}
       >
-        {isUnranked ? `${label || 'Unranked'}` : `#${rank}`}
+        {isUnranked ? `${label || t('unranked')}` : `#${rank}`}
       </span>
     )
   }
@@ -30,7 +33,7 @@ export function RankBadge({ rank, label, compact = false }: RankBadgeProps) {
       }`}
     >
       {label && <span className="mr-1 opacity-60">{label}</span>}
-      {isUnranked ? 'Unranked' : `#${rank}`}
+      {isUnranked ? t('unranked') : `#${rank}`}
     </span>
   )
 }
