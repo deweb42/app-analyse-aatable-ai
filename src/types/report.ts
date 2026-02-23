@@ -5,11 +5,18 @@ export interface HealthReport {
   overallScore: ScoreRating
   subScores: SubScore[]
   revenueLoss: RevenueLoss
+  competitorRankings: OverallCompetitor[]
   keywordCards: KeywordCard[]
   sections: ReportSection[]
   googleProfile: GoogleBusinessProfile
   caseStudies: CaseStudy[]
   ctaText: string
+}
+
+export interface OverallCompetitor {
+  name: string
+  rating: number
+  rank: number
 }
 
 export interface Restaurant {
@@ -45,6 +52,13 @@ export interface KeywordCard {
   organicRank: number | null
   winner: string | null
   competitors: CompetitorRanking[]
+  organicResults: OrganicResult[]
+}
+
+export interface OrganicResult {
+  site: string
+  title: string
+  favicon?: string
 }
 
 export interface CompetitorRanking {

@@ -10,32 +10,35 @@ interface SearchResultsSectionProps {
 
 export function SearchResultsSection({ section, keywordCards }: SearchResultsSectionProps) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-white overflow-hidden">
-      <SectionHeader
-        number={section.number}
-        title={section.title}
-        subtitle={section.subtitle}
-        score={section.score}
-        maxScore={section.maxScore}
-        scoreColor={section.scoreColor}
-      />
-
-      {/* Keyword Rankings */}
-      <div className="py-4">
-        <h3 className="text-sm font-medium text-gray-700 px-4 mb-3">
-          Keyword Rankings
-        </h3>
+    <div className="space-y-4">
+      {/* Keyword rankings - "This is how you're doing online" */}
+      <div>
+        <div className="mb-3">
+          <h2 className="text-xl font-semibold text-gray-900">
+            This is how you're doing online
+          </h2>
+          <p className="text-sm text-gray-500 mt-0.5">
+            Where you are showing up when customers search you, next to your competitors
+          </p>
+        </div>
         <KeywordGrid cards={keywordCards} />
       </div>
 
-      {/* Checklist */}
-      <div className="border-t border-gray-100">
-        <h3 className="text-sm font-medium text-gray-700 px-4 py-3">
-          SEO Checklist
-        </h3>
-        {section.categories.map((category) => (
-          <ChecklistAccordion key={category.name} category={category} />
-        ))}
+      {/* SEO Checklist section */}
+      <div className="rounded-xl border border-gray-200 bg-white overflow-hidden">
+        <SectionHeader
+          number={section.number}
+          title={section.title}
+          subtitle={section.subtitle}
+          score={section.score}
+          maxScore={section.maxScore}
+          scoreColor={section.scoreColor}
+        />
+        <div>
+          {section.categories.map((category) => (
+            <ChecklistAccordion key={category.name} category={category} />
+          ))}
+        </div>
       </div>
     </div>
   )

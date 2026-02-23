@@ -3,11 +3,11 @@ import type { HealthReport } from './types/report'
 import { ReportLayout } from './components/layout/ReportLayout'
 import { Sidebar } from './components/layout/Sidebar'
 import { MainContent } from './components/layout/MainContent'
+import { HeroCards } from './components/hero/HeroCards'
 import { SearchResultsSection } from './components/search-results/SearchResultsSection'
 import { WebsiteExperienceSection } from './components/website-experience/WebsiteExperienceSection'
 import { LocalListingsSection } from './components/local-listings/LocalListingsSection'
 import { AIWebsiteSection } from './components/ai-website/AIWebsiteSection'
-import { formatCurrency } from './lib/score-utils'
 
 export default function App() {
   const report = reportData as unknown as HealthReport
@@ -20,27 +20,11 @@ export default function App() {
     <ReportLayout>
       <Sidebar report={report} />
       <MainContent>
-        {/* Revenue loss banner */}
-        {report.revenueLoss.amount > 0 && (
-          <div className="mx-4 mb-4 rounded-lg bg-red-50 border border-red-200 p-4 lg:mx-0">
-            <p className="text-sm text-red-800">
-              You could be losing up to{' '}
-              <span className="font-semibold">
-                {formatCurrency(report.revenueLoss.amount)}/month
-              </span>{' '}
-              due to:
-            </p>
-            <ul className="mt-1 space-y-0.5">
-              {report.revenueLoss.problems.map((problem) => (
-                <li key={problem} className="text-sm text-red-700">
-                  • {problem}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <div className="space-y-6 px-4 pb-20 lg:px-0 lg:pb-4">
+          {/* Hero cards: Revenue Loss + Competitors + Why Fix */}
+          <HeroCards report={report} />
 
-        <div className="space-y-4 pb-20 lg:pb-4">
+          {/* Search Results section with keywords */}
           {searchResults && (
             <SearchResultsSection
               section={searchResults}
@@ -48,10 +32,12 @@ export default function App() {
             />
           )}
 
+          {/* Website Experience section */}
           {websiteExperience && (
             <WebsiteExperienceSection section={websiteExperience} />
           )}
 
+          {/* Local Listings section */}
           {localListings && (
             <LocalListingsSection
               section={localListings}
@@ -59,6 +45,7 @@ export default function App() {
             />
           )}
 
+          {/* AI Website improvement section */}
           <AIWebsiteSection
             caseStudies={report.caseStudies}
             ctaText={report.ctaText}
