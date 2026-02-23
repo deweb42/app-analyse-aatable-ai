@@ -10,7 +10,7 @@ interface LocalListingsSectionProps {
 
 export function LocalListingsSection({ section, googleProfile }: LocalListingsSectionProps) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-white overflow-hidden">
+    <div className="rounded-xl border border-gray-200 bg-white overflow-hidden">
       <SectionHeader
         number={section.number}
         title={section.title}

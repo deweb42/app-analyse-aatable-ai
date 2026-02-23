@@ -1,16 +1,14 @@
-import type { CaseStudy } from '../../types/report'
-import { CTAButton } from '../shared/CTAButton'
-import { WebsiteCarousel } from './WebsiteCarousel'
+import type { CTABanner } from '../../types/report'
+import { ArrowRight } from 'lucide-react'
 import feastBuffetImg from '../../assets/images/feast-buffet.jpg'
 
 interface AIWebsiteSectionProps {
-  caseStudies: CaseStudy[]
-  ctaText: string
+  ctaBanner: CTABanner
 }
 
-export function AIWebsiteSection({ caseStudies, ctaText }: AIWebsiteSectionProps) {
+export function AIWebsiteSection({ ctaBanner }: AIWebsiteSectionProps) {
   return (
-    <div className="relative rounded-lg overflow-hidden">
+    <div className="relative rounded-xl overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <img
@@ -23,19 +21,25 @@ export function AIWebsiteSection({ caseStudies, ctaText }: AIWebsiteSectionProps
 
       {/* Content */}
       <div className="relative z-10 p-6 md:p-8">
-        <div className="text-center mb-6">
-          <h2 className="text-xl md:text-2xl font-semibold text-white">
-            Improve your website with AI in 35 seconds
-          </h2>
-          <p className="text-sm text-white/70 mt-2">
-            See how other restaurants improved their online health score
-          </p>
-        </div>
+        <p className="text-sm text-white/70">{ctaBanner.label}</p>
+        <h2 className="text-xl md:text-2xl font-semibold text-white mt-1">
+          {ctaBanner.title}
+        </h2>
 
-        <WebsiteCarousel caseStudies={caseStudies} />
+        <button className="mt-4 inline-flex items-center gap-2 rounded-lg bg-gray-900 text-white px-4 py-2.5 text-sm font-medium hover:bg-gray-800 transition-colors">
+          {ctaBanner.buttonText}
+          <ArrowRight className="w-4 h-4" />
+        </button>
 
-        <div className="flex justify-center mt-6">
-          <CTAButton text={ctaText} className="bg-white !text-black hover:bg-gray-100" />
+        {/* Preview card */}
+        <div className="mt-6 flex justify-center">
+          <div className="bg-white rounded-lg shadow-xl p-4 w-40">
+            <div className="w-full h-20 bg-gray-100 rounded mb-2" />
+            <p className="text-xs font-medium text-gray-900">Savor every bite</p>
+            <div className="mt-2 bg-black text-white text-[10px] rounded px-2 py-1 text-center">
+              Order now
+            </div>
+          </div>
         </div>
       </div>
     </div>

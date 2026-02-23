@@ -1,5 +1,6 @@
 import type { ReportSection, KeywordCard as KeywordCardType } from '../../types/report'
 import { SectionHeader } from '../shared/SectionHeader'
+import { InfoBox } from '../shared/InfoBox'
 import { KeywordGrid } from './KeywordGrid'
 import { ChecklistAccordion } from '../website-experience/ChecklistAccordion'
 
@@ -11,7 +12,7 @@ interface SearchResultsSectionProps {
 export function SearchResultsSection({ section, keywordCards }: SearchResultsSectionProps) {
   return (
     <div className="space-y-4">
-      {/* Keyword rankings - "This is how you're doing online" */}
+      {/* Keyword rankings */}
       <div>
         <div className="mb-3">
           <h2 className="text-xl font-semibold text-gray-900">
@@ -24,7 +25,7 @@ export function SearchResultsSection({ section, keywordCards }: SearchResultsSec
         <KeywordGrid cards={keywordCards} />
       </div>
 
-      {/* SEO Checklist section */}
+      {/* SEO Checklist */}
       <div className="rounded-xl border border-gray-200 bg-white overflow-hidden">
         <SectionHeader
           number={section.number}
@@ -34,6 +35,7 @@ export function SearchResultsSection({ section, keywordCards }: SearchResultsSec
           maxScore={section.maxScore}
           scoreColor={section.scoreColor}
         />
+        {section.infoBox && <InfoBox infoBox={section.infoBox} />}
         <div>
           {section.categories.map((category) => (
             <ChecklistAccordion key={category.name} category={category} />

@@ -32,12 +32,25 @@ export default function App() {
             />
           )}
 
-          {/* Website Experience section */}
+          {/* Audit summary header */}
+          <div>
+            <h2 className="text-xl font-semibold text-gray-900">
+              {report.auditSummary.totalReviewed} things reviewed,{' '}
+              <span className="text-red-500">{report.auditSummary.needsWork} need work</span>
+            </h2>
+            <p className="text-sm text-gray-500 mt-0.5">
+              {report.auditSummary.subtitle}
+            </p>
+          </div>
+
+          {/* Section 1: Search Results checklist (already shown above with keywords) */}
+
+          {/* Section 2: Guest Experience */}
           {websiteExperience && (
             <WebsiteExperienceSection section={websiteExperience} />
           )}
 
-          {/* Local Listings section */}
+          {/* Section 3: Local Listings */}
           {localListings && (
             <LocalListingsSection
               section={localListings}
@@ -45,11 +58,8 @@ export default function App() {
             />
           )}
 
-          {/* AI Website improvement section */}
-          <AIWebsiteSection
-            caseStudies={report.caseStudies}
-            ctaText={report.ctaText}
-          />
+          {/* CTA Banner */}
+          <AIWebsiteSection ctaBanner={report.ctaBanner} />
         </div>
       </MainContent>
     </ReportLayout>

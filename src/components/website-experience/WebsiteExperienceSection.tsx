@@ -1,5 +1,6 @@
 import type { ReportSection } from '../../types/report'
 import { SectionHeader } from '../shared/SectionHeader'
+import { InfoBox } from '../shared/InfoBox'
 import { ChecklistAccordion } from './ChecklistAccordion'
 
 interface WebsiteExperienceSectionProps {
@@ -19,7 +20,7 @@ export function WebsiteExperienceSection({ section }: WebsiteExperienceSectionPr
   const needsWork = failCount + warningCount
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-white overflow-hidden">
+    <div className="rounded-xl border border-gray-200 bg-white overflow-hidden">
       <SectionHeader
         number={section.number}
         title={section.title}
@@ -28,8 +29,9 @@ export function WebsiteExperienceSection({ section }: WebsiteExperienceSectionPr
         maxScore={section.maxScore}
         scoreColor={section.scoreColor}
       />
+      {section.infoBox && <InfoBox infoBox={section.infoBox} />}
       <div className="px-4 py-3">
-        <p className="text-sm text-gray-600 mb-4">
+        <p className="text-sm text-gray-600">
           {totalItems} things reviewed, <span className="text-red-500 font-medium">{needsWork} need work</span>
         </p>
       </div>

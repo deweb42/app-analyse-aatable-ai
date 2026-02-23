@@ -14,32 +14,11 @@
     "strokeColor": "#FF0101"
   },
   "subScores": [
-    {
-      "name": "Search Results",
-      "score": 28,
-      "maxScore": 40,
-      "rating": "Fair",
-      "strokeColor": "#F89412"
-    },
-    {
-      "name": "Website Experience",
-      "score": 9,
-      "maxScore": 40,
-      "rating": "Poor",
-      "strokeColor": "#D65353"
-    },
-    {
-      "name": "Local Listings",
-      "score": 16,
-      "maxScore": 20,
-      "rating": "Fair",
-      "strokeColor": "#F89412"
-    }
+    { "name": "Search Results", "score": 28, "maxScore": 40, "rating": "Fair", "strokeColor": "#F89412" },
+    { "name": "Website Experience", "score": 9, "maxScore": 40, "rating": "Poor", "strokeColor": "#D65353" },
+    { "name": "Local Listings", "score": 16, "maxScore": 20, "rating": "Fair", "strokeColor": "#F89412" }
   ],
-  "revenueLoss": {
-    "amount": 1615,
-    "problems": ["Website is missing a compelling story"]
-  },
+  "revenueLoss": { "amount": 1615, "problems": ["Website is missing a compelling story"] },
   "competitorRankings": [
     { "name": "Din Tai Fung 鼎泰豐", "rating": 4.6, "rank": 1 },
     { "name": "MR. DIM SUM", "rating": 4.1, "rank": 2 },
@@ -52,12 +31,8 @@
   ],
   "keywordCards": [
     {
-      "keyword": "asian food",
-      "city": "Renton",
-      "fullKeyword": "best asian food in Renton",
-      "mapPackRank": null,
-      "organicRank": null,
-      "winner": "Wild Ginger Teriyaki",
+      "keyword": "asian food", "city": "Renton", "fullKeyword": "Best asian food in Renton",
+      "mapPackRank": null, "organicRank": null, "winner": "Wild Ginger Teriyaki",
       "competitors": [
         { "name": "Wild Ginger Teriyaki", "rating": 4.5, "mapRank": 1, "organicRank": null },
         { "name": "Ocha Thai Kitchen and Bar", "rating": 4.4, "mapRank": 2, "organicRank": null },
@@ -67,16 +42,13 @@
         { "site": "www.yelp.com", "title": "TOP 10 BEST Asian Food in Renton, WA - Updated 2026" },
         { "site": "www.tripadvisor.com", "title": "THE 10 BEST Asian Restaurants in Renton (Updated 2026)" },
         { "site": "www.facebook.com", "title": "Best chinese restaurants near Renton?" },
-        { "site": "dtf.com", "title": "Bellevue Restaurant" }
+        { "site": "dtf.com", "title": "Bellevue Restaurant" },
+        { "site": "www.tripadvisor.com", "title": "LITTLE PEKING, Renton - Restaurant Reviews, Photos & ..." }
       ]
     },
     {
-      "keyword": "asian food",
-      "city": "Tukwila",
-      "fullKeyword": "best asian food in Tukwila",
-      "mapPackRank": null,
-      "organicRank": null,
-      "winner": "Din Tai Fung 鼎泰豐",
+      "keyword": "asian food", "city": "Tukwila", "fullKeyword": "Best asian food in Tukwila",
+      "mapPackRank": null, "organicRank": null, "winner": "Din Tai Fung 鼎泰豐",
       "competitors": [
         { "name": "Din Tai Fung 鼎泰豐", "rating": 4.6, "mapRank": 1, "organicRank": null },
         { "name": "Seatango/Spice Bridge", "rating": 4.7, "mapRank": 2, "organicRank": null },
@@ -85,493 +57,241 @@
       "organicResults": [
         { "site": "www.yelp.com", "title": "TOP 10 BEST Asian Restaurants in Tukwila, WA" },
         { "site": "www.tripadvisor.com", "title": "THE 10 BEST Asian Restaurants in Tukwila (Updated 2026)" },
-        { "site": "www.facebook.com", "title": "Best asian restaurants near Tukwila?" }
+        { "site": "wanderlog.com", "title": "The 25 best Asian food in Tukwila" },
+        { "site": "seattle.eater.com", "title": "The Best Chinese and Taiwanese Restaurants in Seattle" },
+        { "site": "www.opentable.com", "title": "22 Best Asian Restaurants In Seattle" },
+        { "site": "www.quora.com", "title": "What are some of the best Asian restaurants in Seattle?" },
+        { "site": "www.reddit.com", "title": "Any good Asian Food courts in the Eastside?" },
+        { "site": "www.yelp.com", "title": "MAYFLOWER OF CHINA RESTAURANT - Chinese" }
       ]
     },
     {
-      "keyword": "asian food",
-      "city": "SeaTac",
-      "fullKeyword": "best asian food in SeaTac",
-      "mapPackRank": null,
-      "organicRank": null,
-      "winner": "P. F. Chang's - SEA",
+      "keyword": "asian food", "city": "SeaTac", "fullKeyword": "Best asian food in SeaTac",
+      "mapPackRank": null, "organicRank": null, "winner": "P. F. Chang's - SEA",
       "competitors": [
         { "name": "P. F. Chang's - SEA", "rating": 4.8, "mapRank": 1, "organicRank": null },
         { "name": "Din Tai Fung 鼎泰豐", "rating": 4.6, "mapRank": 2, "organicRank": null },
         { "name": "Angkor Bar & Grill", "rating": 4.3, "mapRank": 3, "organicRank": null }
       ],
       "organicResults": [
-        { "site": "www.yelp.com", "title": "BEST Asian Food Near SeaTac, WA" },
-        { "site": "www.tripadvisor.com", "title": "Best Asian Restaurants in SeaTac" }
+        { "site": "www.yelp.com", "title": "TOP 10 BEST Asian Food in Seatac, WA - Updated 2026" },
+        { "site": "www.tripadvisor.com", "title": "THE 5 BEST Asian Restaurants in SeaTac (Updated 2026)" },
+        { "site": "www.reddit.com", "title": "Best new Asian or interesting restaurants : r/Seattle" },
+        { "site": "www.opentable.com", "title": "22 Best Asian Restaurants In Seattle" },
+        { "site": "seattle.eater.com", "title": "The 14 Best Asian Restaurants Where Bellevue Meets ..." },
+        { "site": "www.fodors.com", "title": "Any suggestions for really good Asian food in Seattle?" },
+        { "site": "dtf.com", "title": "Bellevue Restaurant" }
       ]
     },
     {
-      "keyword": "dim sum",
-      "city": "Renton",
-      "fullKeyword": "best dim sum in Renton",
-      "mapPackRank": null,
-      "organicRank": null,
-      "winner": "Din Tai Fung 鼎泰豐",
+      "keyword": "dim sum", "city": "Renton", "fullKeyword": "Best dim sum in Renton",
+      "mapPackRank": null, "organicRank": null, "winner": "Din Tai Fung 鼎泰豐",
       "competitors": [
         { "name": "Din Tai Fung 鼎泰豐", "rating": 4.6, "mapRank": 1, "organicRank": null },
         { "name": "MR. DIM SUM", "rating": 4.1, "mapRank": 2, "organicRank": null },
         { "name": "Supreme Dumplings (Bellevue)", "rating": 4.6, "mapRank": 3, "organicRank": null }
       ],
       "organicResults": [
-        { "site": "www.yelp.com", "title": "BEST Dim Sum in Renton, WA" },
-        { "site": "www.tripadvisor.com", "title": "Best Dim Sum Restaurants in Renton" },
-        { "site": "dtf.com", "title": "Din Tai Fung - Bellevue" }
+        { "site": "www.yelp.com", "title": "THE BEST 10 DIM SUM RESTAURANTS in RENTON, WA" },
+        { "site": "www.yelp.com", "title": "Triumph Valley - Restaurant Reviews" },
+        { "site": "www.tripadvisor.com", "title": "THE BEST Dim Sum in Renton (Updated November 2025)" },
+        { "site": "www.reddit.com", "title": "Best dim sum in the greater Seattle area?" },
+        { "site": "dtf.com", "title": "Din Tai Fung - Tukwila Restaurant" },
+        { "site": "www.tripadvisor.com", "title": "TRIUMPH VALLEY, Renton - Photos & Restaurant Reviews" },
+        { "site": "www.doughzonedumplinghouse.com", "title": "Dough Zone Dumpling House | Washington, Oregon ..." },
+        { "site": "www.quora.com", "title": "Where is the best dim sum in Seattle?" }
       ]
     },
     {
-      "keyword": "dim sum",
-      "city": "Tukwila",
-      "fullKeyword": "best dim sum in Tukwila",
-      "mapPackRank": null,
-      "organicRank": null,
-      "winner": "MR. DIM SUM",
+      "keyword": "dim sum", "city": "Tukwila", "fullKeyword": "Best dim sum in Tukwila",
+      "mapPackRank": null, "organicRank": null, "winner": "MR. DIM SUM",
       "competitors": [
         { "name": "MR. DIM SUM", "rating": 4.1, "mapRank": 1, "organicRank": null },
         { "name": "Din Tai Fung 鼎泰豐", "rating": 4.6, "mapRank": 2, "organicRank": null },
         { "name": "Dim Sum House", "rating": 4.4, "mapRank": 3, "organicRank": null }
       ],
       "organicResults": [
-        { "site": "www.yelp.com", "title": "BEST Dim Sum in Tukwila, WA" },
-        { "site": "www.tripadvisor.com", "title": "Best Dim Sum in Tukwila" }
+        { "site": "www.yelp.com", "title": "THE BEST 10 DIM SUM RESTAURANTS in TUKWILA, WA" },
+        { "site": "www.tripadvisor.com", "title": "THE BEST Dim Sum in Tukwila (Updated February 2026)" },
+        { "site": "eat-mds.com", "title": "Mr Dim Sum" },
+        { "site": "www.reddit.com", "title": "Best dim sum in the greater Seattle area?" },
+        { "site": "www.seattleschild.com", "title": "The best dim sum for families in the Seattle area" },
+        { "site": "www.yelp.com", "title": "MR. DIM SUM - 973 Southcenter Mall, Tukwila, Washington" },
+        { "site": "seattle.eater.com", "title": "The Best Dim Sum in the Seattle Area" },
+        { "site": "dtf.com", "title": "Bellevue Restaurant" }
       ]
     },
     {
-      "keyword": "dim sum",
-      "city": "SeaTac",
-      "fullKeyword": "best dim sum in SeaTac",
-      "mapPackRank": null,
-      "organicRank": null,
-      "winner": "Din Tai Fung 鼎泰豐",
+      "keyword": "dim sum", "city": "SeaTac", "fullKeyword": "Best dim sum in SeaTac",
+      "mapPackRank": null, "organicRank": null, "winner": "Din Tai Fung 鼎泰豐",
       "competitors": [
         { "name": "Din Tai Fung 鼎泰豐", "rating": 4.6, "mapRank": 1, "organicRank": null },
         { "name": "MR. DIM SUM", "rating": 4.1, "mapRank": 2, "organicRank": null },
         { "name": "Jade Garden Restaurant", "rating": 4.3, "mapRank": 3, "organicRank": null }
       ],
       "organicResults": [
-        { "site": "www.yelp.com", "title": "BEST Dim Sum Near SeaTac, WA" },
-        { "site": "dtf.com", "title": "Din Tai Fung Locations" }
+        { "site": "www.yelp.com", "title": "The Best 10 Dim Sum Restaurants near SeaTac/Airport ..." },
+        { "site": "seattle.eater.com", "title": "The Best Dim Sum in the Seattle Area" },
+        { "site": "www.reddit.com", "title": "Best dim sum in the greater Seattle area?" },
+        { "site": "www.seattleschild.com", "title": "The best dim sum for families in the Seattle area" },
+        { "site": "www.tripadvisor.com", "title": "THE BEST Dim Sum in Seattle (Updated February 2026)" },
+        { "site": "www.yelp.com", "title": "MR. DIM SUM - 973 Southcenter Mall, Tukwila, Washington" },
+        { "site": "www.facebook.com", "title": "I am looking for a real Chinese restaurant that has dim sum ..." },
+        { "site": "www.theinfatuation.com", "title": "The Best Dim Sum In Seattle" }
       ]
     },
     {
-      "keyword": "soup",
-      "city": "Renton",
-      "fullKeyword": "best soup in Renton",
-      "mapPackRank": null,
-      "organicRank": null,
-      "winner": "PHO BOX",
+      "keyword": "soup", "city": "Renton", "fullKeyword": "Best soup in Renton",
+      "mapPackRank": null, "organicRank": null, "winner": "PHO BOX",
       "competitors": [
         { "name": "PHO BOX", "rating": 4.7, "mapRank": 1, "organicRank": null },
         { "name": "The Lemongrass", "rating": 4.3, "mapRank": 2, "organicRank": null },
         { "name": "Renton Bistro", "rating": 4.2, "mapRank": 3, "organicRank": null }
       ],
       "organicResults": [
-        { "site": "www.yelp.com", "title": "BEST Soup in Renton, WA" },
-        { "site": "www.tripadvisor.com", "title": "Best Soup Restaurants in Renton" }
+        { "site": "www.tripadvisor.com", "title": "THE BEST Soup in Renton (Updated 2025)" },
+        { "site": "www.yelp.com", "title": "TOP 10 BEST Soup in Renton, WA - Updated 2026" },
+        { "site": "www.grubhub.com", "title": "15 Best Soup Delivery Restaurants in Renton" },
+        { "site": "www.yelp.com", "title": "THE BEST 10 SOUP SPOTS in RENTON, WA" },
+        { "site": "www.reddit.com", "title": "Where is the best soup in Seattle?" },
+        { "site": "www.emeraldpalate.com", "title": "21 Best Soup in Seattle with Soul-Satisfying Comfort" },
+        { "site": "www.ubereats.com", "title": "THE 10 BEST SOUP DELIVERY in Seattle 2025" },
+        { "site": "www.reddit.com", "title": "Favorite takeout soup? : r/eastside" },
+        { "site": "www.doordash.com", "title": "Food delivery in Renton, WA" }
       ]
     },
     {
-      "keyword": "soup",
-      "city": "Tukwila",
-      "fullKeyword": "best soup in Tukwila",
-      "mapPackRank": null,
-      "organicRank": null,
-      "winner": "Juba Restaurant & Café",
+      "keyword": "soup", "city": "Tukwila", "fullKeyword": "Best soup in Tukwila",
+      "mapPackRank": null, "organicRank": null, "winner": "Juba Restaurant & Café",
       "competitors": [
         { "name": "Juba Restaurant & Café", "rating": 4.5, "mapRank": 1, "organicRank": null },
         { "name": "Seatango/Spice Bridge", "rating": 4.7, "mapRank": 2, "organicRank": null },
         { "name": "Panera Bread", "rating": 4.0, "mapRank": 3, "organicRank": null }
       ],
       "organicResults": [
-        { "site": "www.yelp.com", "title": "BEST Soup in Tukwila, WA" },
-        { "site": "www.tripadvisor.com", "title": "Best Soup Restaurants in Tukwila" }
+        { "site": "www.yelp.com", "title": "TOP 10 BEST Soup in Tukwila, WA - Updated 2026" },
+        { "site": "www.tripadvisor.com", "title": "THE BEST Soup in Tukwila (Updated 2026)" },
+        { "site": "www.emeraldpalate.com", "title": "21 Best Soup in Seattle with Soul-Satisfying Comfort" },
+        { "site": "www.reddit.com", "title": "Where is the best soup in Seattle?" },
+        { "site": "www.ubereats.com", "title": "THE 10 BEST SOUP DELIVERY in Seattle 2026" },
+        { "site": "seattle.eater.com", "title": "The Best Soups and Stews at Seattle Restaurants" },
+        { "site": "www.doordash.com", "title": "Food delivery in Tukwila, WA" },
+        { "site": "www.doughzonedumplinghouse.com", "title": "Dough Zone Dumpling House | Washington, Oregon ..." }
       ]
     },
     {
-      "keyword": "soup",
-      "city": "SeaTac",
-      "fullKeyword": "best soup in SeaTac",
-      "mapPackRank": null,
-      "organicRank": null,
-      "winner": "Aunt Becky's Deli",
+      "keyword": "soup", "city": "SeaTac", "fullKeyword": "Best soup in SeaTac",
+      "mapPackRank": null, "organicRank": null, "winner": "Aunt Becky's Deli",
       "competitors": [
         { "name": "Aunt Becky's Deli", "rating": 4.4, "mapRank": 1, "organicRank": null },
         { "name": "P. F. Chang's - SEA", "rating": 4.8, "mapRank": 2, "organicRank": null },
         { "name": "Floret - By Cafe Flora", "rating": 4.3, "mapRank": 3, "organicRank": null }
       ],
       "organicResults": [
-        { "site": "www.yelp.com", "title": "BEST Soup Near SeaTac, WA" },
-        { "site": "www.tripadvisor.com", "title": "Best Soup in SeaTac Area" }
+        { "site": "www.yelp.com", "title": "THE BEST 10 SOUP SPOTS in SEATAC, WA - Updated 2026" },
+        { "site": "www.emeraldpalate.com", "title": "21 Best Soup in Seattle with Soul-Satisfying Comfort" },
+        { "site": "www.reddit.com", "title": "Where is the best soup in Seattle?" },
+        { "site": "www.tripadvisor.com", "title": "THE BEST Soup in Renton (Updated 2026)" },
+        { "site": "seattle.eater.com", "title": "The Best Soups and Stews at Seattle Restaurants" },
+        { "site": "www.ubereats.com", "title": "THE 10 BEST SOUP DELIVERY in Seattle 2026" },
+        { "site": "www.tripadvisor.com", "title": "THE BEST Soup in SeaTac (Updated 2026)" },
+        { "site": "www.doughzonedumplinghouse.com", "title": "Dough Zone Dumpling House | Washington, Oregon ..." },
+        { "site": "www.reddit.com", "title": "Favorite takeout soup? : r/eastside" }
       ]
     }
   ],
   "sections": [
     {
-      "id": "search-results",
-      "number": 1,
-      "title": "Search Results",
+      "id": "search-results", "number": 1, "title": "Search Results",
       "subtitle": "Get your website to the top of Google",
-      "score": 28,
-      "maxScore": 40,
-      "scoreColor": "#F89412",
+      "score": 28, "maxScore": 40, "scoreColor": "#F89412",
+      "infoBox": { "title": "What's SEO?", "text": "It means improving your website so search engines like Google can find it, rank it higher, and help more people see it." },
       "categories": [
-        {
-          "name": "Domain",
-          "items": [
-            {
-              "title": "Using custom domain",
-              "status": "pass",
-              "findings": "feastbuffetrenton.com",
-              "expected": "A custom domain (not a subdomain of a third-party service)"
-            },
-            {
-              "title": "Only one domain",
-              "status": "pass",
-              "findings": "0.0% of traffic is routed away from your brand",
-              "expected": "All traffic stays on your primary domain"
-            }
-          ]
-        },
-        {
-          "name": "H1",
-          "items": [
-            {
-              "title": "H1 tag exists",
-              "status": "warning",
-              "description": "The main heading tag on your homepage",
-              "expected": "An H1 tag on the homepage"
-            },
-            {
-              "title": "H1 includes service area",
-              "status": "warning",
-              "description": "Your heading should mention your location",
-              "expected": "H1 contains city or area name"
-            },
-            {
-              "title": "H1 includes relevant keywords",
-              "status": "warning",
-              "description": "Your heading should include key terms",
-              "expected": "H1 contains relevant food/cuisine keywords"
-            }
-          ]
-        },
-        {
-          "name": "Metadata",
-          "items": [
-            {
-              "title": "Description length",
-              "status": "warning",
-              "description": "Meta description should be 120-160 characters",
-              "expected": "120-160 character meta description"
-            },
-            {
-              "title": "Description includes service area",
-              "status": "warning",
-              "description": "Meta description should mention your location",
-              "expected": "Location mentioned in meta description"
-            },
-            {
-              "title": "Description includes keywords",
-              "status": "warning",
-              "description": "Meta description should include relevant keywords",
-              "expected": "Keywords in meta description"
-            }
-          ]
-        },
-        {
-          "name": "Content",
-          "items": [
-            {
-              "title": "Images have alt tags",
-              "status": "warning",
-              "description": "All images should have descriptive alt text",
-              "expected": "Alt tags on all images"
-            }
-          ]
-        },
-        {
-          "name": "Appearance",
-          "items": [
-            {
-              "title": "Open Graph title",
-              "status": "warning",
-              "description": "OG title for social media sharing",
-              "expected": "Open Graph title tag"
-            },
-            {
-              "title": "Open Graph description",
-              "status": "warning",
-              "description": "OG description for social media sharing",
-              "expected": "Open Graph description tag"
-            },
-            {
-              "title": "Open Graph image",
-              "status": "warning",
-              "description": "OG image for social media sharing",
-              "expected": "Open Graph image tag"
-            },
-            {
-              "title": "Twitter card",
-              "status": "warning",
-              "description": "Twitter card meta tags",
-              "expected": "Twitter card meta tags"
-            },
-            {
-              "title": "Page title matches Google Business Profile",
-              "status": "warning",
-              "description": "Your page title should match your GBP name",
-              "expected": "Matching page title and GBP name"
-            },
-            {
-              "title": "Page title includes service area",
-              "status": "warning",
-              "description": "Page title should include your city",
-              "expected": "City name in page title"
-            },
-            {
-              "title": "Page title includes keyword",
-              "status": "warning",
-              "description": "Page title should include a relevant keyword",
-              "expected": "Keyword in page title"
-            }
-          ]
-        }
+        { "name": "Domain", "items": [
+          { "title": "Using custom domain", "description": "The business has and controls its own domain name instead of linking to a third-party website", "status": "pass", "findings": "http://feastbuffetrenton.com", "expected": "doordash.com, ubereats.com, toasttab.com, clover.com, chownow.com, grubhub.com, squareup.com, square.site, seamless.com, order.online, yammii.com, ezcater.com, order.thanx.com, spotapps.co, dine.online, menus.fyi, mealkeyway.com, heartland.us, facebook.com, instagram.com" },
+          { "title": "Only one domain", "description": "Fracturing your web presence across multiple domains hurts Google rankings", "status": "pass", "findings": "0.0% of traffic is routed away from your brand", "expected": "Nothing found." }
+        ]},
+        { "name": "Headline (H1)", "items": [
+          { "title": "Includes the service area", "description": "Mentioning your service area in the headline helps with local SEO.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Includes relevant keywords", "description": "Including relevant keywords in your headline improves search visibility.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Exists", "description": "An H1 tag is crucial for SEO and helps structure your content hierarchy.", "status": "warning", "findings": "Working on finding this data..." }
+        ]},
+        { "name": "Metadata", "items": [
+          { "title": "Images have \"alt tags\"", "description": "Google looks at alt tags to understand what images are on your site.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Description length", "description": "A sufficiently long meta description provides more context in search results.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Description includes the service area", "description": "Mentioning your service area in the meta description aids local SEO efforts.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Description includes relevant keywords", "description": "Including relevant keywords in your meta description can improve click-through rates from search results.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Open Graph title", "description": "Open Graph title metadata (og:title) is essential for proper social sharing on Facebook, WhatsApp, LinkedIn, and other platforms.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Open Graph description", "description": "Open Graph description metadata (og:description) provides a preview description when your website is shared on social platforms.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Open Graph image", "description": "Open Graph image metadata (og:image) is critical for visual social sharing previews. Posts with images get significantly more engagement.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Twitter card", "description": "Twitter card metadata enables rich previews when your website is shared on Twitter/X, increasing engagement and click-through rates.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Page title matches Google Business Profile", "description": "Matching your page title with your Google listing provides consistency across platforms.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Page title includes the service area", "description": "Including your service area in the page title helps with local search visibility.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Page title includes a relevant keyword", "description": "Having a relevant keyword in your page title can improve search engine rankings.", "status": "warning", "findings": "Working on finding this data..." }
+        ]}
       ]
     },
     {
-      "id": "website-experience",
-      "number": 2,
-      "title": "Website Experience",
+      "id": "website-experience", "number": 2, "title": "Guest Experience",
       "subtitle": "Improve the experience on your website",
-      "score": 9,
-      "maxScore": 40,
-      "scoreColor": "#D65353",
+      "score": 9, "maxScore": 40, "scoreColor": "#D65353",
+      "infoBox": { "title": "Your site", "text": "Your site content and experience drive conversion and sales" },
       "categories": [
-        {
-          "name": "Ordering",
-          "items": [
-            {
-              "title": "No off-site ordering",
-              "status": "warning",
-              "description": "Customers should order directly from your site",
-              "expected": "No third-party ordering redirects"
-            },
-            {
-              "title": "Effective CTA for online ordering",
-              "status": "warning",
-              "description": "Clear call-to-action for placing orders",
-              "expected": "Prominent ordering button"
-            }
-          ]
-        },
-        {
-          "name": "Content",
-          "items": [
-            {
-              "title": "Sufficient text content",
-              "status": "warning",
-              "description": "Your website should have enough descriptive text",
-              "expected": "At least 300 words of content"
-            },
-            {
-              "title": "Compelling About Us section",
-              "status": "fail",
-              "description": "Tell your restaurant's story to connect with guests",
-              "findings": "Website is missing a compelling story",
-              "expected": "An engaging About Us section with your story"
-            },
-            {
-              "title": "Page content includes keywords",
-              "status": "warning",
-              "description": "Your content should include relevant search terms",
-              "expected": "Keywords naturally integrated into content"
-            },
-            {
-              "title": "FAQ section",
-              "status": "warning",
-              "description": "Common questions answered on your website",
-              "expected": "FAQ section with relevant questions"
-            },
-            {
-              "title": "Explain benefits of direct ordering",
-              "status": "warning",
-              "description": "Tell guests why ordering direct is better",
-              "expected": "Section explaining direct ordering benefits"
-            }
-          ]
-        },
-        {
-          "name": "Contact & Info",
-          "items": [
-            {
-              "title": "Phone number",
-              "status": "warning",
-              "description": "Phone number should be easy to find",
-              "expected": "Visible phone number on website"
-            },
-            {
-              "title": "Operating hours",
-              "status": "pass",
-              "description": "Business hours displayed on your website",
-              "findings": "Hours are listed on the website"
-            },
-            {
-              "title": "Address on website",
-              "status": "pass",
-              "description": "Physical address displayed on your website",
-              "findings": "Address is listed on the website"
-            }
-          ]
-        },
-        {
-          "name": "Design & Trust",
-          "items": [
-            {
-              "title": "Favicon",
-              "status": "warning",
-              "description": "Small icon shown in browser tab",
-              "expected": "Custom favicon"
-            },
-            {
-              "title": "Social media links on website",
-              "status": "warning",
-              "description": "Links to your social media profiles",
-              "expected": "Social media links in header or footer"
-            },
-            {
-              "title": "Readable text",
-              "status": "pass",
-              "description": "Text should be easy to read on all devices",
-              "findings": "Text is readable"
-            },
-            {
-              "title": "Customer reviews",
-              "status": "pass",
-              "description": "Display customer testimonials on your website",
-              "findings": "3 reviews displayed"
-            }
-          ]
-        }
+        { "name": "Content", "items": [
+          { "title": "No off-site ordering", "description": "Off-site ordering links can lead to a disjointed user experience and lost revenue.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Effective CTA for online ordering", "description": "A clear call-to-action for online ordering can significantly increase conversions.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Sufficient text content", "description": "Content about the restaurant helps Google understand your business.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Phone number", "description": "Listing a phone number increases the number of ways people can place orders.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Favicon", "description": "Including a favicon on your site improves the legitimacy of your site.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Social media links on website", "description": "Social media links extend your reach and provide additional ways for customers to engage.", "status": "warning", "findings": "Working on finding this data..." },
+          { "title": "Operating hours", "description": "Including operating hours on your website helps guests plan their visits.", "status": "pass", "findings": "Hours are listed on the website" },
+          { "title": "Address on website", "description": "Listing your business address on your website helps customers locate and visit your establishment.", "status": "pass", "findings": "Address is listed on the website" },
+          { "title": "Page content includes relevant keywords", "description": "Including relevant keywords in your website content helps search engines understand what your business offers.", "status": "warning", "findings": "Working on finding this data..." }
+        ]},
+        { "name": "Appearance", "items": [
+          { "title": "Compelling About Us section", "description": "A compelling story helps create an emotional connection with your customers.", "status": "fail", "findings": "Website is missing a compelling story" },
+          { "title": "Readable text", "status": "pass", "findings": "Text is readable" },
+          { "title": "3 customer reviews", "description": "A good number of reviews builds trust and credibility with potential customers.", "status": "fail", "expected": "3 reviews" },
+          { "title": "FAQ section", "description": "Including an FAQ section on your website can provide more information for search engines to understand your business.", "status": "fail", "findings": "No FAQ section found" },
+          { "title": "Explain benefits of direct ordering", "description": "Guests are more likely to order directly if they understand the benefits.", "status": "fail", "findings": "No direct ordering benefits section found" }
+        ]}
       ]
     },
     {
-      "id": "local-listings",
-      "number": 3,
-      "title": "Local Listings",
+      "id": "local-listings", "number": 3, "title": "Local Listings",
       "subtitle": "Make your restaurant easy to find",
-      "score": 16,
-      "maxScore": 20,
-      "scoreColor": "#F89412",
+      "score": 16, "maxScore": 20, "scoreColor": "#F89412",
       "categories": [
-        {
-          "name": "Google Business Profile",
-          "items": [
-            {
-              "title": "First-party website",
-              "status": "pass",
-              "findings": "feastbuffetrenton.com",
-              "expected": "Your own domain linked in GBP"
-            },
-            {
-              "title": "Description",
-              "status": "pass",
-              "findings": "Profile has a description",
-              "expected": "A complete business description"
-            },
-            {
-              "title": "Business hours",
-              "status": "pass",
-              "findings": "Hours are set",
-              "expected": "Business hours listed"
-            },
-            {
-              "title": "Phone number",
-              "status": "pass",
-              "findings": "(425) 235-1888",
-              "expected": "Phone number listed"
-            },
-            {
-              "title": "Price range",
-              "status": "pass",
-              "findings": "$$",
-              "expected": "Price range indicated"
-            },
-            {
-              "title": "Service options",
-              "status": "pass",
-              "findings": "Service options configured",
-              "expected": "Dine-in, takeout, delivery options set"
-            },
-            {
-              "title": "Social media links",
-              "status": "pass",
-              "findings": "Social links present",
-              "expected": "Social media profiles linked"
-            },
-            {
-              "title": "Description includes keywords",
-              "status": "pass",
-              "findings": "Keywords found in description",
-              "expected": "Relevant keywords in business description"
-            },
-            {
-              "title": "Categories match keywords",
-              "status": "pass",
-              "findings": "Categories align with search keywords",
-              "expected": "GBP categories match target keywords"
-            },
-            {
-              "title": "Quality reviews",
-              "status": "pass",
-              "findings": "5,807 reviews with 4.1 rating",
-              "expected": "Sufficient reviews with good rating"
-            }
-          ]
-        }
+        { "name": "Profile content", "items": [
+          { "title": "First-party website", "status": "pass", "findings": "feastbuffetrenton.com" },
+          { "title": "Description", "status": "pass", "findings": "Spacious, contemporary restaurant offering all-you-can-eat Asian fare from dim sum to sushi." },
+          { "title": "Business hours", "description": "Displaying business hours helps customers plan their visits and reduces inquiries.", "status": "pass", "findings": "Hours are set" },
+          { "title": "Phone number", "status": "pass", "findings": "(425) 235-1888" },
+          { "title": "Price range", "status": "pass", "findings": "$$" },
+          { "title": "Service options", "description": "Listing service options helps customers understand how they can interact with your business.", "status": "fail" },
+          { "title": "Social media links", "description": "Social media links extend your reach and provide additional ways for customers to engage.", "status": "pass", "findings": "Social links present" },
+          { "title": "Description includes relevant keywords", "status": "pass", "findings": "asian food, dim sum, soup, baked chicken, banh mi, basmati rice, beef chow mein, beef satay, beef stir fry, bibimbap, bubble tea, asian" },
+          { "title": "Categories match keywords", "status": "pass", "findings": "Buffet restaurant, Asian restaurant, Chinese restaurant, Restaurant", "expected": "asian food, dim sum, soup, baked chicken, banh mi, basmati rice, beef chow mein, beef satay, beef stir fry, bibimbap, bubble tea, asian" }
+        ]},
+        { "name": "User-submitted content", "items": [
+          { "title": "Quality reviews", "status": "pass", "findings": "5,807 reviews" }
+        ]}
       ]
     }
   ],
+  "auditSummary": { "totalReviewed": 40, "needsWork": 7, "subtitle": "See what's wrong and how to improve" },
   "googleProfile": {
-    "name": "Feast Buffet",
-    "rating": 4.1,
-    "reviewCount": 5807,
+    "name": "Feast Buffet", "rating": 4.1, "reviewCount": 5807,
     "description": "Spacious, contemporary restaurant offering all-you-can-eat Asian fare from dim sum to sushi.",
-    "phone": "(425) 235-1888",
-    "website": "feastbuffetrenton.com",
-    "hasHours": true,
-    "hasPhone": true,
-    "hasPriceRange": true,
+    "phone": "(425) 235-1888", "website": "feastbuffetrenton.com",
+    "hasHours": true, "hasPhone": true, "hasPriceRange": true,
     "categories": ["Buffet restaurant", "Asian restaurant", "Chinese restaurant", "Restaurant"]
   },
   "caseStudies": [
-    {
-      "name": "Cyclo Noodles",
-      "initialScore": 37,
-      "finalScore": 92,
-      "result": "Grew direct online sales by 7X",
-      "desktopImage": "cyclonoodles-desktop.png",
-      "tabletImage": "cyclonoodles-tablet.png"
-    },
-    {
-      "name": "Talkin' Tacos",
-      "initialScore": 46,
-      "finalScore": 95,
-      "result": "$120,000/month in sales",
-      "desktopImage": "talkintacos-desktop.png",
-      "tabletImage": "talkintacos-tablet.png"
-    },
-    {
-      "name": "Saffron",
-      "initialScore": 43,
-      "finalScore": 96,
-      "result": "$171,400/month online sales",
-      "desktopImage": "saffron-desktop.png",
-      "tabletImage": "saffron-tablet.png"
-    }
+    { "name": "Cyclo Noodles", "initialScore": 37, "finalScore": 92, "result": "Grew direct online sales by 7X", "desktopImage": "cyclonoodles-desktop.png", "tabletImage": "cyclonoodles-tablet.png" },
+    { "name": "Talkin' Tacos", "initialScore": 46, "finalScore": 95, "result": "$120,000/month in sales", "desktopImage": "talkintacos-desktop.png", "tabletImage": "talkintacos-tablet.png" },
+    { "name": "Saffron", "initialScore": 43, "finalScore": 96, "result": "$171,400/month online sales", "desktopImage": "saffron-desktop.png", "tabletImage": "saffron-tablet.png" }
   ],
-  "ctaText": "Fix in 35 seconds"
+  "ctaText": "Fix in 35 seconds",
+  "ctaBanner": { "label": "Owner AI Website", "title": "Improve your website with AI in 35 seconds.", "buttonText": "Improve your website" }
 }

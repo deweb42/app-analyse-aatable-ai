@@ -8,9 +8,23 @@ export interface HealthReport {
   competitorRankings: OverallCompetitor[]
   keywordCards: KeywordCard[]
   sections: ReportSection[]
+  auditSummary: AuditSummary
   googleProfile: GoogleBusinessProfile
   caseStudies: CaseStudy[]
   ctaText: string
+  ctaBanner: CTABanner
+}
+
+export interface AuditSummary {
+  totalReviewed: number
+  needsWork: number
+  subtitle: string
+}
+
+export interface CTABanner {
+  label: string
+  title: string
+  buttonText: string
 }
 
 export interface OverallCompetitor {
@@ -76,7 +90,13 @@ export interface ReportSection {
   score: number
   maxScore: number
   scoreColor: string
+  infoBox?: InfoBox
   categories: CheckCategory[]
+}
+
+export interface InfoBox {
+  title: string
+  text: string
 }
 
 export interface CheckCategory {
