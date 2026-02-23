@@ -1,1 +1,10 @@
 @import "tailwindcss";
+@import "./styles/fonts.css";
+@import "./styles/animations.css";
+
+@theme {
+  --font-suisse: 'SuisseIntl', -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-score-poor: #D65353;
+  --color-score-fair: #F89412;
+  --color-score-good: #57AA30;
+}
