@@ -1,4 +1,5 @@
-import reportData from './data/feast-buffet.json'
+import { useEffect, useState } from 'react'
+import staticReport from './data/feast-buffet.json'
 import type { HealthReport } from './types/report'
 import { ReportLayout } from './components/layout/ReportLayout'
 import { Sidebar } from './components/layout/Sidebar'
@@ -10,7 +11,37 @@ import { LocalListingsSection } from './components/local-listings/LocalListingsS
 import { AIWebsiteSection } from './components/ai-website/AIWebsiteSection'
 
 export default function App() {
-  const report = reportData as unknown as HealthReport
+  const [report, setReport] = useState<HealthReport | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  const slug = window.location.pathname.split('/report/')[1] || 'feast-buffet'
+
+  useEffect(() => {
+    fetch(`/api/reports/${slug}`)
+      .then(r => {
+        if (!r.ok) throw new Error('API unavailable')
+        return r.json()
+      })
+      .then(setReport)
+      .catch(() => {
+        // API not running — fallback to static JSON
+        setReport(staticReport as unknown as HealthReport)
+      })
+      .finally(() => setLoading(false))
+  }, [slug])
+
+  if (loading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="mx-auto h-8 w-8 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600" />
+          <p className="mt-4 text-gray-600">Loading report...</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (!report) return null
 
   const searchResults = report.sections.find((s) => s.id === 'search-results')
   const websiteExperience = report.sections.find((s) => s.id === 'website-experience')
