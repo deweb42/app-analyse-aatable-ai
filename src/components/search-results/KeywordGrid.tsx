@@ -7,7 +7,7 @@ interface KeywordGridProps {
 
 export function KeywordGrid({ cards }: KeywordGridProps) {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white overflow-hidden">
+    <div className="rounded-2xl border border-gray-200/60 bg-white shadow-sm overflow-hidden divide-y divide-gray-100">
       {cards.map((card) => (
         <KeywordCard key={card.fullKeyword} card={card} />
       ))}

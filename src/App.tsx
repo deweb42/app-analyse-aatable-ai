@@ -20,11 +20,9 @@ export default function App() {
     <ReportLayout>
       <Sidebar report={report} />
       <MainContent>
-        <div className="space-y-6 px-4 pb-20 lg:px-0 lg:pb-4">
-          {/* Hero cards: Revenue Loss + Competitors + Why Fix */}
+        <div className="space-y-4 px-4 pb-24 pt-4 lg:px-0 lg:pb-4 lg:pt-0">
           <HeroCards report={report} />
 
-          {/* Search Results section with keywords + audit summary */}
           {searchResults && (
             <SearchResultsSection
               section={searchResults}
@@ -33,12 +31,10 @@ export default function App() {
             />
           )}
 
-          {/* Section 2: Guest Experience */}
           {websiteExperience && (
             <WebsiteExperienceSection section={websiteExperience} />
           )}
 
-          {/* Section 3: Local Listings */}
           {localListings && (
             <LocalListingsSection
               section={localListings}
@@ -46,7 +42,6 @@ export default function App() {
             />
           )}
 
-          {/* CTA Banner */}
           <AIWebsiteSection ctaBanner={report.ctaBanner} />
         </div>
       </MainContent>

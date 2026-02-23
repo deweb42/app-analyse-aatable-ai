@@ -10,7 +10,7 @@ interface LocalListingsSectionProps {
 
 export function LocalListingsSection({ section, googleProfile }: LocalListingsSectionProps) {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white overflow-hidden">
+    <div className="rounded-2xl border border-gray-200/60 bg-white shadow-sm overflow-hidden">
       <SectionHeader
         number={section.number}
         title={section.title}
@@ -20,7 +20,7 @@ export function LocalListingsSection({ section, googleProfile }: LocalListingsSe
         scoreColor={section.scoreColor}
       />
 
-      <div className="p-4">
+      <div className="p-5">
         <GoogleProfileCard profile={googleProfile} />
       </div>
 

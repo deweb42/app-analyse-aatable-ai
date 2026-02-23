@@ -12,29 +12,29 @@ export function ScoreCard({ report }: ScoreCardProps) {
   const ratingColor = getRatingColor(report.overallScore.rating)
 
   return (
-    <div className="relative h-full rounded-lg border-2 border-[#F4C9C1] bg-gradient-to-t from-[#F4C9C1] to-[#F9E5E1] p-6 flex flex-col overflow-hidden">
-      {/* Background pattern */}
+    <div className="relative h-full rounded-2xl border border-[#EDBEAF] bg-gradient-to-b from-[#FDF4F1] via-[#F9E5E1] to-[#F2C4BA] p-5 flex flex-col overflow-hidden">
+      {/* Subtle dot pattern */}
       <div
-        className="absolute inset-0 opacity-5 pointer-events-none"
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)',
-          backgroundSize: '16px 16px',
+          backgroundSize: '20px 20px',
         }}
       />
 
       <div className="relative flex flex-col items-center flex-1">
         {/* Restaurant info */}
-        <div className="text-center mb-6">
-          <h1 className="text-lg font-semibold text-gray-900">
+        <div className="text-center mb-4">
+          <h1 className="text-base font-semibold text-gray-900 tracking-tight">
             {report.restaurant.name}
           </h1>
-          <p className="text-sm text-gray-600">
+          <p className="text-xs text-gray-500 mt-0.5">
             {report.restaurant.city}, {report.restaurant.state}
           </p>
         </div>
 
         {/* Main score ring */}
-        <div className="mb-4">
+        <div className="mb-2">
           <RadialProgress
             size="lg"
             score={report.overallScore.score}
@@ -46,25 +46,25 @@ export function ScoreCard({ report }: ScoreCardProps) {
         </div>
 
         {/* Rating label */}
-        <div className="text-center mb-6">
-          <p className="text-sm text-gray-600">Online health grade</p>
-          <p className="text-lg font-semibold" style={{ color: ratingColor }}>
+        <div className="text-center mb-5">
+          <p className="text-[11px] text-gray-400 tracking-widest uppercase font-medium">Online health grade</p>
+          <p className="text-base font-bold mt-0.5" style={{ color: ratingColor }}>
             {report.overallScore.rating}
           </p>
         </div>
 
         {/* Dashed divider */}
         <div
-          className="w-full h-px mb-6"
+          className="w-full h-px mb-4"
           style={{
             background:
-              'repeating-linear-gradient(90deg, #090a0b, #090a0b 7px, transparent 0, transparent 10px)',
-            opacity: 0.2,
+              'repeating-linear-gradient(90deg, #090a0b 0, #090a0b 6px, transparent 6px, transparent 11px)',
+            opacity: 0.12,
           }}
         />
 
         {/* Sub-scores */}
-        <div className="w-full space-y-3 mb-6">
+        <div className="w-full space-y-1 mb-5">
           {report.subScores.map((sub) => (
             <SubScoreRow
               key={sub.name}
@@ -79,7 +79,7 @@ export function ScoreCard({ report }: ScoreCardProps) {
 
         {/* CTA */}
         <div className="mt-auto w-full">
-          <CTAButton text={report.ctaText} className="w-full justify-center" />
+          <CTAButton text={report.ctaText} className="w-full justify-center py-2.5 rounded-xl" />
         </div>
       </div>
     </div>

@@ -10,9 +10,9 @@ export function CTAButton({ text, onClick, className = '' }: CTAButtonProps) {
   return (
     <button
       onClick={onClick}
-      className={`inline-flex items-center gap-2 rounded-md bg-black text-white px-3 py-2 text-sm font-medium hover:bg-gray-800 transition-colors ${className}`}
+      className={`inline-flex items-center gap-2 rounded-lg bg-gray-900 text-white px-4 py-2 text-sm font-medium hover:bg-black active:scale-[0.98] transition-all duration-150 shadow-sm ${className}`}
     >
-      <Sparkles className="w-4 h-4" />
+      <Sparkles className="w-3.5 h-3.5" />
       {text}
     </button>
   )

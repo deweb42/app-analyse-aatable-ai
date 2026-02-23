@@ -10,32 +10,32 @@ interface RevenueLossCardProps {
 
 export function RevenueLossCard({ revenueLoss, restaurant }: RevenueLossCardProps) {
   return (
-    <div className="flex flex-col justify-between rounded-xl bg-white border border-gray-200 p-5 h-full">
-      <div>
-        <h2 className="text-xl font-semibold text-gray-900 leading-tight">
+    <div className="flex flex-col rounded-2xl bg-white border border-gray-200/60 shadow-sm overflow-hidden h-full">
+      <div className="flex-1 p-5">
+        <h2 className="text-lg font-bold text-gray-900 leading-snug tracking-tight">
           You could be losing ~{formatCurrency(revenueLoss.amount)}/month due to{' '}
-          {revenueLoss.problems.length} problem
+          {revenueLoss.problems.length} problem{revenueLoss.problems.length > 1 ? 's' : ''}
         </h2>
+
+        <div className="mt-5 space-y-2">
+          {revenueLoss.problems.map((problem) => (
+            <div key={problem} className="flex items-start gap-2.5 rounded-lg bg-amber-50/80 border border-amber-100/60 px-3 py-2.5">
+              <AlertTriangle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+              <span className="text-[13px] text-amber-800 leading-snug">{problem}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div className="mt-6 space-y-3">
-        {revenueLoss.problems.map((problem) => (
-          <div key={problem} className="flex items-start gap-2">
-            <AlertTriangle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
-            <span className="text-sm text-gray-600 truncate">{problem}</span>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-6 flex items-center gap-3">
+      <div className="border-t border-gray-100 px-5 py-3 flex items-center gap-3">
         <img
           src={restaurant.imageUrl || feastBuffetImg}
           alt={restaurant.name}
-          className="w-10 h-10 rounded-full object-cover"
+          className="w-8 h-8 rounded-full object-cover ring-2 ring-gray-100"
         />
         <div className="min-w-0">
-          <p className="text-sm font-semibold text-gray-900 truncate">{restaurant.name}</p>
-          <p className="text-xs text-gray-500 truncate">{restaurant.website}</p>
+          <p className="text-[13px] font-semibold text-gray-900 truncate">{restaurant.name}</p>
+          <p className="text-[11px] text-gray-400 truncate">{restaurant.website}</p>
         </div>
       </div>
     </div>

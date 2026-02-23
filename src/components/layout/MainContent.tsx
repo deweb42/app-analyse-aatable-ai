@@ -6,7 +6,7 @@ interface MainContentProps {
 
 export function MainContent({ children }: MainContentProps) {
   return (
-    <main className="relative min-h-full w-full grow-[999] basis-0 lg:mx-auto lg:max-w-[1080px] lg:min-w-0 lg:py-2 lg:pr-2">
+    <main className="relative min-h-full w-full grow-[999] basis-0 lg:mx-auto lg:max-w-[960px] lg:min-w-0 lg:py-3 lg:px-4">
       {children}
     </main>
   )

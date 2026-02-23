@@ -20,7 +20,7 @@ export function WebsiteExperienceSection({ section }: WebsiteExperienceSectionPr
   const needsWork = failCount + warningCount
 
   return (
-    <div className="rounded-xl border border-gray-200 bg-white overflow-hidden">
+    <div className="rounded-2xl border border-gray-200/60 bg-white shadow-sm overflow-hidden">
       <SectionHeader
         number={section.number}
         title={section.title}
@@ -30,9 +30,10 @@ export function WebsiteExperienceSection({ section }: WebsiteExperienceSectionPr
         scoreColor={section.scoreColor}
       />
       {section.infoBox && <InfoBox infoBox={section.infoBox} />}
-      <div className="px-4 py-3">
-        <p className="text-sm text-gray-600">
-          {totalItems} things reviewed, <span className="text-red-500 font-medium">{needsWork} need work</span>
+      <div className="px-5 py-3 border-b border-gray-100">
+        <p className="text-[13px] text-gray-500">
+          <span className="font-semibold text-gray-700">{totalItems}</span> things reviewed,{' '}
+          <span className="text-red-500 font-semibold">{needsWork} need work</span>
         </p>
       </div>
       <div>

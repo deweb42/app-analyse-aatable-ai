@@ -10,26 +10,26 @@ export function RankBadge({ rank, label, compact = false }: RankBadgeProps) {
   if (compact) {
     return (
       <span
-        className={`inline-flex items-center rounded-sm px-1.5 py-0.5 text-xs font-medium ${
+        className={`inline-flex items-center rounded-md px-1.5 py-0.5 text-[10px] font-semibold tracking-wide ${
           isUnranked
-            ? 'bg-[#FFB4B4] text-gray-800'
-            : 'bg-green-100 text-green-800'
+            ? 'bg-red-100 text-red-600'
+            : 'bg-emerald-100 text-emerald-700'
         }`}
       >
-        {isUnranked ? (label || 'Unranked') : `#${rank}`}
+        {isUnranked ? `${label || 'Unranked'}` : `#${rank}`}
       </span>
     )
   }
 
   return (
     <span
-      className={`inline-flex items-center rounded-sm px-1.5 py-0.5 text-xs font-medium ${
+      className={`inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold ${
         isUnranked
-          ? 'bg-[#FFB4B4] text-gray-800'
-          : 'bg-green-100 text-green-800'
+          ? 'bg-red-100 text-red-600'
+          : 'bg-emerald-100 text-emerald-700'
       }`}
     >
-      {label && <span className="mr-1 text-gray-500">{label}</span>}
+      {label && <span className="mr-1 opacity-60">{label}</span>}
       {isUnranked ? 'Unranked' : `#${rank}`}
     </span>
   )

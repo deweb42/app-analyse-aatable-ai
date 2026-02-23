@@ -14,8 +14,12 @@ export function HeroCards({ report }: HeroCardsProps) {
         revenueLoss={report.revenueLoss}
         restaurant={report.restaurant}
       />
-      <CompetitorRankCard competitors={report.competitorRankings} />
-      <WhyFixCard caseStudy={report.caseStudies[0]} />
+      <CompetitorRankCard
+        competitors={report.competitorRankings}
+        restaurant={report.restaurant}
+        restaurantRating={report.googleProfile.rating}
+      />
+      <WhyFixCard caseStudies={report.caseStudies} />
     </div>
   )
 }

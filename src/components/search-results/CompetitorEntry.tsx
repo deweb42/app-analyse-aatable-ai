@@ -10,12 +10,12 @@ interface CompetitorEntryProps {
 export function CompetitorEntry({ competitor, index }: CompetitorEntryProps) {
   return (
     <div className="flex items-center gap-2 py-1.5">
-      <span className="text-xs text-gray-400 w-4 text-right shrink-0">{index + 1}</span>
-      <img src={cutleryIcon} alt="" className="w-4 h-4 shrink-0 opacity-60" />
-      <span className="text-sm text-gray-800 truncate flex-1">{competitor.name}</span>
+      <span className="text-[11px] text-gray-300 w-3 text-right shrink-0 font-semibold tabular-nums">{index + 1}</span>
+      <img src={cutleryIcon} alt="" className="w-3.5 h-3.5 shrink-0 opacity-40" />
+      <span className="text-[12px] text-gray-700 truncate flex-1">{competitor.name}</span>
       <div className="flex items-center gap-0.5 shrink-0">
-        <img src={starIcon} alt="" className="w-3 h-3" />
-        <span className="text-xs text-gray-600">{competitor.rating}</span>
+        <img src={starIcon} alt="" className="w-2.5 h-2.5" />
+        <span className="text-[11px] text-gray-400 tabular-nums">{competitor.rating}</span>
       </div>
     </div>
   )

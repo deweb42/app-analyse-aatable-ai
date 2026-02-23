@@ -14,23 +14,23 @@ export function SearchResultsSection({ section, keywordCards, auditSummary }: Se
   return (
     <div className="space-y-4">
       {/* Audit summary */}
-      <div>
-        <h2 className="text-xl font-semibold text-gray-900">
+      <div className="bg-white rounded-2xl border border-gray-200/60 shadow-sm px-5 py-4">
+        <h2 className="text-lg font-bold text-gray-900 tracking-tight">
           {auditSummary.totalReviewed} things reviewed,{' '}
           <span className="text-red-500">{auditSummary.needsWork} need work</span>
         </h2>
-        <p className="text-sm text-gray-500 mt-0.5">
+        <p className="text-[13px] text-gray-400 mt-0.5">
           {auditSummary.subtitle}
         </p>
       </div>
 
       {/* Keyword rankings */}
       <div>
-        <div className="mb-3">
-          <h2 className="text-xl font-semibold text-gray-900">
+        <div className="mb-3 px-1">
+          <h2 className="text-lg font-bold text-gray-900 tracking-tight">
             This is how you're doing online
           </h2>
-          <p className="text-sm text-gray-500 mt-0.5">
+          <p className="text-[13px] text-gray-400 mt-0.5">
             Where you are showing up when customers search you, next to your competitors
           </p>
         </div>
@@ -38,7 +38,7 @@ export function SearchResultsSection({ section, keywordCards, auditSummary }: Se
       </div>
 
       {/* SEO Checklist */}
-      <div className="rounded-xl border border-gray-200 bg-white overflow-hidden">
+      <div className="rounded-2xl border border-gray-200/60 bg-white shadow-sm overflow-hidden">
         <SectionHeader
           number={section.number}
           title={section.title}
