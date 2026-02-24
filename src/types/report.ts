@@ -13,6 +13,7 @@ export interface HealthReport {
   caseStudies: CaseStudy[]
   ctaText: string
   ctaBanner: CTABanner
+  businessInfo?: BusinessInfo
 }
 
 export interface AuditSummary {
@@ -132,4 +133,59 @@ export interface CaseStudy {
   result: string
   desktopImage: string
   tabletImage: string
+}
+
+export interface BusinessInfo {
+  legalName?: string
+  ownerName?: string
+  address: string
+  city: string
+  state: string
+  postalCode: string
+  country: string
+  phone: string
+  additionalPhones?: string[]
+  email?: string
+  website: string
+  additionalWebsites?: string[]
+  description?: string
+  cuisineTypes: string[]
+  priceRange?: string
+  openingHours?: Record<string, string>
+  socialMedia?: {
+    facebook?: string
+    instagram?: string
+    tiktok?: string
+    twitter?: string
+    linkedin?: string
+  }
+  platforms?: {
+    googleMaps?: string
+    tripadvisor?: string
+    yelp?: string
+    thefork?: string
+    uberEats?: string
+    justEat?: string
+    deliveroo?: string
+    other?: string[]
+  }
+  googleMapsData?: {
+    placeId?: string
+    rating?: number
+    reviewCount?: number
+    categories?: string[]
+    plusCode?: string
+    coordinates?: { lat: number; lng: number }
+  }
+  websiteAnalysis?: {
+    hasSsl: boolean
+    isMobileResponsive?: boolean
+    hasOnlineOrdering?: boolean
+    hasMenu?: boolean
+    hasReservation?: boolean
+    technologies?: string[]
+    loadTimeEstimate?: string
+  }
+  scrapedAt: string
+  sources: string[]
 }
