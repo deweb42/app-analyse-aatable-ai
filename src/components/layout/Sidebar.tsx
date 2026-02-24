@@ -6,16 +6,17 @@ import { RadialProgress } from '../shared/RadialProgress'
 
 interface SidebarProps {
   report: HealthReport
+  slug: string
 }
 
-export function Sidebar({ report }: SidebarProps) {
+export function Sidebar({ report, slug }: SidebarProps) {
   const { t } = useI18n()
 
   return (
     <>
       {/* Desktop sidebar */}
       <aside className="hidden lg:block h-full w-full lg:sticky lg:top-0 lg:h-screen lg:w-auto lg:min-w-[280px] lg:max-w-[280px] lg:p-2 lg:pr-0">
-        <ScoreCard report={report} />
+        <ScoreCard report={report} slug={slug} />
       </aside>
 
       {/* Mobile bottom bar */}
@@ -41,7 +42,7 @@ export function Sidebar({ report }: SidebarProps) {
               </span>
             </div>
           </div>
-          <CTAButton text={report.ctaText} />
+          <CTAButton text={report.ctaText} onClick={() => { window.location.href = `/improve/${slug}` }} />
         </div>
       </div>
     </>

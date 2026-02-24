@@ -5,9 +5,10 @@ import feastBuffetImg from '../../assets/images/feast-buffet.jpg'
 
 interface AIWebsiteSectionProps {
   ctaBanner: CTABanner
+  slug?: string
 }
 
-export function AIWebsiteSection({ ctaBanner }: AIWebsiteSectionProps) {
+export function AIWebsiteSection({ ctaBanner, slug }: AIWebsiteSectionProps) {
   const { t } = useI18n()
 
   return (
@@ -33,7 +34,7 @@ export function AIWebsiteSection({ ctaBanner }: AIWebsiteSectionProps) {
             {ctaBanner.title}
           </h2>
 
-          <button className="mt-5 inline-flex items-center gap-2 rounded-xl bg-white text-gray-900 px-5 py-3 text-sm font-semibold hover:bg-gray-100 active:scale-[0.98] transition-all duration-150 shadow-lg">
+          <button onClick={slug ? () => { window.location.href = `/improve/${slug}` } : undefined} className="mt-5 inline-flex items-center gap-2 rounded-xl bg-white text-gray-900 px-5 py-3 text-sm font-semibold hover:bg-gray-100 active:scale-[0.98] transition-all duration-150 shadow-lg">
             {ctaBanner.buttonText}
             <ArrowRight className="w-4 h-4" />
           </button>

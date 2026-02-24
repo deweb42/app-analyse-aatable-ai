@@ -44,8 +44,8 @@ export function SearchResultsSection({ section, keywordCards, auditSummary }: Se
       <div className="rounded-2xl border border-gray-200/60 bg-white shadow-sm overflow-hidden">
         <SectionHeader
           number={section.number}
-          title={section.title}
-          subtitle={section.subtitle}
+          title={t('sectionSearchResults')}
+          subtitle={t('sectionSearchResultsSub')}
           score={section.score}
           maxScore={section.maxScore}
           scoreColor={section.scoreColor}

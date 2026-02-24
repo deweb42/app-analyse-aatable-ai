@@ -7,9 +7,10 @@ import { SubScoreRow } from './SubScoreRow'
 
 interface ScoreCardProps {
   report: HealthReport
+  slug?: string
 }
 
-export function ScoreCard({ report }: ScoreCardProps) {
+export function ScoreCard({ report, slug }: ScoreCardProps) {
   const { t } = useI18n()
   const ratingColor = getRatingColor(report.overallScore.rating)
 
@@ -81,7 +82,7 @@ export function ScoreCard({ report }: ScoreCardProps) {
 
         {/* CTA */}
         <div className="mt-auto w-full">
-          <CTAButton text={report.ctaText} className="w-full justify-center py-2.5 rounded-xl" />
+          <CTAButton text={report.ctaText} className="w-full justify-center py-2.5 rounded-xl" onClick={slug ? () => { window.location.href = `/improve/${slug}` } : undefined} />
         </div>
       </div>
     </div>

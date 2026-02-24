@@ -1,4 +1,5 @@
 import type { ReportSection, GoogleBusinessProfile } from '../../types/report'
+import { useI18n } from '../../lib/i18n'
 import { SectionHeader } from '../shared/SectionHeader'
 import { GoogleProfileCard } from './GoogleProfileCard'
 import { ChecklistAccordion } from '../website-experience/ChecklistAccordion'
@@ -9,12 +10,14 @@ interface LocalListingsSectionProps {
 }
 
 export function LocalListingsSection({ section, googleProfile }: LocalListingsSectionProps) {
+  const { t } = useI18n()
+
   return (
     <div className="rounded-2xl border border-gray-200/60 bg-white shadow-sm overflow-hidden">
       <SectionHeader
         number={section.number}
-        title={section.title}
-        subtitle={section.subtitle}
+        title={t('sectionLocalListings')}
+        subtitle={t('sectionLocalListingsSub')}
         score={section.score}
         maxScore={section.maxScore}
         scoreColor={section.scoreColor}
