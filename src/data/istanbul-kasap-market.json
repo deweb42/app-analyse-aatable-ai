@@ -298,5 +298,63 @@
     { "name": "Saffron", "initialScore": 43, "finalScore": 96, "result": "171 400$/mois de ventes en ligne", "desktopImage": "saffron-desktop.png", "tabletImage": "saffron-tablet.png" }
   ],
   "ctaText": "Corrigez en 35 secondes",
-  "ctaBanner": { "label": "Site Web IA", "title": "Améliorez votre site web avec l'IA en 35 secondes.", "buttonText": "Améliorer votre site" }
+  "ctaBanner": { "label": "Site Web IA", "title": "Améliorez votre site web avec l'IA en 35 secondes.", "buttonText": "Améliorer votre site" },
+  "businessInfo": {
+    "legalName": "Istanbul Kasap Market Sàrl",
+    "ownerName": "Non déterminé",
+    "address": "Rue des Moulins 51",
+    "city": "Neuchâtel",
+    "state": "NE",
+    "postalCode": "2000",
+    "country": "CH",
+    "phone": "+41 32 724 30 87",
+    "additionalPhones": ["+41 78 838 42 44"],
+    "email": "",
+    "website": "https://boucherie-istanbul.ch",
+    "additionalWebsites": ["https://lecointurc.com"],
+    "description": "Boucherie Halal proposant de la viande fraîche, alimentation orientale, fruits et légumes importés de Turquie et d'Italie. Dispose également d'un service de kebab/döner et pizza à emporter. Épicerie orientale avec produits turcs, arabes et méditerranéens.",
+    "cuisineTypes": ["Kebab", "Döner", "Pizza", "Boucherie Halal", "Alimentation orientale"],
+    "priceRange": "$",
+    "openingHours": {
+      "Lundi": "08:00 – 19:00",
+      "Mardi": "08:00 – 19:00",
+      "Mercredi": "08:00 – 19:00",
+      "Jeudi": "08:00 – 19:00",
+      "Vendredi": "08:00 – 19:00",
+      "Samedi": "08:00 – 18:00",
+      "Dimanche": "Fermé"
+    },
+    "socialMedia": {
+      "facebook": "https://www.facebook.com/istanbulkasapmarket"
+    },
+    "platforms": {
+      "googleMaps": "https://maps.google.com/?q=Istanbul+Kasap+Market+Neuchatel",
+      "uberEats": "",
+      "justEat": ""
+    },
+    "googleMapsData": {
+      "rating": 4.4,
+      "reviewCount": 12,
+      "categories": ["Boucherie", "Kebab Döner", "Pizza Take Away", "Alimentation orientale"],
+      "coordinates": { "lat": 46.9920, "lng": 6.9291 }
+    },
+    "websiteAnalysis": {
+      "hasSsl": true,
+      "isMobileResponsive": true,
+      "hasOnlineOrdering": false,
+      "hasMenu": false,
+      "hasReservation": false,
+      "technologies": ["WordPress"],
+      "loadTimeEstimate": "~4s"
+    },
+    "scrapedAt": "2026-02-20",
+    "sources": [
+      "https://boucherie-istanbul.ch",
+      "https://lecointurc.com",
+      "Google Maps",
+      "search.ch",
+      "local.ch",
+      "Facebook"
+    ]
+  }
 }

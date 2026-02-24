@@ -296,5 +296,66 @@
     { "name": "Saffron", "initialScore": 43, "finalScore": 96, "result": "171 400$/mois de ventes en ligne", "desktopImage": "saffron-desktop.png", "tabletImage": "saffron-tablet.png" }
   ],
   "ctaText": "Corrigez en 35 secondes",
-  "ctaBanner": { "label": "Site Web IA", "title": "Améliorez votre site web avec l'IA en 35 secondes.", "buttonText": "Améliorer votre site" }
+  "ctaBanner": { "label": "Site Web IA", "title": "Améliorez votre site web avec l'IA en 35 secondes.", "buttonText": "Améliorer votre site" },
+  "businessInfo": {
+    "legalName": "O'QG Burger & Tacos Sàrl",
+    "ownerName": "Non déterminé",
+    "address": "Faubourg du Lac 17",
+    "city": "Neuchâtel",
+    "state": "NE",
+    "postalCode": "2000",
+    "country": "CH",
+    "phone": "032 753 19 75",
+    "email": "",
+    "website": "https://oqgburgertacos.ch",
+    "additionalWebsites": ["https://oqg-burgers-tacos.orderbox.ch"],
+    "description": "Restaurant spécialisé en burgers et tacos de qualité supérieure avec des recettes originales. Ouvert depuis 2018, propose des produits frais avec un concept fast-casual. Possibilité de commande en ligne et livraison.",
+    "cuisineTypes": ["Burger", "Tacos", "Fast-casual", "Street food"],
+    "priceRange": "$$",
+    "openingHours": {
+      "Lundi": "Fermé",
+      "Mardi": "11:30 – 14:00, 18:00 – 22:00",
+      "Mercredi": "11:30 – 14:00, 18:00 – 22:00",
+      "Jeudi": "11:30 – 14:00, 18:00 – 22:00",
+      "Vendredi": "11:30 – 14:00, 18:00 – 22:30",
+      "Samedi": "11:30 – 22:30",
+      "Dimanche": "Fermé"
+    },
+    "socialMedia": {
+      "instagram": "https://www.instagram.com/oqg_burger_tacos",
+      "facebook": "https://www.facebook.com/OQGBurgerTacos"
+    },
+    "platforms": {
+      "googleMaps": "https://maps.google.com/?q=OQG+Burger+Tacos+Neuchatel",
+      "uberEats": "https://www.ubereats.com/ch/store/oqg-burger-tacos",
+      "tripadvisor": "https://www.tripadvisor.com/Restaurant_Review-OQG_Burger_Tacos-Neuchatel",
+      "thefork": "https://www.thefork.ch/restaurant/oqg-burger-tacos"
+    },
+    "googleMapsData": {
+      "rating": 4.5,
+      "reviewCount": 164,
+      "categories": ["Restaurant de hamburgers", "Restaurant de tacos", "Fast food", "Livraison de repas"],
+      "coordinates": { "lat": 46.9925, "lng": 6.9310 }
+    },
+    "websiteAnalysis": {
+      "hasSsl": true,
+      "isMobileResponsive": true,
+      "hasOnlineOrdering": true,
+      "hasMenu": true,
+      "hasReservation": false,
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "loadTimeEstimate": "~2s"
+    },
+    "scrapedAt": "2026-02-22",
+    "sources": [
+      "https://oqgburgertacos.ch",
+      "https://oqg-burgers-tacos.orderbox.ch",
+      "Google Maps",
+      "TripAdvisor",
+      "Uber Eats",
+      "TheFork",
+      "Instagram",
+      "Facebook"
+    ]
+  }
 }

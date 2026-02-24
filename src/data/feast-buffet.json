@@ -375,5 +375,55 @@
     { "name": "Saffron", "initialScore": 43, "finalScore": 96, "result": "$171,400/month online sales", "desktopImage": "saffron-desktop.png", "tabletImage": "saffron-tablet.png" }
   ],
   "ctaText": "Fix in 35 seconds",
-  "ctaBanner": { "label": "Owner AI Website", "title": "Improve your website with AI in 35 seconds.", "buttonText": "Improve your website" }
+  "ctaBanner": { "label": "Owner AI Website", "title": "Improve your website with AI in 35 seconds.", "buttonText": "Improve your website" },
+  "businessInfo": {
+    "legalName": "Feast Buffet",
+    "address": "801 Rainier Ave S",
+    "city": "Renton",
+    "state": "WA",
+    "postalCode": "98057",
+    "country": "US",
+    "phone": "(425) 235-1888",
+    "email": "",
+    "website": "https://feastbuffetrenton.com",
+    "description": "Spacious, contemporary restaurant offering all-you-can-eat Asian fare from dim sum to sushi. Features a wide variety of cuisines including Chinese, Japanese, Korean, and Vietnamese dishes in a modern buffet setting.",
+    "cuisineTypes": ["Asian", "Buffet", "Chinese", "Japanese", "Sushi", "Dim Sum", "Korean", "Vietnamese"],
+    "priceRange": "$$",
+    "openingHours": {
+      "Monday": "11:00 AM – 9:30 PM",
+      "Tuesday": "11:00 AM – 9:30 PM",
+      "Wednesday": "11:00 AM – 9:30 PM",
+      "Thursday": "11:00 AM – 9:30 PM",
+      "Friday": "11:00 AM – 10:00 PM",
+      "Saturday": "11:00 AM – 10:00 PM",
+      "Sunday": "11:00 AM – 9:30 PM"
+    },
+    "socialMedia": {},
+    "platforms": {
+      "googleMaps": "https://maps.google.com/?cid=feast-buffet-renton",
+      "yelp": "https://www.yelp.com/biz/feast-buffet-renton",
+      "tripadvisor": "https://www.tripadvisor.com/Restaurant_Review-Feast_Buffet-Renton"
+    },
+    "googleMapsData": {
+      "rating": 4.1,
+      "reviewCount": 5807,
+      "categories": ["Buffet restaurant", "Asian restaurant", "Chinese restaurant", "Restaurant"]
+    },
+    "websiteAnalysis": {
+      "hasSsl": true,
+      "isMobileResponsive": true,
+      "hasOnlineOrdering": false,
+      "hasMenu": true,
+      "hasReservation": false,
+      "technologies": ["HTML", "CSS"],
+      "loadTimeEstimate": "~3s"
+    },
+    "scrapedAt": "2026-02-01",
+    "sources": [
+      "https://feastbuffetrenton.com",
+      "Google Maps",
+      "Yelp",
+      "TripAdvisor"
+    ]
+  }
 }
