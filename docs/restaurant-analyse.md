@@ -58,236 +58,568 @@ Le fichier doit contenir **exactement 6 à 9 keyword cards** (mots-clés × vill
 
 ## 3. Processus Complet Étape par Étape
 
-### ÉTAPE 1 — Identification de l'entreprise (5-10 recherches)
+> **Principe directeur** : Chaque recherche doit avoir un OBJECTIF PRÉCIS. On ne fait jamais de recherche "pour voir". Chaque WebSearch et WebFetch alimente directement un ou plusieurs champs du JSON final. On maximise les données extraites par requête.
 
-**Objectif** : Collecter TOUTES les informations publiques sur le restaurant.
+### ÉTAPE 1 — Identification de l'entreprise (4-6 recherches)
 
-#### 1.1 Recherches à effectuer (EN PARALLÈLE si possible)
+**Objectif** : Collecter TOUTES les informations publiques ET déterminer le contexte géographique/sectoriel.
+
+#### 1.1 Détection automatique du pays et de la langue
+
+AVANT toute recherche, détermine le contexte à partir des indices disponibles :
 
 ```
-Recherche 1 : WebSearch("{nom_restaurant} {ville}")
-  → Trouver le site officiel, les réseaux sociaux, les avis
-  → Noter toutes les URLs trouvées
-
-Recherche 2 : WebSearch("{nom_restaurant} {ville} google maps")
-  → Trouver la fiche Google Business
-  → Noter : note, nombre d'avis, catégories, description
-
-Recherche 3 : WebSearch("{nom_restaurant} {ville} avis" OU "reviews")
-  → Trouver les plateformes de reviews (Yelp, TripAdvisor, TheFork, etc.)
-  → Noter les notes et nombre d'avis sur chaque plateforme
-
-Recherche 4 (si Suisse) : WebSearch("{nom_restaurant} site:local.ch")
-  → Trouver la fiche local.ch/search.ch
-  → Noter : adresse exacte, téléphone, horaires, catégories
-
-Recherche 4 (si US) : WebSearch("{nom_restaurant} {ville} site:yelp.com")
-  → Trouver la fiche Yelp
-  → Noter : note, nombre d'avis, catégories, gamme de prix
+SI website se termine par .ch → country = "CH", locale = "fr" (ou "de" si ville germanophone)
+SI website se termine par .fr → country = "FR", locale = "fr"
+SI website se termine par .com et ville US → country = "US", locale = "en"
+SI website se termine par .co.uk → country = "GB", locale = "en"
 ```
 
-#### 1.2 Ce que tu dois avoir à la fin de l'Étape 1
+Ce contexte détermine :
+- La langue des recherches ("Best" vs "Meilleur")
+- Les plateformes à vérifier (Yelp=US, local.ch=CH, PagesJaunes=FR, TheFork=EU)
+- Le format des numéros de téléphone et adresses
+- Les catégories de noms dans les critères d'audit
 
-```json
-{
-  "legalName": "Nom légal complet (si trouvé au registre du commerce)",
-  "ownerName": "Nom du propriétaire (si trouvé)",
-  "address": "Adresse complète",
-  "city": "Ville",
-  "state": "Canton/État",
-  "postalCode": "Code postal",
-  "country": "Pays (US, CH, FR...)",
-  "phone": "Téléphone principal",
-  "additionalPhones": ["Autres numéros"],
-  "email": "Email (si trouvé)",
-  "website": "URL principale",
-  "additionalWebsites": ["Sous-domaines", "Sites de commande"],
-  "description": "Description longue du restaurant",
-  "cuisineTypes": ["Type 1", "Type 2"],
-  "priceRange": "$" | "$$" | "$$$" | "$$$$",
-  "openingHours": { "Lundi": "11:00 – 22:00", ... },
-  "socialMedia": { "instagram": "url", "facebook": "url" },
-  "platforms": { "googleMaps": "url", "yelp": "url", ... },
-  "googleMapsData": { "rating": 4.5, "reviewCount": 164, "categories": [...] },
-  "websiteAnalysis": { "hasSsl": true, ... },
-  "scrapedAt": "2026-02-25",
-  "sources": ["liste de toutes les URLs consultées"]
-}
+#### 1.2 Recherche MAÎTRE — La requête la plus importante
+
+Cette première recherche est CRITIQUE. Elle donne 80% des informations de base.
+
+```
+WebSearch('"{nom_restaurant}" {ville} restaurant')
 ```
 
-**IMPORTANT** : JAMAIS inventer de données. Si tu ne trouves pas une info → `""` ou `null`.
+**Pourquoi cette requête précise :**
+- Les guillemets `"..."` forcent la correspondance exacte du nom → évite les homonymes
+- Ajouter `{ville}` filtre géographiquement
+- Ajouter `restaurant` force Google à montrer les résultats restaurant/food (pas un magasin, pas une personne)
+
+**Ce que tu extrais de cette SEULE recherche :**
+- Le site officiel (premier résultat .ch/.com/.fr qui n'est PAS Yelp/TripAdvisor/Google)
+- La fiche Google Maps (snippet avec note ★, nombre d'avis, adresse)
+- Les plateformes présentes (Yelp, TripAdvisor, TheFork, Uber Eats dans les résultats)
+- Les réseaux sociaux (si Facebook/Instagram apparaissent)
+- Les annuaires locaux (local.ch, search.ch, PagesJaunes)
+- D'éventuels domaines multiples (signe de fragmentation)
+
+**Arbre de décision après la Recherche MAÎTRE :**
+
+```
+SI la fiche Google Maps est visible dans les résultats :
+  → Extraire note, avis, catégories, adresse, téléphone
+  → PAS BESOIN de Recherche 2
+
+SI la fiche Google Maps N'est PAS visible :
+  → Lancer Recherche 2 : WebSearch("{nom_restaurant} {ville} site:google.com/maps")
+
+SI le site officiel N'est PAS clair (plusieurs domaines) :
+  → Lancer Recherche 3 : WebSearch("site:{domaine1}" vs "site:{domaine2}")
+  → Celui avec le plus de pages indexées est le principal
+
+SI aucun réseau social trouvé :
+  → Lancer Recherche 4 : WebSearch("{nom_restaurant} {ville} instagram OR facebook")
+```
+
+#### 1.3 Recherche ANNUAIRES — Spécifique au pays
+
+**Suisse :**
+```
+WebSearch("{nom_restaurant} {ville} site:local.ch OR site:search.ch")
+```
+Extraire : adresse formatée, téléphone suisse, horaires, catégories local.ch
+
+**USA :**
+```
+WebSearch("{nom_restaurant} {ville} site:yelp.com")
+```
+Extraire : note Yelp, nombre d'avis, catégories, gamme de prix ($-$$$$)
+
+**France :**
+```
+WebSearch("{nom_restaurant} {ville} site:pagesjaunes.fr OR site:tripadvisor.fr")
+```
+Extraire : note, avis, catégories, adresse
+
+**Pourquoi `site:` ?** : Ça force Google à ne montrer QUE les résultats de cette plateforme → pas de bruit, résultat direct.
+
+#### 1.4 Recherche LÉGALE (optionnelle mais recommandée)
+
+```
+Suisse : WebSearch("{nom_restaurant} site:zefix.ch OR site:moneyhouse.ch")
+France : WebSearch("{nom_restaurant} {ville} site:societe.com OR site:pappers.fr")
+USA    : pas d'équivalent simple → skip
+```
+
+Extraire : raison sociale exacte, nom du propriétaire, forme juridique (Sàrl, SAS, LLC)
+
+#### 1.5 Ce que tu DOIS avoir à la fin de l'Étape 1
+
+Remplis ce tableau de vérification. Chaque ligne = un champ `businessInfo` :
+
+```
+✅ ou ❌ | Champ              | Source qui l'a fourni
+---------|--------------------|--------------------------
+  ?      | legalName          | Registre commerce / Google
+  ?      | ownerName          | Registre / site web / LinkedIn
+  ?      | address            | Google Maps / local.ch / site
+  ?      | city               | Google Maps
+  ?      | state              | Google Maps
+  ?      | postalCode         | Google Maps / local.ch
+  ?      | country            | Déduit du domaine/ville
+  ?      | phone              | Google Maps / site / local.ch
+  ?      | additionalPhones   | Si 2 numéros trouvés sur différentes sources
+  ?      | email              | Site web (scraping footer)
+  ?      | website            | Recherche MAÎTRE
+  ?      | additionalWebsites | Si fragmentation détectée
+  ?      | description        | Google Maps snippet
+  ?      | cuisineTypes       | Catégories Google + contenu menu
+  ?      | priceRange         | Google Maps / Yelp / TheFork
+  ?      | openingHours       | Google Maps / site / local.ch
+  ?      | socialMedia        | Recherche MAÎTRE ou Recherche 4
+  ?      | platforms          | Recherche MAÎTRE (toutes les URLs trouvées)
+  ?      | googleMapsData     | Recherche MAÎTRE ou Recherche 2
+```
+
+**RÈGLE** : Si après 4-6 recherches un champ est toujours ❌ → `""` ou `null`. JAMAIS inventer.
 
 ---
 
-### ÉTAPE 2 — Analyse du site web (3-5 WebFetch)
+### ÉTAPE 2 — Analyse du site web (3-4 WebFetch)
 
-**Objectif** : Évaluer les 40 critères de la section "Website Experience".
+**Objectif** : Évaluer les 40 critères "Website Experience" + les 19 critères SEO de "Search Results".
 
-#### 2.1 Scraper la page d'accueil
+**Principe** : On fait LE MINIMUM de WebFetch pour couvrir LE MAXIMUM de critères. Chaque WebFetch a un prompt ultra-précis qui demande des réponses YES/NO avec preuves.
+
+#### 2.1 WebFetch #1 — Page d'accueil (COUVRE 35+ critères)
+
+C'est le WebFetch le plus important. Le prompt doit être STRUCTURÉ pour que la réponse soit directement mappable aux critères.
 
 ```
 WebFetch(
   url: "{website_url}",
-  prompt: "Analyse complète de cette page web de restaurant. Extraire :
-  1. Le tag <title> exact
-  2. La meta description
-  3. Le contenu du H1 (s'il existe)
-  4. Les meta Open Graph (og:title, og:description, og:image)
-  5. Les Twitter card metas
-  6. La présence de schema.org (type Restaurant, LocalBusiness, Menu)
-  7. Les liens de navigation (quelles pages existent)
-  8. Les numéros de téléphone visibles
-  9. L'adresse affichée
-  10. Les horaires d'ouverture affichés
-  11. Les liens vers les réseaux sociaux
-  12. Les boutons CTA (Commander, Réserver, etc.)
-  13. La présence d'images avec alt text
-  14. Le favicon
-  15. Si le site est en HTTP ou HTTPS
-  16. La quantité de texte (beaucoup, peu, presque rien)
-  17. La présence d'une section À propos / histoire
-  18. La présence d'avis clients
-  19. La présence d'une FAQ
-  20. Les couleurs et le design général (moderne, vieillot, etc.)"
+  prompt: "Tu es un auditeur SEO professionnel. Analyse cette page web et réponds à CHAQUE question par YES ou NO suivi de la preuve trouvée.
+
+  === HEAD / META (répondre avec le contenu exact trouvé ou 'ABSENT') ===
+  M1. <title> exact ?
+  M2. <meta name='description'> contenu exact ?
+  M3. <meta property='og:title'> ?
+  M4. <meta property='og:description'> ?
+  M5. <meta property='og:image'> ?
+  M6. <meta name='twitter:card'> ?
+  M7. <link rel='icon'> (favicon) ?
+  M8. <meta name='viewport'> ?
+  M9. <link rel='canonical'> href exact ?
+
+  === STRUCTURE HTML ===
+  H1. Contenu du premier <h1> ? (texte exact)
+  H2. Le H1 contient-il le nom de la ville ? (YES/NO + ville trouvée)
+  H3. Le H1 contient-il un mot-clé restaurant/food ? (YES/NO + mot trouvé)
+
+  === SCHEMA.ORG (chercher dans <script type='application/ld+json'>) ===
+  S1. Schema Restaurant ? (YES/NO)
+  S2. Schema LocalBusiness ? (YES/NO)
+  S3. Schema Menu ? (YES/NO)
+  S4. Schema Review ou AggregateRating ? (YES/NO)
+  S5. Schema BreadcrumbList ? (YES/NO)
+
+  === CONTENU VISIBLE ===
+  C1. Numéro de téléphone visible ? (YES/NO + numéro)
+  C2. Adresse physique visible ? (YES/NO + adresse)
+  C3. Horaires d'ouverture visibles ? (YES/NO)
+  C4. Liens réseaux sociaux ? (YES/NO + lesquels : FB, IG, TikTok...)
+  C5. Section 'À propos' / histoire du restaurant ? (YES/NO)
+  C6. Avis clients affichés ? (YES/NO + combien)
+  C7. Section FAQ ? (YES/NO)
+  C8. Bouton CTA 'Commander' / 'Réserver' visible ? (YES/NO + texte du bouton)
+  C9. Nom de la ville mentionné dans le texte ? (YES/NO + contexte)
+  C10. Estimation du volume de texte : BEAUCOUP (>500 mots) / MOYEN (100-500) / PEU (<100)
+
+  === TECHNIQUE ===
+  T1. Le site charge en HTTPS ? (YES/NO)
+  T2. Images avec attribut alt rempli ? (YES/NO + exemples)
+  T3. Liens de navigation (lister les pages du menu)
+  T4. Liens externes vers plateformes de livraison (Uber Eats, DoorDash, etc.) ? (YES/NO + URLs)
+  T5. Page politique de confidentialité liée ? (YES/NO)
+  T6. Formulaire de commande/contact avec labels ? (YES/NO)
+  T7. Technologie détectée ? (WordPress, Shopify, WooCommerce, custom, React, etc.)"
 )
 ```
 
-#### 2.2 Scraper la page menu (si elle existe)
+**Pourquoi ce format ?** Chaque réponse M1-T7 mappe directement à un critère d'audit. Pas d'interprétation nécessaire.
+
+#### 2.2 WebFetch #2 — Vérifications techniques (robots.txt + sitemap)
+
+**Une seule requête pour les deux** en utilisant le robots.txt qui référence souvent le sitemap :
 
 ```
 WebFetch(
-  url: "{website_url}/menu" OU l'URL du menu trouvée en navigation,
-  prompt: "Analyser cette page menu :
-  1. Le menu est en HTML ou PDF ?
-  2. Les prix sont-ils affichés ?
-  3. Y a-t-il des photos des plats ?
-  4. Les descriptions des plats sont-elles détaillées ?
-  5. Y a-t-il des options végétariennes/vegan signalées ?
-  6. Le menu est-il facile à parcourir ?"
+  url: "{website_url}/robots.txt",
+  prompt: "1. Ce fichier robots.txt existe-t-il ? (YES/NO)
+  2. Contient-il une directive Sitemap ? (YES/NO + URL du sitemap)
+  3. Y a-t-il des directives Disallow problématiques ? (YES/NO + lesquelles)"
 )
 ```
 
-#### 2.3 Vérifications techniques
+Si le sitemap n'est pas référencé dans robots.txt :
+```
+WebFetch(
+  url: "{website_url}/sitemap.xml",
+  prompt: "Ce sitemap XML existe-t-il ? (YES/NO). Si oui, combien de pages sont listées ?"
+)
+```
+
+#### 2.3 WebFetch #3 — Page menu (SEULEMENT si navigation trouvée en 2.1)
 
 ```
-WebFetch(url: "{website_url}/robots.txt", prompt: "Ce fichier existe-t-il ?")
-WebFetch(url: "{website_url}/sitemap.xml", prompt: "Ce fichier existe-t-il ?")
+WebFetch(
+  url: "{url_menu_trouvée_en_2.1}",
+  prompt: "Analyse cette page menu de restaurant :
+  1. Format du menu : HTML interactif / PDF / Image / Texte simple ?
+  2. Prix affichés ? (YES/NO)
+  3. Photos des plats ? (YES/NO + nombre estimé)
+  4. Descriptions détaillées des plats ? (YES/NO)
+  5. Options alimentaires signalées (végétarien, vegan, halal, sans gluten) ? (YES/NO)
+  6. Le menu est-il commandable directement (ajout au panier) ? (YES/NO)"
+)
 ```
 
-#### 2.4 Ce que tu dois noter pour chaque critère
+#### 2.4 WebFetch #4 — Page contact/about (SEULEMENT si trouvée en 2.1)
 
-Pour chaque check du site web, tu notes :
-- `status`: "pass", "fail", ou "warning"
-- `findings`: CE QUE TU AS RÉELLEMENT TROUVÉ (citation, fait vérifiable)
-- `expected`: CE QUI DEVRAIT ÊTRE LÀ (seulement pour fail/warning)
+Si une page "À propos" ou "Contact" existe :
+```
+WebFetch(
+  url: "{url_about_ou_contact}",
+  prompt: "Extraire :
+  1. L'histoire du restaurant (fondateur, année de création, philosophie)
+  2. L'adresse complète
+  3. Le(s) numéro(s) de téléphone
+  4. L'email
+  5. Les horaires
+  6. Une carte Google Maps intégrée ? (YES/NO)"
+)
+```
+
+#### 2.5 Matrice de mapping WebFetch → Critères
+
+Utilise cette matrice pour noter chaque critère à partir des résultats :
+
+```
+Résultat WebFetch  | Critère mappé                    | Logique de scoring
+-------------------|----------------------------------|----------------------------
+M1 ≠ ABSENT       | #14 titre correspond Google      | Comparer M1 avec nom Google
+M2 ≠ ABSENT       | #7 meta description              | pass si >120 caractères
+M2 contient ville  | #8 meta desc + zone service     | pass si ville trouvée
+M2 contient keyword| #9 meta desc + mots-clés        | pass si cuisine mentionnée
+M3 ≠ ABSENT       | #10 Open Graph title             | pass si présent
+M4 ≠ ABSENT       | #11 Open Graph description       | pass si présent
+M5 ≠ ABSENT       | #12 Open Graph image             | pass si URL image valide
+M6 ≠ ABSENT       | #13 Twitter card                 | pass si présent
+M7 ≠ ABSENT       | #45 Favicon                      | pass si présent
+M8 ≠ ABSENT       | #68 Meta viewport                | pass si présent
+M9 ≠ ABSENT       | #28 URLs canoniques              | pass si présent
+H1 ≠ ABSENT       | #5 H1 existe                     | pass si H1 textuel trouvé
+H2 = YES          | #3 H1 inclut zone service        | pass si ville dans H1
+H3 = YES          | #4 H1 inclut mots-clés           | pass si keyword dans H1
+S1 = YES          | #29 Schema Restaurant            | pass
+S2 = YES          | #30 Schema LocalBusiness         | pass
+S3 = YES          | #31 Schema Menu                  | pass
+S4 = YES          | #32 Schema Review                | pass
+S5 = YES          | #33 Schema Breadcrumb            | pass
+C1 = YES          | #44 Numéro de téléphone          | pass
+C2 = YES          | #48 Adresse affichée             | pass + #75 Adresse visible
+C3 = YES          | #47 Horaires affichés            | pass
+C4 = YES          | #46 Liens réseaux sociaux        | pass
+C5 = YES          | #50 Section À propos             | pass
+C6 = YES          | #52 3 avis clients               | pass si ≥3 avis
+C7 = YES          | #53 Section FAQ                  | pass
+C8 = YES          | #42 CTA commande en ligne        | pass
+C9 = YES          | #21 Contenu spécifique lieu      | pass
+C10 ≥ MOYEN       | #18 Nombre mots suffisant        | pass si MOYEN ou BEAUCOUP
+T1 = YES          | #22 SSL + #71 SSL actif          | pass (double)
+T2 = YES          | #6 Alt tags + #56 Alt text       | pass (double)
+T4 = YES          | #41 Commande hors-site           | FAIL si oui (perte de revenu)
+T5 = YES          | #72 Politique confidentialité    | pass
+T6 = YES          | #58 Labels formulaires           | pass
+```
 
 ---
 
-### ÉTAPE 3 — Analyse Google Business Profile (2-3 recherches)
+### ÉTAPE 3 — Analyse Google Business Profile (1-2 recherches ciblées)
 
-**Objectif** : Évaluer les 20 critères de la section "Local Listings".
+**Objectif** : Évaluer les 20 critères "Local Listings" + valider les données d'identification.
+
+#### 3.1 Recherche PROFIL — Si pas déjà trouvé en Étape 1
 
 ```
-WebSearch("{nom_restaurant} {ville} google maps")
+WebSearch("{nom_restaurant} {ville} avis google")
 ```
 
-Ce que tu dois collecter :
-- Nom exact affiché sur Google
-- Note moyenne (ex: 4.5)
-- Nombre d'avis (ex: 164)
-- Catégories (ex: "Restaurant de hamburgers", "Fast food")
-- Description
-- Téléphone affiché
-- Site web lié
-- Horaires
-- Tranche de prix ($, $$, $$$)
-- Nombre de photos (estimation)
-- Présence de posts récents
-- Si le restaurant répond aux avis
+**Pourquoi `avis google` plutôt que `google maps` ?**
+- Google montre le Knowledge Panel avec note + avis + photos quand on cherche "avis"
+- On obtient en un seul résultat : note, nb avis, catégories, adresse, horaires, photos, description
+
+#### 3.2 Ce que tu extrais et comment tu scores
+
+```
+Donnée Google              | Critère mappé                  | Logique
+---------------------------|--------------------------------|-------------------
+Site web lié               | #81 Site web propriétaire      | pass si c'est le bon domaine
+Description présente       | #82 Description remplie        | pass si >20 mots
+Horaires affichés          | #83 Horaires définis           | pass si complets
+Téléphone affiché          | #84 Numéro affiché             | pass si présent
+Gamme de prix ($-$$$$)     | #85 Gamme de prix              | pass si affichée
+Options de service visibles| #86 Options listées            | pass si livraison/sur place
+Liens réseaux sociaux      | #87 Liens sociaux              | pass si FB/IG lié
+Mots-clés dans description | #88 Description + mots-clés    | pass si cuisine mentionnée
+Catégories Google          | #89 Catégories = mots-clés     | pass si concordance
+Note > 4.0 ET avis > 50   | #90 Avis de qualité            | pass si les deux
+NAP identique partout      | #91 NAP cohérent               | comparer avec site web + annuaire
+Pin correctement placé     | #92 Position carte             | pass (sauf erreur évidente)
+Présent sur plateforme 3   | #93 Yelp/local.ch/PagesJaunes  | pass si fiche trouvée en Étape 1
+Présent sur TripAdvisor    | #94 TripAdvisor                | pass si fiche trouvée
+Présent sur plateforme 5   | #95 Apple Maps/TheFork/UberEats| pass si fiche trouvée
+Photo profil               | #96 Photo de profil            | pass si visible
+Photo couverture           | #97 Photo de couverture        | pass si visible
+≥10 photos                 | #98 Au moins 10 photos         | pass si estimé >10
+Photos récentes            | #99 Photos récentes            | warning si impossible à vérifier
+Photos plats               | #100 Photos des plats          | pass si photos de nourriture visibles
+```
+
+#### 3.3 Vérification croisée NAP (Name, Address, Phone)
+
+C'est un critère CRITIQUE. Compare ces 3 sources :
+1. Le site web (trouvé en Étape 2)
+2. La fiche Google Maps (trouvée en Étape 1 ou 3)
+3. L'annuaire local (local.ch, Yelp, PagesJaunes — trouvé en Étape 1)
+
+```
+SI le nom est IDENTIQUE sur les 3 → pass
+SI l'adresse est IDENTIQUE sur les 3 → pass
+SI le téléphone est IDENTIQUE sur les 3 → pass
+SI l'un des 3 diffère → fail avec findings expliquant la différence
+SI le restaurant a 2 fiches Google → fail automatique
+```
 
 ---
 
-### ÉTAPE 4 — Recherche de mots-clés et concurrents (5-9 WebSearch)
+### ÉTAPE 4 — Recherche de mots-clés et concurrents (6-9 WebSearch)
 
 **Objectif** : Produire les `keywordCards` et `competitorRankings`.
 
-#### 4.1 Choix des mots-clés
+> C'est l'étape qui consomme le plus de requêtes mais qui produit les données les plus précieuses : le classement du restaurant face à ses concurrents.
 
-Tu dois choisir **3 mots-clés** × **2-3 villes proches** = **6-9 keyword cards**.
+#### 4.1 Algorithme de sélection des mots-clés
 
-**Comment choisir les 3 mots-clés :**
+**Input** : `cuisineTypes` de l'Étape 1 + nom du restaurant + catégories Google
 
-1. Le plat/cuisine PRINCIPALE du restaurant (ex: "burger", "kebab", "asian food", "dim sum")
-2. Le plat/cuisine SECONDAIRE (ex: "tacos", "döner", "soup")
-3. Un terme générique ou niche (ex: "smash burger", "boucherie halal", "fast food")
-
-**Comment choisir les 2-3 villes :**
-
-1. La ville du restaurant (TOUJOURS)
-2. La ville voisine la plus grande (si pertinent)
-3. Une 3e ville proche si le restaurant a une zone de chalandise large
-
-**Exemples concrets de ce qu'on a fait :**
-
-| Restaurant | Mots-clés | Villes |
-|------------|-----------|--------|
-| Feast Buffet (Renton, WA) | asian food, dim sum, soup | Renton, Tukwila, SeaTac |
-| Istanbul Kasap Market (Neuchâtel, CH) | kebab, döner, boucherie halal, viande halal, restaurant turc | Neuchâtel, La Chaux-de-Fonds |
-| O'QG Burger & Tacos (Neuchâtel, CH) | burger, tacos, smash burger, fast food, livraison burger | Neuchâtel, La Chaux-de-Fonds |
-
-#### 4.2 Pour chaque combinaison mot-clé × ville
-
-Effectuer cette recherche :
+**Algorithme :**
 
 ```
-WebSearch("Best {mot-clé} in {ville}")     // pour EN
-WebSearch("Meilleur {mot-clé} à {ville}")  // pour FR
+1. EXTRAIRE les mots-clés candidats :
+   a. Chaque élément de cuisineTypes → candidat (ex: "burger", "tacos")
+   b. Les catégories Google → candidat (ex: "fast food", "kebab döner")
+   c. Le nom du restaurant s'il contient un type de cuisine
+      (ex: "O'QG Burger & Tacos" → "burger", "tacos")
+   d. Les produits phares trouvés sur le site (ex: "smash burger", "dim sum")
+
+2. DÉDUPLIQUER et PRIORISER :
+   a. Supprimer les doublons sémantiques ("hamburger" = "burger")
+   b. Garder le terme le plus cherché par les clients
+      ("burger" > "hamburger", "kebab" > "kebab döner")
+   c. Prioriser par spécificité :
+      - HAUTE : terme de niche où le restaurant peut être #1 ("smash burger", "boucherie halal")
+      - MOYENNE : cuisine principale ("burger", "kebab", "asian food")
+      - BASSE : terme générique ("restaurant", "fast food")
+
+3. SÉLECTIONNER 3 mots-clés :
+   Mot-clé 1 : Cuisine PRINCIPALE (le plus évident, ce pour quoi le restaurant est connu)
+   Mot-clé 2 : Cuisine SECONDAIRE ou spécialité (un autre produit phare)
+   Mot-clé 3 : Terme de NICHE ou GÉNÉRIQUE stratégique
+              → Si le restaurant a une niche (smash burger, halal) → niche
+              → Si le restaurant est généraliste → générique (fast food, restaurant)
+              → Si le restaurant fait de la livraison → "livraison {cuisine}"
 ```
 
-Dans les résultats, tu dois identifier :
+**Exemples détaillés de l'algorithme appliqué :**
 
-**A. Google Maps / Local Pack (les 3 premiers résultats Maps)**
+```
+FEAST BUFFET (Renton, WA)
+  cuisineTypes: Asian, Buffet, Chinese, Japanese, Sushi, Dim Sum, Korean, Vietnamese
+  catégories Google: Buffet restaurant, Asian restaurant, Chinese restaurant
 
-```json
-"competitors": [
-  { "name": "Nom du #1", "rating": 4.7, "mapRank": 1, "organicRank": null },
-  { "name": "Nom du #2", "rating": 4.5, "mapRank": 2, "organicRank": null },
-  { "name": "Nom du #3", "rating": 4.3, "mapRank": 3, "organicRank": null }
-]
+  Candidats: asian food, buffet, chinese food, dim sum, sushi, korean food, vietnamese food
+  Après priorisation:
+    → "asian food"  (PRINCIPALE — terme de recherche le plus large, correspond à "Asian restaurant")
+    → "dim sum"     (SECONDAIRE — spécialité différenciante du buffet)
+    → "soup"        (NICHE — plat populaire du buffet, moins compétitif)
+
+  ❌ PAS "buffet" → trop générique, inclut des buffets non-restaurant
+  ❌ PAS "sushi" → trop de concurrence spécialisée (restaurants sushi dédiés)
+  ❌ PAS "chinese food" → trop similaire à "asian food"
+
+ISTANBUL KASAP MARKET (Neuchâtel, CH)
+  cuisineTypes: Kebab, Döner, Pizza, Boucherie Halal, Alimentation orientale
+  catégories Google: Boucherie, Kebab Döner, Pizza Take Away
+
+  Candidats: kebab, döner, pizza, boucherie halal, viande halal, restaurant turc
+  Après priorisation:
+    → "kebab"           (PRINCIPALE — c'est le cœur du restaurant)
+    → "boucherie halal" (SECONDAIRE — l'autre activité, #1 potentiel)
+    → "restaurant turc" (GÉNÉRIQUE — capte la clientèle turque large)
+
+  BONUS ajoutés car business complexe (double activité) :
+    → "döner"           (variante du kebab, résultats Maps différents)
+    → "viande halal"    (variante de boucherie halal, résultats différents)
+
+O'QG BURGER & TACOS (Neuchâtel, CH)
+  cuisineTypes: Burger, Tacos, Fast-casual, Street food
+  catégories Google: Restaurant de hamburgers, Restaurant de tacos, Fast food
+
+  Candidats: burger, tacos, smash burger, fast food, livraison burger
+  Après priorisation:
+    → "burger"       (PRINCIPALE — c'est dans le nom)
+    → "tacos"        (SECONDAIRE — c'est dans le nom)
+    → "smash burger" (NICHE — spécialité, potentiel #1)
+
+  BONUS :
+    → "fast food"        (GÉNÉRIQUE — capte les recherches larges)
+    → "livraison burger" (INTENTION TRANSACTIONNELLE — les gens qui cherchent ça veulent commander)
 ```
 
-**B. Résultats organiques Google (les 5-9 premiers liens)**
+#### 4.2 Algorithme de sélection des villes
 
-```json
-"organicResults": [
-  { "site": "www.yelp.com", "title": "TOP 10 BEST Burger in Neuchâtel" },
-  { "site": "www.tripadvisor.com", "title": "THE BEST Burgers in Neuchâtel" },
-  ...
-]
+```
+1. VILLE PRINCIPALE : Toujours la ville du restaurant (OBLIGATOIRE)
+
+2. VILLES SECONDAIRES — Choisir 1-2 parmi :
+   a. La ville voisine la plus peuplée dans un rayon de 15km
+   b. La ville "bassin d'emploi" (là où les gens travaillent et mangent le midi)
+   c. La ville "hub transport" (aéroport, gare, zone commerciale)
+
+   ATTENTION : Ne PAS choisir une ville trop éloignée où le restaurant n'a aucune chance d'apparaître.
+
+3. VALIDATION : La ville secondaire est pertinente SEULEMENT si :
+   - Le restaurant livre dans cette ville, OU
+   - Le restaurant est à <15 min en voiture, OU
+   - Les résidents de cette ville pourraient raisonnablement venir manger
+
+Exemples :
+  Renton, WA → Tukwila (5 min, même zone commerciale), SeaTac (10 min, hub aéroport)
+  Neuchâtel, CH → La Chaux-de-Fonds (25 min, 2e ville du canton)
+  Paris 11e, FR → Paris (global), Vincennes (à côté)
 ```
 
-**C. Le rang du restaurant analysé**
+#### 4.3 Requêtes de recherche OPTIMISÉES par mot-clé
 
-- `mapPackRank`: Le rang du restaurant dans le Map Pack (1, 2, 3, ou `null` s'il n'apparaît pas)
-- `organicRank`: Le rang dans les résultats organiques (ou `null`)
-- `winner`: Le nom du #1 dans le Map Pack
+La formulation de la requête est CRITIQUE. Différentes formulations donnent des résultats Maps différents.
 
-#### 4.3 Construction des competitorRankings
+**Format des requêtes :**
 
-Après avoir analysé TOUS les mots-clés :
+```
+ANGLAIS (US, UK) :
+  "Best {keyword} in {city}"
+  → Cible le Map Pack + résultats organiques de classement
+  → Exemple : "Best asian food in Renton"
 
-1. Lister TOUS les concurrents rencontrés dans les Map Packs
-2. Compter combien de fois chaque concurrent apparaît
-3. Trier par fréquence d'apparition (puis par note)
-4. EXCLURE le restaurant analysé de la liste
-5. Garder les TOP 8
-6. Assigner un rank de 1 à 8
+FRANÇAIS (CH, FR) :
+  "Meilleur {keyword} à {city}"
+  → Même logique en français
+  → Exemple : "Meilleur burger à Neuchâtel"
+
+ALTERNATIVE si le premier format ne retourne pas de Map Pack :
+  "{keyword} {city}"
+  → Plus court, parfois meilleur pour le Map Pack
+  → Exemple : "dim sum Tukwila"
+
+ALTERNATIVE pour la livraison :
+  "livraison {keyword} {city}" / "{keyword} delivery {city}"
+  → Résultats orientés Uber Eats, DoorDash, etc.
+```
+
+**IMPORTANT — Comment lire les résultats :**
+
+```
+Résultat WebSearch typique :
+┌─────────────────────────────────────────────┐
+│ 🗺️  MAP PACK (3 résultats)                 │ ← competitors[0-2]
+│  1. Din Tai Fung ★4.6 (2,340 avis)          │    mapRank: 1
+│  2. MR. DIM SUM ★4.1 (890 avis)             │    mapRank: 2
+│  3. Supreme Dumplings ★4.6 (445 avis)        │    mapRank: 3
+├─────────────────────────────────────────────┤
+│ 📄  ORGANIC RESULTS                          │ ← organicResults[]
+│  1. www.yelp.com — "TOP 10 BEST ..."         │    organicResults[0]
+│  2. www.tripadvisor.com — "THE BEST ..."     │    organicResults[1]
+│  3. www.facebook.com — "Best chinese ..."    │    organicResults[2]
+│  4. dtf.com — "Bellevue Restaurant"          │    organicResults[3]
+│  5. www.tripadvisor.com — "LITTLE PEKING..." │    organicResults[4]
+└─────────────────────────────────────────────┘
+
+Pour le restaurant analysé :
+  → Est-il dans le MAP PACK ? Si oui, mapPackRank = son rang (1, 2 ou 3)
+  → Son site apparaît-il dans les ORGANIC ? Si oui, organicRank = sa position
+  → Si absent des deux → mapPackRank: null, organicRank: null
+```
+
+#### 4.4 Construction intelligente des competitorRankings
+
+**Algorithme détaillé :**
+
+```
+1. Créer un dictionnaire : { nom_concurrent: { count: 0, bestRating: 0, mapRanks: [] } }
+
+2. Pour chaque keywordCard :
+   Pour chaque concurrent dans competitors (Map Pack) :
+     SI concurrent ≠ restaurant_analysé :
+       dict[nom].count += 1
+       dict[nom].bestRating = max(current, rating)
+       dict[nom].mapRanks.push(mapRank)
+
+3. Trier le dictionnaire par :
+   a. count (décroissant) — celui qui apparaît le plus souvent est le plus menaçant
+   b. bestRating (décroissant) — à fréquence égale, le mieux noté gagne
+
+4. Prendre les TOP 8
+
+5. Assigner rank 1 à 8
+
+Exemple avec O'QG Burger & Tacos :
+  Greasemonkees  : apparaît 3× (burger NE, smash NE, burger LCdF) → rank 1
+  Neuch' Tacos   : apparaît 2× (burger NE, tacos NE) → rank 2
+  King Food      : apparaît 2× (tacos NE, fast food NE) → rank 3
+  Holy Cow!      : apparaît 2× (smash NE, burger LCdF) → rank 4
+  Burger King    : apparaît 2× (fast food NE, livraison NE) → rank 5
+  McDonald's     : apparaît 2× (fast food NE, livraison NE) → rank 6
+  La Turquoise   : apparaît 1× → rank 7
+  Star Kebab     : apparaît 1× → rank 8
+```
 
 ---
 
 ### ÉTAPE 5 — Rédaction des 100 critères d'audit
 
 **C'est l'étape la plus importante.** Tu utilises TOUTES les données collectées aux étapes 1-4 pour remplir les 100 critères.
+
+**Principe fondamental** : Chaque `findings` doit citer un FAIT VÉRIFIABLE trouvé pendant les étapes précédentes. Jamais une phrase générique.
+
+```
+❌ MAUVAIS :  "findings": "SSL certificate is active and valid"     (générique, copier-coller)
+✅ BON :      "findings": "HTTPS actif sur oqgburgertacos.ch"       (spécifique, vérifiable)
+
+❌ MAUVAIS :  "findings": "No FAQ section found"                     (générique)
+✅ BON :      "findings": "Aucune page FAQ — le site n'a que 3 pages : Accueil, Menu, Contact"
+
+❌ MAUVAIS :  "findings": "Images have alt attributes"               (vague)
+✅ BON :      "findings": "12 images produit avec alt='Smash Cheese', alt='Double Bacon' etc."
+```
+
+**Arbre de décision pour le status :**
+
+```
+SI tu as trouvé la preuve via WebFetch/WebSearch que le critère est satisfait → "pass"
+SI tu as trouvé la preuve que le critère N'est PAS satisfait → "fail"
+SI tu n'as pas pu vérifier (site trop minimal, données inaccessibles) → "warning"
+SI tu n'as PAS fait de WebFetch du site → "warning" pour tous les critères site web
+```
 
 Voir la [section 5 ci-dessous](#5-les-100-critères-daudit--liste-exhaustive) pour la liste complète.
 
@@ -348,81 +680,232 @@ Remplir le JSON dans cet ordre :
 
 **Contexte** : Grand buffet asiatique dans la banlieue de Seattle. Site web basique mais fonctionnel.
 
-**Ce qu'on a fait :**
+**Requêtes exactes effectuées (dans l'ordre) :**
 
-1. **Identification** : WebSearch "Feast Buffet Renton" → trouvé site feastbuffetrenton.com, Google Maps (4.1★, 5807 avis), Yelp, TripAdvisor
-2. **Site web** : WebFetch du site → site simple, PAS de commande en ligne, PAS de section À propos, PAS de FAQ, horaires et adresse présents, SSL valide
-3. **Google Business** : Fiche bien remplie — description correcte, catégories (Buffet, Asian, Chinese, Restaurant), horaires, téléphone, photos
-4. **Mots-clés** : 3 mots-clés (asian food, dim sum, soup) × 3 villes (Renton, Tukwila, SeaTac) = 9 keyword cards
-5. **Résultat** : Feast Buffet n'apparaît dans AUCUN Map Pack → tous les mapPackRank sont `null`
+```
+ÉTAPE 1 — Identification (3 requêtes)
+  1. WebSearch('"Feast Buffet" Renton restaurant')
+     → Trouvé : feastbuffetrenton.com, Google Maps (4.1★, 5807 avis), Yelp, TripAdvisor
+     → Les 5807 avis prouvent un restaurant très fréquenté
+     → Catégories Google : Buffet restaurant, Asian restaurant, Chinese restaurant
 
-**Leçons apprises :**
-- Un restaurant peut avoir 5800 avis Google mais NE PAS apparaître dans le Map Pack pour ses mots-clés
-- Le choix des villes voisines est important : Renton, Tukwila et SeaTac sont dans le même bassin de vie
-- Le site avait beaucoup de "warning" (données non vérifiables) car le site était minimal
-- Les concurrents dominants (Din Tai Fung, PHO BOX) sont apparus sur PLUSIEURS mots-clés
+  2. WebSearch('"Feast Buffet" Renton site:yelp.com')
+     → Trouvé : fiche Yelp avec note, nombre d'avis, catégories, prix $$
+     → Confirmé adresse : 801 Rainier Ave S, Renton, WA 98057
 
-**Particularités du JSON :**
-- Beaucoup de critères en `"warning"` avec `"findings": "Working on finding this data..."` → c'est parce que le site était trop minimal pour vérifier certains critères SEO
-- Le `revenueLoss.amount` est faible (1615$) car il n'y a que 7 `needsWork` — le site est simple mais pas cassé
-- Le `overallScore` est 53 car les parties techniques (SSL, mobile, sitemap) passent, mais le contenu et la conversion sont faibles
+  3. WebFetch('https://feastbuffetrenton.com', prompt: audit SEO structuré)
+     → Résultat : site TRÈS minimal — quasi pas de texte
+     → SSL: YES, H1: non vérifiable, meta description: non vérifiable
+     → Horaires: OUI, Adresse: OUI, Téléphone: OUI
+     → Pas de menu en ligne, pas de section À propos, pas de FAQ
+     → Pas de commande en ligne, pas de réservation
+
+ÉTAPE 2 — Site web (1 requête supplémentaire)
+  4. WebFetch('https://feastbuffetrenton.com/robots.txt')
+     → robots.txt et sitemap présents
+
+ÉTAPE 4 — Mots-clés (9 requêtes)
+  5.  WebSearch("Best asian food in Renton")
+  6.  WebSearch("Best asian food in Tukwila")
+  7.  WebSearch("Best asian food in SeaTac")
+  8.  WebSearch("Best dim sum in Renton")
+  9.  WebSearch("Best dim sum in Tukwila")
+  10. WebSearch("Best dim sum in SeaTac")
+  11. WebSearch("Best soup in Renton")
+  12. WebSearch("Best soup in Tukwila")
+  13. WebSearch("Best soup in SeaTac")
+
+TOTAL : 13 requêtes (3 identification + 1 site + 9 mots-clés)
+```
+
+**Pourquoi ces choix de mots-clés :**
+- "asian food" → terme le plus large, correspond à la catégorie Google "Asian restaurant"
+- "dim sum" → spécialité distinctive du buffet, mentionnée dans la description Google
+- "soup" → plat populaire mentionné dans les catégories de menu
+- PAS "buffet" → trop générique (inclut des buffets d'hôtel, petit-déjeuner, etc.)
+- PAS "sushi" → trop de restaurants sushi spécialisés, Feast Buffet serait noyé
+
+**Pourquoi ces villes :**
+- Renton → ville du restaurant (obligatoire)
+- Tukwila → 5 min en voiture, zone commerciale Westfield Southcenter, bassin d'emploi commun
+- SeaTac → 10 min, hub aéroport, les voyageurs cherchent "asian food near SeaTac"
+
+**Résultat critique** : Feast Buffet n'apparaît dans AUCUN Map Pack sur 9 recherches malgré 5807 avis → tous les mapPackRank sont `null`. C'est un signal fort : le SEO local est mauvais malgré la popularité.
+
+**Leçons techniques :**
+- Un restaurant avec 5800 avis peut NE PAS apparaître dans le Map Pack → le nombre d'avis seul ne suffit pas
+- Le site avait beaucoup de `"warning"` avec `"findings": "Working on finding this data..."` → c'est INCORRECT. On aurait dû mettre `"fail"` pour les critères non trouvés sur un site aussi minimal. Le `warning` ne doit être utilisé que si le critère est partiellement satisfait, pas si les données sont inaccessibles.
+- Les concurrents dominants (Din Tai Fung 3×, PHO BOX 2×, MR. DIM SUM 2×) sont apparus sur PLUSIEURS mots-clés → algorithme de fréquence pour competitorRankings
 
 ---
 
 ### 4.2 Istanbul Kasap Market (Neuchâtel, CH) — Score 38/100
 
-**Contexte** : Boucherie halal turque qui fait aussi kebab/döner. Double activité = double complexité.
+**Contexte** : Boucherie halal turque qui fait aussi kebab/döner. Double activité = double complexité. Domaine .ch → pays CH, locale FR.
 
-**Ce qu'on a fait :**
+**Requêtes exactes effectuées (dans l'ordre) :**
 
-1. **Identification** : WebSearch "Istanbul Kasap Market Neuchâtel" → 2 sites trouvés ! boucherie-istanbul.ch (WooCommerce pour la boucherie) + lecointurc.com. Aussi kebab séparé. Google Maps: 4.4★, 12 avis seulement
-2. **Site web** : WebFetch de boucherie-istanbul.ch → site WooCommerce avec fiches produit viande, AUCUNE mention du kebab/restaurant, pas d'adresse, pas d'horaires, pas de section À propos, pas de FAQ
-3. **Google Business** : 2 fiches séparées (boucherie + kebab) → incohérence NAP. Catégories "Boucherie", "Kebab Döner", "Pizza Take Away"
-4. **Mots-clés** : 5 mots-clés (kebab, döner, boucherie halal, viande halal, restaurant turc) × 2 villes (Neuchâtel, La Chaux-de-Fonds) = 6 keyword cards
-5. **Résultat** : Classé #1 pour "boucherie halal" et "viande halal" mais ABSENT pour "kebab" et "döner"
+```
+ÉTAPE 1 — Identification (4 requêtes)
+  1. WebSearch('"Istanbul Kasap Market" Neuchâtel')
+     → DÉCOUVERTE CRITIQUE : 2 domaines trouvés ! boucherie-istanbul.ch + lecointurc.com
+     → Google Maps : 4.4★, 12 avis (TRÈS PEU comparé à Feast Buffet)
+     → Catégories : Boucherie, Kebab Döner, Pizza Take Away, Alimentation orientale
+     → Signal : 2 fiches Google séparées (boucherie ET kebab) → problème NAP
 
-**Leçons apprises :**
-- Un commerce avec PLUSIEURS activités (boucherie + kebab) est plus complexe à analyser
-- Il faut vérifier s'il y a plusieurs fiches Google → ça crée des problèmes de cohérence NAP
-- En Suisse, il faut chercher sur local.ch et search.ch en plus de Google
-- Le site WooCommerce est techniquement correct (SSL, responsive) mais le contenu est quasi inexistant
-- Les `additionalPhones` sont utiles quand le même commerce a plusieurs numéros
-- Quand le restaurant est classé #1, le `mapPackRank` est `1` ET le restaurant apparaît dans ses propres `competitors`
+  2. WebSearch('"Istanbul Kasap" Neuchâtel site:local.ch OR site:search.ch')
+     → Trouvé sur local.ch : adresse exacte Rue des Moulins 51, 2000 Neuchâtel
+     → Téléphone boucherie : +41 32 724 30 87
+     → Téléphone kebab : +41 32 544 74 74 (DIFFÉRENT → additionalPhones)
+     → Horaires détaillés pour les deux activités
 
-**Particularités du JSON :**
-- `"locale": "fr"` → tous les titres de critères sont en français
-- La section titles est en français : "Résultats de Recherche", "Expérience Client", "Fiches Locales"
-- Les catégories sont en français : "Domaine", "Titre principal (H1)", "Métadonnées", etc.
-- Le `revenueLoss` cite des problèmes spécifiques au contexte : "Le site ne mentionne pas le kebab/döner"
-- 62 critères `needsWork` → score très bas car le site ne représente qu'un aspect du business
+  3. WebSearch('"Istanbul Kasap" Neuchâtel site:facebook.com OR instagram')
+     → Facebook trouvé : facebook.com/istanbulkasapmarket
+     → Pas d'Instagram trouvé
+
+  4. WebSearch('"Istanbul" boucherie Neuchâtel site:zefix.ch OR site:moneyhouse.ch')
+     → Raison sociale : Istanbul Kasap Market Sàrl
+     → Pas de nom de propriétaire trouvé → ownerName: "Non déterminé"
+
+ÉTAPE 2 — Site web (2 requêtes)
+  5. WebFetch('https://boucherie-istanbul.ch', prompt: audit SEO structuré)
+     → WooCommerce détecté (WordPress + WooCommerce)
+     → AUCUNE mention du kebab/restaurant sur le site boucherie
+     → Catégories produit : Agneau, Boeuf, Veau, Volaille
+     → Pas d'adresse, pas d'horaires, pas de section À propos
+     → SSL OK, responsive OK, mais performance moyenne (scripts WooCommerce)
+
+  6. WebFetch('https://boucherie-istanbul.ch/robots.txt')
+     → robots.txt WordPress par défaut, sitemap auto-généré
+
+ÉTAPE 4 — Mots-clés (6 requêtes)
+  7.  WebSearch("Meilleur kebab à Neuchâtel")
+  8.  WebSearch("Meilleur döner à Neuchâtel")
+  9.  WebSearch("Meilleure boucherie halal à Neuchâtel")
+  10. WebSearch("Viande halal à Neuchâtel")
+  11. WebSearch("Meilleur restaurant turc à Neuchâtel")
+  12. WebSearch("Meilleur kebab à La Chaux-de-Fonds")
+
+TOTAL : 12 requêtes (4 identification + 2 site + 6 mots-clés)
+```
+
+**Pourquoi 5 mots-clés (au lieu de 3) :**
+- Ce business a une DOUBLE ACTIVITÉ (boucherie + restaurant) → il faut couvrir les deux
+- "kebab" et "döner" semblent similaires mais donnent des résultats Maps DIFFÉRENTS
+- "boucherie halal" et "viande halal" ciblent les mêmes clients mais via des intentions différentes
+- "restaurant turc" est le terme culturel large
+
+**Pourquoi seulement 2 villes :**
+- Neuchâtel est petit (34k habitants), le bassin de chalandise est limité
+- La Chaux-de-Fonds est la 2e ville du canton (38k), à 25 min → pertinent
+- PAS de 3e ville car les autres (Bienne, Yverdon) sont dans d'autres cantons et trop loin
+
+**Résultat stratégique** : Le restaurant est #1 pour "boucherie halal" et "viande halal" (sa niche) mais INVISIBLE pour "kebab" et "döner" (le marché compétitif). Cela révèle que Google catégorise le business comme boucherie, pas comme restaurant.
+
+**Leçons techniques :**
+- 2 fiches Google = TOUJOURS `fail` sur le critère NAP (confusion pour Google)
+- En Suisse, local.ch/search.ch donne des données de MEILLEURE QUALITÉ que Google pour les horaires et téléphones
+- La recherche `site:zefix.ch` permet de trouver la raison sociale exacte (registre du commerce suisse)
+- Quand le restaurant est classé #1, il apparaît dans ses propres `competitors` dans la keywordCard ET `mapPackRank: 1`
+- Tout le rapport est en français : titres de sections, descriptions de critères, findings
 
 ---
 
 ### 4.3 O'QG Burger & Tacos (Neuchâtel, CH) — Score 48/100
 
-**Contexte** : Restaurant fast-casual burger/tacos avec système de commande en ligne.
+**Contexte** : Restaurant fast-casual burger/tacos avec système de commande en ligne. Domaine .ch → pays CH, locale FR.
 
-**Ce qu'on a fait :**
+**Requêtes exactes effectuées (dans l'ordre) :**
 
-1. **Identification** : WebSearch "OQG Burger Tacos Neuchâtel" → PLUSIEURS domaines trouvés : oqgburgertacos.ch, neuchatel.oqgburgertacos.ch, oqgburger.com, oqg-burgertacos.shop → problème de fragmentation !
-2. **Site web** : WebFetch de oqgburgertacos.ch → site de commande en ligne avec menu complet, MAIS quasi aucun texte, pas de meta description, pas d'alt tags, pas de schema markup, Instagram actif mais pas lié
-3. **Google Business** : 4.5★, 164 avis (Restaurant Guru). Catégories : "Restaurant de hamburgers", "Restaurant de tacos", "Fast food"
-4. **Mots-clés** : 4 mots-clés (burger, tacos, smash burger, fast food) × 2 villes (Neuchâtel, La Chaux-de-Fonds) + 1 spécial (livraison burger Neuchâtel) = 6 keyword cards
-5. **Résultat** : Classé #3 pour "burger", #2 pour "tacos", #1 pour "smash burger" — bonne position sur sa niche !
+```
+ÉTAPE 1 — Identification (3 requêtes)
+  1. WebSearch('"OQG" OR "O\'QG" burger tacos Neuchâtel')
+     → DÉCOUVERTE CRITIQUE : 4 domaines ! oqgburgertacos.ch, neuchatel.oqgburgertacos.ch,
+       oqgburger.com, oqg-burgertacos.shop → FRAGMENTATION MASSIVE
+     → Google Maps : 4.5★ via Restaurant Guru (164 avis)
+     → Catégories : Restaurant de hamburgers, Restaurant de tacos, Fast food, Livraison
+     → Instagram actif : @oqg_burger_tacos (trouvé dans les résultats)
+     → Facebook : trouvé dans les résultats
+     → 2e établissement : La Chaux-de-Fonds (sous-domaine lachaux.oqgburgertacos.ch)
 
-**Leçons apprises :**
-- La fragmentation de domaines est un GROS problème SEO → toujours compter combien de domaines un restaurant utilise
-- Un restaurant peut être bien classé sur des termes de niche (smash burger) mais absent sur les termes génériques (fast food)
-- Les plateformes de livraison (Uber Eats) apparaissent dans les résultats organiques → noter ces URLs
-- Quand le restaurant A un système de commande en ligne, le critère "CTA efficace" passe
-- Les sous-domaines par ville (neuchatel.oqgburgertacos.ch) sont un pattern courant en Suisse
+     NOTE SUR LA REQUÊTE : Utilisation de OR pour couvrir les 2 orthographes
+     du nom (OQG vs O'QG — l'apostrophe varie selon les plateformes)
 
-**Particularités du JSON :**
-- `"additionalWebsites": ["https://oqg-burgers-tacos.orderbox.ch"]` → le système de commande est sur un domaine séparé
-- Le nombre d'avis vient de Restaurant Guru (164), pas de Google directement
-- Les concurrents incluent des chaînes (McDonald's, Burger King) ET des indépendants (Greasemonkees, Holy Cow!)
-- `mapPackRank` varie par mot-clé : 3 pour "burger", 2 pour "tacos", 1 pour "smash burger", null pour "fast food"
-- Le mot-clé "livraison burger" a `winner: "Uber Eats"` → c'est une plateforme, pas un restaurant
+  2. WebSearch("oqgburgertacos.ch site:google.com")
+     → Vérifier combien de pages sont indexées pour le domaine principal
+     → Permet de confirmer que c'est bien le domaine principal (plus de pages indexées)
+
+  3. WebSearch('"OQG" burger Neuchâtel site:local.ch OR site:search.ch')
+     → local.ch : adresse Rue de la Dîme 6 (DIFFÉRENT du Faubourg du Lac 17 trouvé ailleurs)
+     → Téléphone : 032 753 19 75
+     → Horaires détaillés
+
+     NOTE : L'adresse diffère selon les sources → signal d'incohérence NAP
+     Après vérification : Faubourg du Lac 17 = ancienne adresse, Rue de la Dîme 6 = actuelle
+
+ÉTAPE 2 — Site web (2 requêtes)
+  4. WebFetch('https://oqgburgertacos.ch', prompt: audit SEO structuré)
+     → Site de commande en ligne propre avec menu interactif
+     → MAIS : zéro texte (juste des noms de produits), zéro meta description,
+       zéro alt tags sur les images, zéro schema markup
+     → Favicon : OUI (logo OQG)
+     → SSL : OUI
+     → Système de commande intégré avec panier → CTA "Commander" passe
+     → Instagram non lié malgré une présence active
+     → Catégories menu : Smash Burger, Tacos, Burgers, Samboussa, Kids, Frites, Tenders, Desserts
+
+  5. WebFetch('https://neuchatel.oqgburgertacos.ch', prompt: "Comparer avec le domaine principal")
+     → Menu identique mais avec adresse + téléphone + horaires
+     → Contenu dupliqué entre les 2 sous-domaines → critère "duplicate content" = warning
+
+ÉTAPE 4 — Mots-clés (6 requêtes)
+  6.  WebSearch("Meilleur burger à Neuchâtel")
+      → Map Pack : Greasemonkees #1, Neuch' Tacos #2, O'QG #3 → mapPackRank: 3
+  7.  WebSearch("Meilleur tacos à Neuchâtel")
+      → Map Pack : Neuch' Tacos #1, O'QG #2, King Food #3 → mapPackRank: 2
+  8.  WebSearch("Meilleur smash burger à Neuchâtel")
+      → Map Pack : O'QG #1, Greasemonkees #2, Holy Cow! #3 → mapPackRank: 1 (NICHE WIN!)
+  9.  WebSearch("Meilleur fast food à Neuchâtel")
+      → Map Pack : McDonald's #1, Burger King #2, King Food #3 → mapPackRank: null (absent)
+  10. WebSearch("Meilleur burger à La Chaux-de-Fonds")
+      → Map Pack : Holy Cow! #1, O'QG #2, McDonald's #3 → mapPackRank: 2
+  11. WebSearch("Livraison burger Neuchâtel")
+      → Map Pack : McDonald's #1, Burger King #2, O'QG #3 → mapPackRank: 3
+      → Organic : Uber Eats en #1 → winner est une plateforme, pas un restaurant
+
+TOTAL : 11 requêtes (3 identification + 2 site + 6 mots-clés)
+```
+
+**Pourquoi cette stratégie de mots-clés :**
+- "burger" → terme principal (dans le nom du restaurant), forte compétition
+- "tacos" → terme secondaire (dans le nom), compétition moyenne
+- "smash burger" → NICHE STRATÉGIQUE. Peu de restaurants se positionnent dessus → potentiel #1
+- "fast food" → terme générique pour voir si O'QG apparaît face aux chaînes (non → insight utile)
+- "livraison burger" → INTENTION TRANSACTIONNELLE. Le client veut commander maintenant.
+- PAS de mot-clé "kebab" même si les concurrents en font → ce n'est pas le positionnement d'O'QG
+
+**Pattern découvert — La pyramide de niche :**
+```
+                    "smash burger" → #1 (NICHE = fort)
+               "tacos" → #2 (SPÉCIALITÉ = moyen)
+          "burger" → #3 (GÉNÉRIQUE = dilué)
+     "fast food" → absent (TROP LARGE = invisible)
+
+→ Plus le mot-clé est spécifique, mieux le restaurant est classé.
+→ C'est une RÈGLE GÉNÉRALE qui se vérifie pour la plupart des restaurants.
+```
+
+**Leçon critique — Fragmentation des domaines :**
+```
+4 domaines trouvés pour le même restaurant :
+  oqgburgertacos.ch            → Site principal (menu + commande)
+  neuchatel.oqgburgertacos.ch  → Sous-domaine par ville
+  oqgburger.com                → Ancien domaine (page À propos dessus !)
+  oqg-burgertacos.shop         → Domaine shop (jamais vu en pratique)
+
+IMPACT SEO : Google ne sait pas quel domaine prioriser → le "jus SEO" est divisé par 4.
+C'est pourquoi le critère "Un seul domaine" est en FAIL avec findings détaillés.
+```
 
 ---
 
@@ -838,6 +1321,73 @@ Utilise ce template comme point de départ. Remplace les `___` par les vraies do
     "sources": []
   }
 }
+```
+
+---
+
+## 9. Optimisation des Requêtes — Aide-mémoire Rapide
+
+### Nombre total de requêtes par rapport
+
+```
+Budget optimal : 11-15 requêtes par restaurant
+
+  Étape 1 (Identification)  : 3-4 WebSearch
+  Étape 2 (Site web)         : 2-3 WebFetch
+  Étape 3 (Google Business)  : 0-1 WebSearch (souvent déjà couvert en Étape 1)
+  Étape 4 (Mots-clés)       : 6-9 WebSearch (3 mots-clés × 2-3 villes)
+  ──────────────────────────────────────
+  TOTAL                      : 11-17 requêtes
+```
+
+### Qualité des requêtes — Patterns à utiliser
+
+```
+IDENTIFICATION :
+  ✅ '"Nom Exact" ville restaurant'          → Force la correspondance exacte
+  ✅ '"Nom" ville site:local.ch'             → Cible un annuaire précis
+  ✅ '"Nom" ville site:zefix.ch'             → Registre du commerce (CH)
+  ❌ 'Nom restaurant avis'                   → Trop vague, résultats pollués
+  ❌ 'Nom'                                   → Homonymes partout
+
+MOTS-CLÉS :
+  ✅ 'Meilleur {keyword} à {ville}'          → Déclenche le Map Pack en FR
+  ✅ 'Best {keyword} in {city}'              → Déclenche le Map Pack en EN
+  ✅ '{keyword} {ville}'                     → Alternatif si le premier ne donne pas de Map Pack
+  ❌ '{keyword} restaurant {ville}'          → Le mot "restaurant" dilue les résultats
+  ❌ 'Où manger {keyword} à {ville}'        → Formulation trop conversationnelle
+
+SITE WEB :
+  ✅ WebFetch avec prompt structuré M1-T7    → Réponses mappables aux critères
+  ✅ WebFetch robots.txt PUIS sitemap.xml    → robots.txt référence souvent le sitemap
+  ❌ WebFetch avec prompt vague "analyse ce site" → Réponse inutilisable
+  ❌ WebFetch de chaque page du site         → Trop de requêtes, redondant
+```
+
+### Arbre de décision — Quand ajouter une requête supplémentaire
+
+```
+SI la Recherche MAÎTRE n'a pas trouvé Google Maps :
+  → AJOUTER : WebSearch("{nom} {ville} google maps avis")
+
+SI le site web a un menu mais pas trouvé en page d'accueil :
+  → AJOUTER : WebFetch de la page /menu ou /carte
+
+SI l'adresse diffère entre Google et le site :
+  → NE PAS ajouter de requête, noter comme fail NAP
+
+SI le restaurant a des avis sur Restaurant Guru mais pas Google :
+  → AJOUTER : WebSearch("{nom} {ville} site:restaurantguru.com")
+
+SI le pays est la Suisse et local.ch n'a rien donné :
+  → AJOUTER : WebSearch("{nom} {ville} site:search.ch")
+
+SI aucun réseau social trouvé :
+  → AJOUTER : WebSearch("{nom} {ville} instagram OR facebook OR tiktok")
+  → UNE SEULE requête pour les 3 réseaux
+
+SINON :
+  → NE PAS ajouter de requête. Mets les champs manquants à null.
 ```
 
 ---
