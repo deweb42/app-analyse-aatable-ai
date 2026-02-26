@@ -6,6 +6,7 @@ const staticReports: Record<string, () => Promise<{ default: unknown }>> = {
   'feast-buffet': () => import('./data/feast-buffet.json'),
   'istanbul-kasap-market': () => import('./data/istanbul-kasap-market.json'),
   'oqg-burger-tacos': () => import('./data/oqg-burger-tacos.json'),
+  'okapi-neuchatel': () => import('./data/00001-okapi-neuchatel.json'),
 }
 import { ReportLayout } from './components/layout/ReportLayout'
 import { Sidebar } from './components/layout/Sidebar'
