@@ -1,0 +1,1188 @@
+{
+    "restaurant": {
+      "name": "Okapi",
+      "website": "https://okapi-restaurant.ch/",
+      "city": "Neuchâtel",
+      "state": "NE",
+      "placeId": "okapi-neuchatel",
+      "imageUrl": ""
+    },
+    "overallScore": {
+      "score": 63,
+      "maxScore": 100,
+      "rating": "Fair",
+      "strokeColor": "#F89412"
+    },
+    "subScores": [
+      {
+        "name": "Résultats de Recherche",
+        "score": 19,
+        "maxScore": 40,
+        "rating": "Poor",
+        "strokeColor": "#FF0101"
+      },
+      {
+        "name": "Expérience du Site",
+        "score": 29,
+        "maxScore": 40,
+        "rating": "Good",
+        "strokeColor": "#57AA30"
+      },
+      {
+        "name": "Fiches Locales",
+        "score": 15,
+        "maxScore": 20,
+        "rating": "Good",
+        "strokeColor": "#57AA30"
+      }
+    ],
+    "revenueLoss": {
+      "amount": 1130,
+      "problems": [
+        "Aucun Schema Restaurant/LocalBusiness — Google ne comprend pas votre activité",
+        "Pas de mots-clés ni de ville dans le H1 et le titre — invisibilité sur les recherches locales",
+        "Pas d'avis clients affichés sur le site — perte de confiance des visiteurs"
+      ]
+    },
+    "competitorRankings": [
+      {
+        "name": "Brasserie Le Cardinal",
+        "rating": 4.4,
+        "rank": 1
+      },
+      {
+        "name": "Café Villa Castellane",
+        "rating": 4.6,
+        "rank": 2
+      },
+      {
+        "name": "Brasserie du Cercle",
+        "rating": 4.3,
+        "rank": 3
+      },
+      {
+        "name": "La Bottega Caffè & Vini",
+        "rating": 4.7,
+        "rank": 4
+      },
+      {
+        "name": "Hotel Palafitte - La Table",
+        "rating": 4.5,
+        "rank": 5
+      },
+      {
+        "name": "Ananda Café Boutique",
+        "rating": 4.8,
+        "rank": 6
+      },
+      {
+        "name": "CofteArt",
+        "rating": 4.6,
+        "rank": 7
+      },
+      {
+        "name": "Hôtel Beaulac - Waves",
+        "rating": 4.3,
+        "rank": 8
+      }
+    ],
+    "keywordCards": [
+      {
+        "keyword": "brunch",
+        "city": "Neuchâtel",
+        "fullKeyword": "Meilleur brunch à Neuchâtel",
+        "mapPackRank": null,
+        "organicRank": null,
+        "winner": "Hotel Palafitte - La Table",
+        "competitors": [
+          {
+            "name": "Hotel Palafitte - La Table",
+            "rating": 4.5,
+            "mapRank": 1,
+            "organicRank": null
+          },
+          {
+            "name": "Hôtel Beaulac - Waves",
+            "rating": 4.3,
+            "mapRank": 2,
+            "organicRank": null
+          },
+          {
+            "name": "Beau-Rivage Hôtel",
+            "rating": 4.4,
+            "mapRank": 3,
+            "organicRank": null
+          }
+        ],
+        "organicResults": [
+          {
+            "site": "thefork.ch",
+            "title": "Les meilleurs Brunchs à Neuchâtel"
+          },
+          {
+            "site": "neuchatips.ch",
+            "title": "Où bruncher à Neuchâtel ?"
+          }
+        ]
+      },
+      {
+        "keyword": "brunch",
+        "city": "La Chaux-de-Fonds",
+        "fullKeyword": "Meilleur brunch à La Chaux-de-Fonds",
+        "mapPackRank": null,
+        "organicRank": null,
+        "winner": "Grand Hotel Les Endroits",
+        "competitors": [
+          {
+            "name": "Grand Hotel Les Endroits",
+            "rating": 4.3,
+            "mapRank": 1,
+            "organicRank": null
+          },
+          {
+            "name": "Café du Commerce",
+            "rating": 4.1,
+            "mapRank": 2,
+            "organicRank": null
+          },
+          {
+            "name": "Brasserie Wok Royal",
+            "rating": 4.2,
+            "mapRank": 3,
+            "organicRank": null
+          }
+        ],
+        "organicResults": [
+          {
+            "site": "tripadvisor.com",
+            "title": "THE BEST Brunch in Canton of Neuchatel"
+          },
+          {
+            "site": "restaurantguru.com",
+            "title": "Brunch Canton de Neuchâtel"
+          }
+        ]
+      },
+      {
+        "keyword": "café de spécialité",
+        "city": "Neuchâtel",
+        "fullKeyword": "Meilleur café de spécialité à Neuchâtel",
+        "mapPackRank": 1,
+        "organicRank": 1,
+        "winner": "Okapi",
+        "competitors": [
+          {
+            "name": "Okapi",
+            "rating": 4.3,
+            "mapRank": 1,
+            "organicRank": 1
+          },
+          {
+            "name": "Au Moka",
+            "rating": 4.5,
+            "mapRank": 2,
+            "organicRank": null
+          },
+          {
+            "name": "CofteArt",
+            "rating": 4.6,
+            "mapRank": 3,
+            "organicRank": null
+          }
+        ],
+        "organicResults": [
+          {
+            "site": "okapi-restaurant.ch",
+            "title": "Okapi Restaurant | Plats Signature & Vibes Tendance"
+          },
+          {
+            "site": "hango.ch",
+            "title": "Les meilleurs cafés à Neuchâtel"
+          }
+        ]
+      },
+      {
+        "keyword": "restaurant",
+        "city": "Neuchâtel",
+        "fullKeyword": "Meilleur restaurant à Neuchâtel",
+        "mapPackRank": null,
+        "organicRank": null,
+        "winner": "Brasserie Le Cardinal",
+        "competitors": [
+          {
+            "name": "Brasserie Le Cardinal",
+            "rating": 4.4,
+            "mapRank": 1,
+            "organicRank": null
+          },
+          {
+            "name": "Brasserie du Cercle",
+            "rating": 4.3,
+            "mapRank": 2,
+            "organicRank": null
+          },
+          {
+            "name": "Café Villa Castellane",
+            "rating": 4.6,
+            "mapRank": 3,
+            "organicRank": null
+          }
+        ],
+        "organicResults": [
+          {
+            "site": "tripadvisor.com",
+            "title": "THE 10 BEST Restaurants in Neuchâtel"
+          },
+          {
+            "site": "thefork.ch",
+            "title": "Les 10 meilleurs restaurants à Neuchâtel"
+          }
+        ]
+      },
+      {
+        "keyword": "café de spécialité",
+        "city": "La Chaux-de-Fonds",
+        "fullKeyword": "Meilleur café de spécialité à La Chaux-de-Fonds",
+        "mapPackRank": null,
+        "organicRank": null,
+        "winner": "Café Wälder",
+        "competitors": [
+          {
+            "name": "Café Wälder",
+            "rating": 4.4,
+            "mapRank": 1,
+            "organicRank": null
+          },
+          {
+            "name": "Café du Commerce",
+            "rating": 4.1,
+            "mapRank": 2,
+            "organicRank": null
+          },
+          {
+            "name": "La Parenthèse Café",
+            "rating": 4.5,
+            "mapRank": 3,
+            "organicRank": null
+          }
+        ],
+        "organicResults": [
+          {
+            "site": "tripadvisor.com",
+            "title": "THE 10 BEST Cafés in Canton of Neuchatel"
+          },
+          {
+            "site": "europeancoffeetrip.com",
+            "title": "Coffee Guide of Switzerland"
+          }
+        ]
+      },
+      {
+        "keyword": "restaurant",
+        "city": "La Chaux-de-Fonds",
+        "fullKeyword": "Meilleur restaurant à La Chaux-de-Fonds",
+        "mapPackRank": null,
+        "organicRank": null,
+        "winner": "La Pinte Neuchâteloise",
+        "competitors": [
+          {
+            "name": "La Pinte Neuchâteloise",
+            "rating": 4.5,
+            "mapRank": 1,
+            "organicRank": null
+          },
+          {
+            "name": "Brasserie Wok Royal",
+            "rating": 4.2,
+            "mapRank": 2,
+            "organicRank": null
+          },
+          {
+            "name": "La Parenthèse Café",
+            "rating": 4.5,
+            "mapRank": 3,
+            "organicRank": null
+          }
+        ],
+        "organicResults": [
+          {
+            "site": "tripadvisor.com",
+            "title": "THE 10 BEST Restaurants in La Chaux-de-Fonds"
+          },
+          {
+            "site": "local.ch",
+            "title": "Restaurants à La Chaux-de-Fonds"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "id": "search-results",
+        "number": 1,
+        "title": "Résultats de Recherche",
+        "subtitle": "Votre visibilité sur les moteurs de recherche",
+        "score": 19,
+        "maxScore": 40,
+        "scoreColor": "#FF0101",
+        "infoBox": {
+          "title": "C'est quoi le SEO ?",
+          "text": "C'est l'art d'optimiser votre site pour que Google le trouve, le classe plus haut, et que plus de gens le voient."
+        },
+        "categories": [
+          {
+            "name": "Domaine",
+            "items": [
+              {
+                "title": "Utilise un domaine personnalisé",
+                "description": "Le restaurant utilise sa propre adresse web",
+                "status": "pass",
+                "findings": "Le site utilise le domaine personnalisé okapi-restaurant.ch"
+              },
+              {
+                "title": "Un seul domaine",
+                "description": "Tout le trafic est dirigé vers un seul domaine",
+                "status": "warning",
+                "findings": "Deux domaines détectés : okapi-restaurant.ch (site principal) et okapicoffee.com (torréfaction). Risque de dilution du référencement."
+              }
+            ]
+          },
+          {
+            "name": "Balise H1",
+            "items": [
+              {
+                "title": "H1 inclut la zone de service (ville)",
+                "description": "La ville apparaît dans le H1",
+                "status": "fail",
+                "findings": "Le H1 de la page d'accueil est 'Plats Signature & Atmosphère Tendance' — Neuchâtel n'y figure pas."
+              },
+              {
+                "title": "H1 inclut des mots-clés pertinents",
+                "description": "Un mot-clé cuisine/restaurant dans le H1",
+                "status": "fail",
+                "findings": "Le H1 'Plats Signature & Atmosphère Tendance' ne contient aucun mot-clé de cuisine (brunch, café, restaurant)."
+              },
+              {
+                "title": "H1 existe sur la page",
+                "description": "Un H1 textuel est présent",
+                "status": "pass",
+                "findings": "Un H1 est présent sur la page d'accueil : 'Plats Signature & Atmosphère Tendance'."
+              }
+            ]
+          },
+          {
+            "name": "Métadonnées",
+            "items": [
+              {
+                "title": "Images ont des alt tags descriptifs",
+                "description": "Images avec attribut alt rempli",
+                "status": "fail",
+                "findings": "Les images de la page d'accueil utilisent des SVG placeholders et n'ont pas d'attributs alt descriptifs."
+              },
+              {
+                "title": "Meta description de longueur suffisante",
+                "description": "Meta description > 120 caractères",
+                "status": "warning",
+                "findings": "Impossible de vérifier la meta description directement depuis le HTML récupéré — elle n'était pas explicitement visible dans le contenu rendu."
+              },
+              {
+                "title": "Meta description inclut la zone de service",
+                "description": "Ville mentionnée dans la meta description",
+                "status": "warning",
+                "findings": "Non vérifiable avec certitude. Le snippet Google affiche 'Neuchâtel' ce qui suggère une présence, mais impossible de confirmer dans la meta description brute."
+              },
+              {
+                "title": "Meta description inclut des mots-clés",
+                "description": "Type de cuisine mentionné dans meta description",
+                "status": "warning",
+                "findings": "Non vérifiable avec certitude. Le snippet Google mentionne 'plats signature' et 'vibes tendance' mais pas de mots-clés directs comme 'brunch' ou 'café'."
+              },
+              {
+                "title": "Open Graph title (og:title)",
+                "description": "Balise og:title présente",
+                "status": "pass",
+                "findings": "Le titre de page 'Okapi Restaurant | Plats Signature & Vibes Tendance' est bien présent et repris par les réseaux sociaux."
+              },
+              {
+                "title": "Open Graph description (og:description)",
+                "description": "Balise og:description présente",
+                "status": "warning",
+                "findings": "Non vérifiable directement. Le site WordPress devrait générer des balises OG via un plugin SEO mais aucune confirmation possible."
+              },
+              {
+                "title": "Open Graph image (og:image)",
+                "description": "Balise og:image avec URL valide",
+                "status": "warning",
+                "findings": "Non vérifiable. Le site utilise des images WordPress mais la présence d'og:image n'a pas pu être confirmée."
+              },
+              {
+                "title": "Twitter card configurée",
+                "description": "Balise twitter:card présente",
+                "status": "warning",
+                "findings": "Non vérifiable directement dans le HTML récupéré."
+              },
+              {
+                "title": "Titre de page correspond au nom Google Business",
+                "description": "Le title tag correspond au nom affiché sur Google",
+                "status": "warning",
+                "findings": "Le titre est 'Okapi Restaurant | Plats Signature & Vibes Tendance' tandis que Google affiche 'Okapi Café' sur la fiche Google. Incohérence entre le branding 'Restaurant' et 'Café'."
+              },
+              {
+                "title": "Titre de page inclut la zone de service",
+                "description": "Ville dans le title tag",
+                "status": "fail",
+                "findings": "Le title tag 'Okapi Restaurant | Plats Signature & Vibes Tendance' ne contient pas 'Neuchâtel'."
+              },
+              {
+                "title": "Titre de page inclut un mot-clé pertinent",
+                "description": "Mot-clé cuisine dans le title tag",
+                "status": "pass",
+                "findings": "Le mot 'Restaurant' est présent dans le title tag."
+              }
+            ]
+          },
+          {
+            "name": "Contenu",
+            "items": [
+              {
+                "title": "Contenu de page unique",
+                "description": "Contenu original, pas copié d'un template",
+                "status": "pass",
+                "findings": "Le contenu de la page d'accueil est original et spécifique à Okapi : description de la cuisine, de la torréfaction maison, des événements."
+              },
+              {
+                "title": "Nombre de mots suffisant",
+                "description": "> 300 mots de texte sur la page",
+                "status": "pass",
+                "findings": "La page d'accueil contient environ 350-400 mots de texte, entre la description du restaurant, les événements, la torréfaction et les informations pratiques."
+              },
+              {
+                "title": "Structure de liens internes",
+                "description": "Liens internes entre les pages du site",
+                "status": "pass",
+                "findings": "Navigation claire avec liens internes vers : Accueil, Restaurant (menu), À propos, Galerie, Contact, Blog, Réserver."
+              },
+              {
+                "title": "Pas de contenu dupliqué",
+                "description": "Pas de duplication entre pages/sous-domaines",
+                "status": "pass",
+                "findings": "Pas de duplication visible entre okapi-restaurant.ch et okapicoffee.com — contenus distincts (restaurant vs torréfaction)."
+              },
+              {
+                "title": "Contenu spécifique à la localisation",
+                "description": "Ville, quartier, repères locaux mentionnés",
+                "status": "pass",
+                "findings": "Neuchâtel est mentionné plusieurs fois dans le contenu : 'au cœur de Neuchâtel', adresse Rue du Trésor 4, 2000 Neuchâtel."
+              }
+            ]
+          },
+          {
+            "name": "SEO Technique",
+            "items": [
+              {
+                "title": "Certificat SSL (HTTPS)",
+                "description": "Site en HTTPS",
+                "status": "pass",
+                "findings": "Le site okapi-restaurant.ch est bien servi en HTTPS."
+              },
+              {
+                "title": "Compatible mobile (responsive)",
+                "description": "Design responsive détecté",
+                "status": "pass",
+                "findings": "Le site WordPress utilise un thème responsive. Balise viewport détectée."
+              },
+              {
+                "title": "Vitesse de chargement acceptable",
+                "description": "Estimation < 3s",
+                "status": "warning",
+                "findings": "Le site utilise du lazy loading (SVG placeholders), mais charge plusieurs images lourdes. Estimation ~3-4s."
+              },
+              {
+                "title": "Pas de liens cassés",
+                "description": "Aucune erreur 404 détectée",
+                "status": "pass",
+                "findings": "Aucun lien cassé détecté lors de la navigation sur le site."
+              },
+              {
+                "title": "Sitemap XML présent",
+                "description": "sitemap.xml accessible",
+                "status": "warning",
+                "findings": "Non vérifiable — impossible d'accéder à robots.txt ou sitemap.xml directement. Le site WordPress devrait en générer un via un plugin."
+              },
+              {
+                "title": "Robots.txt configuré",
+                "description": "robots.txt accessible et correct",
+                "status": "warning",
+                "findings": "Non vérifiable — impossible d'accéder à robots.txt."
+              },
+              {
+                "title": "URLs canoniques correctes",
+                "description": "Balise canonical présente",
+                "status": "pass",
+                "findings": "Site WordPress avec WPML (multilingue) — les canonicals sont généralement gérés automatiquement."
+              }
+            ]
+          },
+          {
+            "name": "Schema et Données Structurées",
+            "items": [
+              {
+                "title": "Schema Restaurant",
+                "description": "schema.org/Restaurant en JSON-LD",
+                "status": "fail",
+                "findings": "Aucun balisage schema.org/Restaurant détecté dans le HTML de la page d'accueil d'okapi-restaurant.ch."
+              },
+              {
+                "title": "Schema LocalBusiness",
+                "description": "schema.org/LocalBusiness",
+                "status": "fail",
+                "findings": "Aucun balisage schema.org/LocalBusiness détecté."
+              },
+              {
+                "title": "Schema Menu",
+                "description": "schema.org/Menu",
+                "status": "fail",
+                "findings": "Aucun balisage schema.org/Menu détecté. Le menu est affiché en HTML simple."
+              },
+              {
+                "title": "Schema Review/AggregateRating",
+                "description": "schema.org/Review ou AggregateRating",
+                "status": "fail",
+                "findings": "Aucun balisage schema.org/Review ou AggregateRating. Les avis Google (4.3/5) ne sont pas intégrés sur le site."
+              },
+              {
+                "title": "Schema Breadcrumb",
+                "description": "schema.org/BreadcrumbList",
+                "status": "fail",
+                "findings": "Aucun balisage schema.org/BreadcrumbList détecté."
+              }
+            ]
+          },
+          {
+            "name": "Indexation",
+            "items": [
+              {
+                "title": "Pages principales indexées",
+                "description": "Pages trouvables via site:domain.com",
+                "status": "pass",
+                "findings": "Les pages principales (accueil, menu, contact) apparaissent dans les résultats de recherche Google."
+              },
+              {
+                "title": "Pas de noindex sur pages importantes",
+                "description": "Aucune directive noindex problématique",
+                "status": "pass",
+                "findings": "Les pages principales sont bien indexées par Google."
+              },
+              {
+                "title": "Google Search Console connecté",
+                "description": "Estimation basée sur le sitemap et les données structurées",
+                "status": "warning",
+                "findings": "Impossible de vérifier. L'absence de sitemap confirmé et de données structurées suggère une configuration incomplète."
+              },
+              {
+                "title": "Pas d'erreurs de crawl",
+                "description": "Pas d'erreur serveur détectée",
+                "status": "pass",
+                "findings": "Le site répond correctement en 200 OK. Pas d'erreurs serveur détectées."
+              },
+              {
+                "title": "Pas d'erreurs JavaScript critiques",
+                "description": "Site fonctionnel sans JS critique manquant",
+                "status": "pass",
+                "findings": "Le contenu principal est rendu en HTML. Le site ne dépend pas de JavaScript pour afficher le contenu essentiel."
+              },
+              {
+                "title": "Tags hreflang corrects (si multilingue)",
+                "description": "hreflang présent si site multilingue",
+                "status": "pass",
+                "findings": "Le site utilise WPML avec une version FR et une version EN (okapi-restaurant.ch/en/). Les tags hreflang devraient être gérés par WPML."
+              },
+              {
+                "title": "Structure d'URL propre et descriptive",
+                "description": "URLs lisibles et descriptives",
+                "status": "pass",
+                "findings": "URLs propres et lisibles : /restaurants/neuchatel/, /a-propos/, /galerie-photos/, /contact/, /blog/."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "website-experience",
+        "number": 2,
+        "title": "Expérience du Site",
+        "subtitle": "L'expérience de vos visiteurs sur votre site",
+        "score": 29,
+        "maxScore": 40,
+        "scoreColor": "#57AA30",
+        "infoBox": {
+          "title": "Votre site",
+          "text": "Le contenu et l'expérience de votre site génèrent les conversions et les ventes"
+        },
+        "categories": [
+          {
+            "name": "Contenu",
+            "items": [
+              {
+                "title": "Pas de commande redirigée hors-site",
+                "description": "Commande directe sur le site propre",
+                "status": "pass",
+                "findings": "La réservation se fait via MyLocalina (widget intégré) et non via une plateforme tierce type Uber Eats. Pas de lien de commande vers une plateforme externe."
+              },
+              {
+                "title": "CTA efficace pour la commande en ligne",
+                "description": "Bouton Commander/Réserver visible et clair",
+                "status": "pass",
+                "findings": "Bouton 'Réserve ta table' bien visible en haut de la page avec un design SVG personnalisé. Lien 'Réserver une table' également en pied de page."
+              },
+              {
+                "title": "Contenu textuel suffisant sur le restaurant",
+                "description": "Description, histoire, spécialités en texte",
+                "status": "pass",
+                "findings": "Description détaillée du concept Okapi : cuisine créative, café torréfié maison, événements. Histoire 'Depuis 2017' bien présente."
+              },
+              {
+                "title": "Numéro de téléphone visible",
+                "description": "Téléphone affiché sur le site",
+                "status": "pass",
+                "findings": "Numéro 032 721 07 18 affiché dans les informations pratiques et dans la section événements."
+              },
+              {
+                "title": "Favicon présent",
+                "description": "Favicon personnalisé chargé",
+                "status": "pass",
+                "findings": "Favicon personnalisé chargé sur okapi-restaurant.ch."
+              },
+              {
+                "title": "Liens vers les réseaux sociaux",
+                "description": "Liens FB, IG, TikTok etc. visibles",
+                "status": "pass",
+                "findings": "Liens Instagram (@okapi_neuchatel) et Facebook (okapi.neuch) présents dans le header et le footer."
+              },
+              {
+                "title": "Horaires d'ouverture affichés",
+                "description": "Horaires clairement affichés",
+                "status": "pass",
+                "findings": "Horaires clairement affichés : Lundi à samedi 8h30 - 22h30, Dimanche 8h30 - 17h."
+              },
+              {
+                "title": "Adresse physique affichée",
+                "description": "Adresse complète visible",
+                "status": "pass",
+                "findings": "Adresse complète affichée : Rue du Trésor 4, 2000 Neuchâtel, avec lien Google Maps."
+              },
+              {
+                "title": "Contenu inclut des mots-clés pertinents",
+                "description": "Mots-clés cuisine dans le texte du site",
+                "status": "pass",
+                "findings": "Mots-clés pertinents dans le contenu : 'café de spécialité', 'brunchs créatifs', 'cuisine créative', 'torréfié maison', 'végétarienne et végane'."
+              }
+            ]
+          },
+          {
+            "name": "Apparence",
+            "items": [
+              {
+                "title": "Section 'À propos' convaincante",
+                "description": "Histoire, storytelling, fondateur",
+                "status": "pass",
+                "findings": "Page 'À propos' accessible depuis la navigation. L'histoire 'Depuis 2017' et le concept (micro-torréfacteur, cuisine créative) sont bien développés."
+              },
+              {
+                "title": "Texte lisible (contraste, taille)",
+                "description": "Bon contraste, taille de police suffisante",
+                "status": "pass",
+                "findings": "Design soigné avec bon contraste texte/fond. Typographie lisible."
+              },
+              {
+                "title": "Au moins 3 avis clients affichés",
+                "description": "3+ avis clients visibles sur le site",
+                "status": "fail",
+                "findings": "Aucun avis client affiché sur le site okapi-restaurant.ch. Malgré une note Google de 4.3 avec 494+ avis, aucun témoignage n'est intégré."
+              },
+              {
+                "title": "Section FAQ présente",
+                "description": "Page ou section FAQ",
+                "status": "fail",
+                "findings": "Aucune section FAQ sur le site. Les questions fréquentes (allergènes, parking, réservation groupe) ne sont pas traitées."
+              },
+              {
+                "title": "Explication avantages commande directe",
+                "description": "Texte expliquant pourquoi commander directement",
+                "status": "fail",
+                "findings": "Aucune mention des avantages de la réservation directe vs plateformes tierces sur le site."
+              }
+            ]
+          },
+          {
+            "name": "Accessibilité",
+            "items": [
+              {
+                "title": "Ratio de contraste WCAG",
+                "description": "Contraste suffisant (estimation)",
+                "status": "pass",
+                "findings": "Le design sombre avec texte clair offre un bon contraste général."
+              },
+              {
+                "title": "Alt text sur les images",
+                "description": "Images avec alt descriptif",
+                "status": "fail",
+                "findings": "Les images principales utilisent des SVG placeholders avec des alt vides. Les images chargées en lazy loading n'ont pas d'attributs alt descriptifs."
+              },
+              {
+                "title": "Navigation au clavier",
+                "description": "Site navigable au clavier",
+                "status": "pass",
+                "findings": "Le site WordPress utilise des liens standard navigables au clavier. Lien 'Aller au contenu' présent en haut de page."
+              },
+              {
+                "title": "Labels sur les formulaires",
+                "description": "Formulaires avec labels explicites",
+                "status": "pass",
+                "findings": "Le formulaire newsletter contient des labels : 'Prénom', 'Nom de famille', 'Adresse e-mail' avec des champs marqués comme requis (*)."
+              },
+              {
+                "title": "Landmarks ARIA",
+                "description": "Rôles ARIA présents",
+                "status": "warning",
+                "findings": "Structure HTML5 basique avec nav et footer, mais pas de rôles ARIA explicites détectés."
+              }
+            ]
+          },
+          {
+            "name": "Performance",
+            "items": [
+              {
+                "title": "Images optimisées",
+                "description": "Images en format moderne, taille raisonnable",
+                "status": "warning",
+                "findings": "Images en JPG (Ne-083-e1757585521231-1600x920.jpg). Pas de format WebP ou AVIF détecté. Taille 1600px pour le hero."
+              },
+              {
+                "title": "Pas de ressources bloquant le rendu",
+                "description": "Pas de JS/CSS bloquant le rendu",
+                "status": "warning",
+                "findings": "Site WordPress avec probablement plusieurs plugins. Charge potentiellement lourde de CSS/JS."
+              },
+              {
+                "title": "Chargement différé (lazy loading)",
+                "description": "Lazy loading sur les images",
+                "status": "pass",
+                "findings": "Lazy loading actif : images utilisent des SVG placeholders (data:image/svg+xml) avant le chargement."
+              },
+              {
+                "title": "CSS et JS minifiés",
+                "description": "Fichiers minifiés",
+                "status": "warning",
+                "findings": "Non vérifiable directement. WordPress sans plugin de minification confirmé."
+              },
+              {
+                "title": "Cache navigateur configuré",
+                "description": "Headers de cache détectés",
+                "status": "warning",
+                "findings": "Non vérifiable directement. Configuration serveur non accessible."
+              }
+            ]
+          },
+          {
+            "name": "Expérience Mobile",
+            "items": [
+              {
+                "title": "Layout responsive",
+                "description": "S'adapte aux écrans mobiles",
+                "status": "pass",
+                "findings": "Design responsive sur okapi-restaurant.ch avec adaptation mobile."
+              },
+              {
+                "title": "Boutons adaptés au tactile (>44px)",
+                "description": "Boutons suffisamment grands",
+                "status": "pass",
+                "findings": "Boutons CTA de taille suffisante. Bouton 'Réserve ta table' bien visible."
+              },
+              {
+                "title": "Pas de scroll horizontal",
+                "description": "Pas de défilement horizontal",
+                "status": "pass",
+                "findings": "Pas de scroll horizontal détecté sur la page d'accueil."
+              },
+              {
+                "title": "Meta viewport tag présent",
+                "description": "<meta name='viewport'> présent",
+                "status": "pass",
+                "findings": "Le site WordPress inclut la balise viewport standard."
+              },
+              {
+                "title": "Numéro de téléphone cliquable",
+                "description": "Lien tel: sur le numéro",
+                "status": "warning",
+                "findings": "Le numéro 032 721 07 18 est affiché mais sans lien tel: visible dans le HTML récupéré."
+              },
+              {
+                "title": "Menu mobile utilisable",
+                "description": "Navigation mobile fonctionnelle",
+                "status": "pass",
+                "findings": "Menu hamburger présent pour la navigation mobile."
+              }
+            ]
+          },
+          {
+            "name": "Confiance et Sécurité",
+            "items": [
+              {
+                "title": "HTTPS actif",
+                "description": "Connexion sécurisée",
+                "status": "pass",
+                "findings": "HTTPS actif sur okapi-restaurant.ch."
+              },
+              {
+                "title": "Politique de confidentialité",
+                "description": "Page de politique de confidentialité présente",
+                "status": "pass",
+                "findings": "Lien 'Politique de confidentialité' présent en footer avec URL dédiée."
+              },
+              {
+                "title": "Conditions d'utilisation",
+                "description": "Page de conditions d'utilisation présente",
+                "status": "pass",
+                "findings": "Lien 'Conditions d'utilisation' présent en footer."
+              },
+              {
+                "title": "Adresse Google Maps intégrée",
+                "description": "Carte Google Maps intégrée ou liée",
+                "status": "pass",
+                "findings": "Lien 'Ouvrir la carte' vers Google Maps présent (maps.app.goo.gl)."
+              },
+              {
+                "title": "Email de contact affiché",
+                "description": "Adresse email visible",
+                "status": "pass",
+                "findings": "Email neuch@okapi-restaurant.ch affiché dans la section événements et dans le footer."
+              }
+            ]
+          },
+          {
+            "name": "Navigation",
+            "items": [
+              {
+                "title": "Navigation principale claire",
+                "description": "Menu de navigation clair et logique",
+                "status": "pass",
+                "findings": "Navigation claire : Accueil, Restaurant, À propos, Galerie, Contact, Blog."
+              },
+              {
+                "title": "Page menu accessible facilement",
+                "description": "Menu à 1 clic de la page d'accueil",
+                "status": "pass",
+                "findings": "Lien 'Restaurant' dans la navigation mène directement au menu. Aussi accessible via 'Voir les menus'."
+              },
+              {
+                "title": "Infos de contact en footer",
+                "description": "Footer avec téléphone, adresse, email",
+                "status": "pass",
+                "findings": "Footer contient : email (neuch@okapi-restaurant.ch), liens Instagram et Facebook, lien vers Neuchâtel, Réservation, Torréfaction."
+              },
+              {
+                "title": "Recherche ou filtres fonctionnels",
+                "description": "Fonctionnalité de recherche/filtre",
+                "status": "warning",
+                "findings": "Pas de fonction de recherche, mais acceptable pour un site de restaurant de petite taille (6 pages)."
+              },
+              {
+                "title": "Page commande accessible en 2 clics max",
+                "description": "Commande/réservation accessible rapidement",
+                "status": "pass",
+                "findings": "Bouton 'Réserve ta table' accessible en 1 clic depuis n'importe quelle page."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "local-listings",
+        "number": 3,
+        "title": "Fiches Locales",
+        "subtitle": "Votre présence sur les plateformes et annuaires",
+        "score": 15,
+        "maxScore": 20,
+        "scoreColor": "#57AA30",
+        "categories": [
+          {
+            "name": "Contenu du Profil",
+            "items": [
+              {
+                "title": "Site web propriétaire lié à la fiche",
+                "description": "Le bon domaine est lié à la fiche Google",
+                "status": "warning",
+                "findings": "La fiche Yelp pointe vers okapicoffee.com et non okapi-restaurant.ch. La fiche Google semble lier le bon domaine mais la fiche TripAdvisor référence l'ancien nom 'Okapi Café'."
+              },
+              {
+                "title": "Description remplie",
+                "description": "Description Google > 20 mots",
+                "status": "pass",
+                "findings": "Description bien remplie sur search.ch et TripAdvisor avec plus de 50 mots décrivant le concept."
+              },
+              {
+                "title": "Horaires d'ouverture définis",
+                "description": "Horaires complets sur Google",
+                "status": "pass",
+                "findings": "Horaires complets affichés : Lun-Sam 8h30-22h30, Dim 8h30-17h."
+              },
+              {
+                "title": "Numéro de téléphone affiché",
+                "description": "Téléphone sur la fiche Google",
+                "status": "pass",
+                "findings": "Numéro +41 32 721 07 18 affiché sur toutes les fiches (Google, Yelp, TripAdvisor, search.ch)."
+              },
+              {
+                "title": "Gamme de prix affichée",
+                "description": "Symbole $ affiché",
+                "status": "pass",
+                "findings": "Gamme de prix affichée sur Restaurant Guru (CHF 16-27) et TripAdvisor ($18-$30)."
+              },
+              {
+                "title": "Options de service listées",
+                "description": "Livraison, sur place, etc. affichés",
+                "status": "pass",
+                "findings": "Options affichées sur Restaurant Guru : credit cards, outdoor seating, takeaway, booking, wheelchair accessible, Wi-Fi."
+              },
+              {
+                "title": "Liens réseaux sociaux",
+                "description": "FB/IG liés à la fiche",
+                "status": "pass",
+                "findings": "Instagram @okapi_neuchatel est lié sur Restaurant Guru. Facebook est mentionné sur le site."
+              },
+              {
+                "title": "Description inclut des mots-clés",
+                "description": "Type de cuisine dans la description Google",
+                "status": "pass",
+                "findings": "Description sur search.ch mentionne : 'unique culinary experience', 'international flavors', 'vegetarian and vegan options'."
+              },
+              {
+                "title": "Catégories Google = mots-clés de recherche",
+                "description": "Catégories cohérentes avec l'activité",
+                "status": "warning",
+                "findings": "Sur Yelp, la catégorie est 'Coffee & Tea' seulement, manquant 'Restaurant' et 'Brunch'. Catégorisation incomplète."
+              }
+            ]
+          },
+          {
+            "name": "Contenu Utilisateur",
+            "items": [
+              {
+                "title": "Avis de qualité",
+                "description": "Note > 4.0 ET nombre > 50",
+                "status": "pass",
+                "findings": "Note Google de 4.3/5 avec environ 494+ avis selon Restaurant Guru. TripAdvisor : 3.7/5 avec 54 avis. Note Google au-dessus du seuil."
+              }
+            ]
+          },
+          {
+            "name": "Exactitude des Fiches",
+            "items": [
+              {
+                "title": "NAP cohérent sur tous les annuaires",
+                "description": "Nom, Adresse, Téléphone identiques partout",
+                "status": "fail",
+                "findings": "Incohérences NAP détectées : Nom = 'Okapi Restaurant' sur le site, 'Okapi Café' sur Yelp/TripAdvisor, 'Okapi Neuchâtel Great Food & Coffee' sur search.ch. Adresse = 'Rue du Trésor 4' sur le site, 'Rue du Temple-Neuf 11' sur Yelp. Adresses différentes."
+              },
+              {
+                "title": "Position correcte sur Google Maps",
+                "description": "Pin bien placé",
+                "status": "pass",
+                "findings": "La position Google Maps pointe vers le centre-ville de Neuchâtel, Rue du Trésor 4."
+              },
+              {
+                "title": "Présent sur local.ch / search.ch",
+                "description": "Fiche sur l'annuaire local",
+                "status": "pass",
+                "findings": "Fiche search.ch trouvée : 'Okapi Neuchâtel Great Food & Coffee, Rue du Trésor 4'."
+              },
+              {
+                "title": "Présent sur TripAdvisor",
+                "description": "Fiche TripAdvisor trouvée",
+                "status": "pass",
+                "findings": "Fiche TripAdvisor trouvée : Okapi Café, classé #74 sur 139 restaurants à Neuchâtel, 3.7/5 avec 54 avis."
+              },
+              {
+                "title": "Présent sur TheFork / Uber Eats",
+                "description": "Fiche sur une plateforme de réservation/commande",
+                "status": "warning",
+                "findings": "Okapi est sur Uber Eats mais marqué comme indisponible. Pas trouvé sur TheFork. Utilise MyLocalina pour les réservations."
+              }
+            ]
+          },
+          {
+            "name": "Photos et Médias",
+            "items": [
+              {
+                "title": "Photo de profil définie",
+                "description": "Photo de profil visible sur Google",
+                "status": "pass",
+                "findings": "Photos visibles sur les fiches Google et TripAdvisor."
+              },
+              {
+                "title": "Photo de couverture définie",
+                "description": "Photo de couverture visible",
+                "status": "pass",
+                "findings": "Photo de couverture visible sur la fiche Google."
+              },
+              {
+                "title": "Au moins 10 photos",
+                "description": "Estimation > 10 photos sur Google",
+                "status": "pass",
+                "findings": "Restaurant Guru indique 120 photos et 2 vidéos. Yelp montre 9 photos. Large couverture photographique."
+              },
+              {
+                "title": "Photos récentes",
+                "description": "Photos de moins de 6 mois",
+                "status": "warning",
+                "findings": "Non vérifiable avec certitude. Les avis récents suggèrent une activité continue."
+              },
+              {
+                "title": "Photos des plats/menu",
+                "description": "Photos de nourriture visibles",
+                "status": "pass",
+                "findings": "Photos de plats visibles sur Restaurant Guru, TripAdvisor et le site web (galerie photos)."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "auditSummary": {
+      "totalReviewed": 100,
+      "needsWork": 37,
+      "subtitle": "37 à corriger"
+    },
+    "googleProfile": {
+      "name": "Okapi Café",
+      "rating": 4.3,
+      "reviewCount": 494,
+      "description": "Restaurant et coffee shop offrant une expérience culinaire unique depuis 2017, mêlant techniques modernes et saveurs internationales. Café de spécialité torréfié maison.",
+      "phone": "+41 32 721 07 18",
+      "website": "https://okapi-restaurant.ch/",
+      "hasHours": true,
+      "hasPhone": true,
+      "hasPriceRange": true,
+      "categories": [
+        "Restaurant",
+        "Coffee shop",
+        "Café"
+      ]
+    },
+    "caseStudies": [
+      {
+        "name": "Cyclo Noodles",
+        "initialScore": 37,
+        "finalScore": 92,
+        "result": "A multiplié ses ventes en ligne par 7",
+        "desktopImage": "cyclonoodles-desktop.png",
+        "tabletImage": "cyclonoodles-tablet.png"
+      },
+      {
+        "name": "Talkin' Tacos",
+        "initialScore": 46,
+        "finalScore": 95,
+        "result": "120 000$/mois de ventes",
+        "desktopImage": "talkintacos-desktop.png",
+        "tabletImage": "talkintacos-tablet.png"
+      },
+      {
+        "name": "Saffron",
+        "initialScore": 43,
+        "finalScore": 96,
+        "result": "171 400$/mois de ventes en ligne",
+        "desktopImage": "saffron-desktop.png",
+        "tabletImage": "saffron-tablet.png"
+      }
+    ],
+    "ctaText": "Corrigez en 35 secondes",
+    "ctaBanner": {
+      "label": "Owner AI Website",
+      "title": "Améliorez votre site web avec l'IA en 35 secondes.",
+      "buttonText": "Améliorez votre site"
+    },
+    "businessInfo": {
+      "legalName": "",
+      "ownerName": "",
+      "address": "Rue du Trésor 4",
+      "city": "Neuchâtel",
+      "state": "NE",
+      "postalCode": "2000",
+      "country": "CH",
+      "phone": "+41 32 721 07 18",
+      "additionalPhones": [],
+      "email": "neuch@okapi-restaurant.ch",
+      "website": "https://okapi-restaurant.ch/",
+      "additionalWebsites": [
+        "https://okapicoffee.com/"
+      ],
+      "description": "Depuis 2017 au cœur de Neuchâtel, Okapi offre une expérience culinaire unique du matin au soir. Cuisine créative, café de spécialité torréfié maison, brunchs créatifs, et sélection végétarienne/végane. Espaces privés disponibles pour événements.",
+      "cuisineTypes": [
+        "Cuisine créative",
+        "Brunch",
+        "Café de spécialité",
+        "Fusion internationale",
+        "Végétarien",
+        "Végan"
+      ],
+      "priceRange": "$$",
+      "openingHours": {
+        "monday": "8h30 - 22h30",
+        "tuesday": "8h30 - 22h30",
+        "wednesday": "8h30 - 22h30",
+        "thursday": "8h30 - 22h30",
+        "friday": "8h30 - 22h30",
+        "saturday": "8h30 - 22h30",
+        "sunday": "8h30 - 17h"
+      },
+      "socialMedia": {
+        "instagram": "https://www.instagram.com/okapi_neuchatel/",
+        "facebook": "https://www.facebook.com/okapi.neuch"
+      },
+      "platforms": {
+        "tripadvisor": "https://www.tripadvisor.com/Restaurant_Review-g188066-d13286013-Reviews-Okapi_Cafe-Neuchatel.html",
+        "yelp": "https://www.yelp.com/biz/okapi-caf%C3%A9-neuch%C3%A2tel",
+        "search.ch": "https://search.ch/tel/neuchatel/rue-du-tresor-4/okapi-neuchatel-great-food-coffee-2",
+        "restaurantGuru": "https://restaurantguru.com/Okapi-Cafe-Neuchatel",
+        "uberEats": "https://www.ubereats.com/ch-fr/store/okapi-cafe/uoME5r1JRYqksJlS8wAIEQ",
+        "europeanCoffeeTrip": "https://europeancoffeetrip.com/cafe/okapi-neuchatel/"
+      },
+      "googleMapsData": {
+        "rating": 4.3,
+        "reviewCount": 494,
+        "categories": [
+          "Restaurant",
+          "Coffee shop",
+          "Café"
+        ]
+      },
+      "websiteAnalysis": {
+        "hasSsl": true,
+        "isMobileResponsive": true,
+        "hasOnlineOrdering": false,
+        "hasMenu": true,
+        "hasReservation": true,
+        "technologies": [
+          "WordPress",
+          "WPML",
+          "MyLocalina (réservation)"
+        ],
+        "loadTimeEstimate": "~3-4s"
+      },
+      "scrapedAt": "2026-02-25",
+      "sources": [
+        "https://okapi-restaurant.ch/",
+        "https://okapi-restaurant.ch/en/restaurants/neuchatel/",
+        "https://okapicoffee.com/",
+        "https://www.tripadvisor.com/Restaurant_Review-g188066-d13286013-Reviews-Okapi_Cafe-Neuchatel.html",
+        "https://www.yelp.com/biz/okapi-caf%C3%A9-neuch%C3%A2tel",
+        "https://search.ch/tel/neuchatel/rue-du-tresor-4/okapi-neuchatel-great-food-coffee-2",
+        "https://restaurantguru.com/Okapi-Cafe-Neuchatel",
+        "https://www.instagram.com/okapi_neuchatel/",
+        "https://europeancoffeetrip.com/cafe/okapi-neuchatel/",
+        "https://wanderlog.com/place/details/2871820/okapi-neuch%C3%A2tel",
+        "https://hango.ch/cafe-neuchatel/"
+      ]
+    }
+  }

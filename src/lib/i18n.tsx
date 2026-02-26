@@ -90,6 +90,30 @@ const translations = {
     googleBizProfile: 'Google Business Profile',
     yourNewWebsite: 'Your new website',
     menuItems: 'Menu items',
+    // Locked sections
+    lockedWebsite: 'Website Optimization',
+    lockedWebsiteDesc: 'A fully optimized website designed for your restaurant',
+    lockedReport: 'AI Analysis Report',
+    lockedReportDesc: 'Complete downloadable report with 100+ audit criteria',
+    lockedMarketing: 'Marketing & Competitive Analysis',
+    lockedMarketingDesc: 'Detailed strategy to outperform your local competitors',
+    // Profile card
+    profileTitle: 'Your profile',
+    currentScore: 'Current score',
+    goalIn30Days: 'Goal in 30 days',
+    basedOnAudit: 'Based on our AI audit of {count}+ criteria',
+    // Value banner
+    valueOffered: 'Over CHF 900 in value — free',
+    valueOfferedSub: 'Everything included when you book your call',
+    // Secret gift
+    secretGift: 'Secret gift',
+    secretGiftValue: 'Value: CHF 500.-',
+    secretGiftDesc: 'Come to your appointment with a smile and unlock an exclusive secret gift',
+    secretGiftReveal: 'Revealed during your call',
+    // Updated CTA
+    getItNow: 'Get it now',
+    freeCall: 'Free 15-min call',
+    noCommitment: 'No commitment',
   },
   fr: {
     couldBeLosing: 'Vous pourriez perdre ~{amount}/mois à cause de {count} problème{s}',
@@ -166,6 +190,30 @@ const translations = {
     googleBizProfile: 'Profil Google Business',
     yourNewWebsite: 'Votre nouveau site',
     menuItems: 'Éléments du menu',
+    // Locked sections
+    lockedWebsite: 'Optimisation de site web',
+    lockedWebsiteDesc: 'Un site web entièrement optimisé conçu pour votre restaurant',
+    lockedReport: 'Rapport d\'analyse IA',
+    lockedReportDesc: 'Rapport complet téléchargeable avec 100+ critères d\'audit',
+    lockedMarketing: 'Marketing & Analyse concurrentielle',
+    lockedMarketingDesc: 'Stratégie détaillée pour surpasser vos concurrents locaux',
+    // Profile card
+    profileTitle: 'Votre profil',
+    currentScore: 'Score actuel',
+    goalIn30Days: 'Objectif en 30 jours',
+    basedOnAudit: 'Basé sur notre audit IA de {count}+ critères',
+    // Value banner
+    valueOffered: 'Plus de 900 CHF de valeur — offerts',
+    valueOfferedSub: 'Tout est inclus lorsque vous réservez votre appel',
+    // Secret gift
+    secretGift: 'Cadeau secret',
+    secretGiftValue: 'Valeur : 500.- CHF',
+    secretGiftDesc: 'Venez à votre rendez-vous avec le sourire et débloquez un cadeau secret exclusif',
+    secretGiftReveal: 'Révélé lors de votre appel',
+    // Updated CTA
+    getItNow: 'Recevoir maintenant',
+    freeCall: 'Appel gratuit de 15 min',
+    noCommitment: 'Sans engagement',
   },
 } as const
 
